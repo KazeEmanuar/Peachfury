@@ -1,0 +1,2 @@
+b8ee9c949fcd947903c608dc73efcec77b6d2f7b  build/us/sm64.us.f3dex2.z64
+[0;32mBuild succeeded.

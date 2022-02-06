@@ -1,0 +1,9 @@
+extern const GeoLayout toybone_geo[];
+extern Lights1 toybone_material0_bone_0_png_bone_0_png_f3d_lights;
+extern Vtx toybone_shape0_material0_mate_mesh_layer_1_vtx_cull[8];
+extern Vtx toybone_shape0_material0_mate_mesh_layer_1_vtx_0[79];
+extern Gfx toybone_shape0_material0_mate_mesh_layer_1_tri_0[];
+extern Gfx mat_toybone_material0_bone_0_png_bone_0_png_f3d[];
+extern Gfx mat_revert_toybone_material0_bone_0_png_bone_0_png_f3d[];
+extern Gfx toybone_shape0_material0_mate_mesh_layer_1[];
+extern Gfx toybone_material_revert_render_settings[];

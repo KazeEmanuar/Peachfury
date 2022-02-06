@@ -1,0 +1,12 @@
+extern const GeoLayout shipwings_geo[];
+extern Lights1 shipwings_f3d_material_006_lights;
+extern u8 shipwings_SUPER_MARIO_64_17C50CF2_0_2_all_ia8[];
+extern Vtx shipwings_Bone_002_l_mesh_layer_4_vtx_0[10];
+extern Gfx shipwings_Bone_002_l_mesh_layer_4_tri_0[];
+extern Vtx shipwings_Bone_002_r_mesh_layer_4_vtx_0[10];
+extern Gfx shipwings_Bone_002_r_mesh_layer_4_tri_0[];
+extern Gfx mat_shipwings_f3d_material_006[];
+extern Gfx mat_revert_shipwings_f3d_material_006[];
+extern Gfx shipwings_Bone_002_l_mesh_layer_4[];
+extern Gfx shipwings_Bone_002_r_mesh_layer_4[];
+extern Gfx shipwings_material_revert_render_settings[];

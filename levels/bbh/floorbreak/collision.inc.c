@@ -1,0 +1,13 @@
+const Collision floorbreak_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(4),
+	COL_VERTEX(-230, 0, -180),
+	COL_VERTEX(-215, 0, 180),
+	COL_VERTEX(231, 0, 180),
+	COL_VERTEX(212, 0, -168),
+	COL_TRI_INIT(SURFACE_DEFAULT, 2),
+	COL_TRI(0, 1, 2),
+	COL_TRI(0, 2, 3),
+	COL_TRI_STOP(),
+	COL_END()
+};

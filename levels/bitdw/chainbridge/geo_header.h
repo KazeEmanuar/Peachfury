@@ -1,0 +1,18 @@
+extern const GeoLayout chainbridge_geo[];
+extern Lights1 chainbridge_f3d_material_019_lights;
+extern Lights1 chainbridge_f3d_material_020_lights;
+extern u8 chainbridge_KKIIDDZZ_DAT_2881__p00_ci4[];
+extern u8 chainbridge_KKIIDDZZ_DAT_2881__p00_ci4_pal_rgba16[];
+extern u8 chainbridge__3590192_ci8[];
+extern u8 chainbridge__3590192_ci8_pal_rgba16[];
+extern Vtx chainbridge_Bone_mesh_layer_1_vtx_0[14];
+extern Gfx chainbridge_Bone_mesh_layer_1_tri_0[];
+extern Vtx chainbridge_Chain_l_001_mesh_layer_4_vtx_0[16];
+extern Gfx chainbridge_Chain_l_001_mesh_layer_4_tri_0[];
+extern Gfx mat_chainbridge_f3d_material_019[];
+extern Gfx mat_revert_chainbridge_f3d_material_019[];
+extern Gfx mat_chainbridge_f3d_material_020[];
+extern Gfx mat_revert_chainbridge_f3d_material_020[];
+extern Gfx chainbridge_Bone_mesh_layer_1[];
+extern Gfx chainbridge_Chain_l_001_mesh_layer_4[];
+extern Gfx chainbridge_material_revert_render_settings[];

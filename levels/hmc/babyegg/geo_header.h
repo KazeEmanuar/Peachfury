@@ -1,0 +1,10 @@
+extern const GeoLayout babyegg_egg[];
+extern Lights1 babyegg_VMtl091_f3d_lights;
+extern u8 babyegg__4DE6FF52_c_ci4[];
+extern u8 babyegg__4DE6FF52_c_ci4_pal_rgba16[];
+extern Vtx babyegg_ZZZMain_005_mesh_layer_1_vtx_0[115];
+extern Gfx babyegg_ZZZMain_005_mesh_layer_1_tri_0[];
+extern Gfx mat_babyegg_VMtl091_f3d[];
+extern Gfx mat_revert_babyegg_VMtl091_f3d[];
+extern Gfx babyegg_ZZZMain_005_mesh_layer_1[];
+extern Gfx babyegg_material_revert_render_settings[];

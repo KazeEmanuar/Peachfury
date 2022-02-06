@@ -1,0 +1,839 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x6000000
+LOAD build/us/actors/group12.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x400000))
+                0x0000000000400000                . = SEGMENT_START ("text-segment", 0x400000)
+
+.interp
+ *(.interp)
+
+.MIPS.abiflags  0x0000000000400000       0x18
+ *(.MIPS.abiflags)
+ .MIPS.abiflags
+                0x0000000000400000       0x18 build/us/actors/group12.o
+
+.reginfo        0x0000000000400018       0x18
+ *(.reginfo)
+ .reginfo       0x0000000000400018       0x18 build/us/actors/group12.o
+
+.MIPS.xhash
+ *(.MIPS.xhash)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.dynamic
+ *(.dynamic)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x0000000000400018        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.dyn)
+ .rel.dyn       0x0000000000400018        0x0 build/us/actors/group12.o
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+                [!provide]                        PROVIDE (__rel_iplt_end = .)
+
+.rela.dyn       0x0000000000400018        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT_NONE(.init))
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000006000000        0x0
+                0x0000000006000000                _ftext = .
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000006000000        0x0 build/us/actors/group12.o
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x0000000006000000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x0000000006000000        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000006000000        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000006000000        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000006000000        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+                0x0000000006000000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000006000000    0x6fc40
+                0x0000000006000000                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000006000000    0x6fc40 build/us/actors/group12.o
+                0x0000000006000000                savestateYosh_anims
+                0x00000000060034e8                savestateYosh_material_revert_render_settings
+                0x0000000006003528                savestateYosh_atail_001_skinned
+                0x0000000006003560                savestateYosh_atail_001_mesh
+                0x0000000006003598                savestateYosh_arm3_r_skinned
+                0x00000000060035b8                savestateYosh_arm3_r_mesh
+                0x0000000006003628                savestateYosh_arm2_r_skinned
+                0x0000000006003648                savestateYosh_arm2_r_mesh
+                0x0000000006003668                savestateYosh_arm1_r_skinned
+                0x00000000060036b8                savestateYosh_arm1_r_mesh
+                0x0000000006003708                savestateYosh_arm3_l_skinned
+                0x0000000006003728                savestateYosh_arm3_l_mesh
+                0x0000000006003760                savestateYosh_arm2_l_skinned
+                0x0000000006003780                savestateYosh_arm2_l_mesh
+                0x00000000060037a0                savestateYosh_arm1_l_skinned
+                0x00000000060037f0                savestateYosh_arm1_l_mesh
+                0x0000000006003840                savestateYosh_ZZZ_003_skinned_mat_override_sunglasses_9
+                0x0000000006003858                savestateYosh_ZZZ_003_skinned_mat_override_happy_8
+                0x0000000006003870                savestateYosh_ZZZ_003_skinned_mat_override_sleeping_7
+                0x0000000006003888                savestateYosh_ZZZ_003_skinned_mat_override_angry_6
+                0x00000000060038a0                savestateYosh_ZZZ_003_skinned_mat_override_annoyed_5
+                0x00000000060038b8                savestateYosh_ZZZ_003_skinned_mat_override_smug_flamboyant_4
+                0x00000000060038d0                savestateYosh_ZZZ_003_skinned_mat_override_scared_3
+                0x00000000060038e8                savestateYosh_ZZZ_003_skinned_mat_override_sad_2
+                0x0000000006003900                savestateYosh_ZZZ_003_skinned_mat_override_closed_1
+                0x0000000006003918                savestateYosh_ZZZ_003_skinned_mat_override_halfopen_0
+                0x0000000006003930                savestateYosh_ZZZ_003_skinned
+                0x0000000006003948                savestateYosh_ZZZ_003_mesh_mat_override_sunglasses_9
+                0x0000000006003978                savestateYosh_ZZZ_003_mesh_mat_override_happy_8
+                0x00000000060039a8                savestateYosh_ZZZ_003_mesh_mat_override_sleeping_7
+                0x00000000060039d8                savestateYosh_ZZZ_003_mesh_mat_override_angry_6
+                0x0000000006003a08                savestateYosh_ZZZ_003_mesh_mat_override_annoyed_5
+                0x0000000006003a38                savestateYosh_ZZZ_003_mesh_mat_override_smug_flamboyant_4
+                0x0000000006003a68                savestateYosh_ZZZ_003_mesh_mat_override_scared_3
+                0x0000000006003a98                savestateYosh_ZZZ_003_mesh_mat_override_sad_2
+                0x0000000006003ac8                savestateYosh_ZZZ_003_mesh_mat_override_closed_1
+                0x0000000006003af8                savestateYosh_ZZZ_003_mesh_mat_override_halfopen_0
+                0x0000000006003b28                savestateYosh_ZZZ_003_mesh
+                0x0000000006003b58                savestateYosh_ZZZ_002_mesh_mat_override_sunglasses_9
+                0x0000000006003b70                savestateYosh_ZZZ_002_mesh_mat_override_happy_8
+                0x0000000006003b88                savestateYosh_ZZZ_002_mesh_mat_override_sleeping_7
+                0x0000000006003ba0                savestateYosh_ZZZ_002_mesh_mat_override_angry_6
+                0x0000000006003bb8                savestateYosh_ZZZ_002_mesh_mat_override_annoyed_5
+                0x0000000006003bd0                savestateYosh_ZZZ_002_mesh_mat_override_smug_flamboyant_4
+                0x0000000006003be8                savestateYosh_ZZZ_002_mesh_mat_override_scared_3
+                0x0000000006003c00                savestateYosh_ZZZ_002_mesh_mat_override_sad_2
+                0x0000000006003c18                savestateYosh_ZZZ_002_mesh_mat_override_closed_1
+                0x0000000006003c30                savestateYosh_ZZZ_002_mesh_mat_override_halfopen_0
+                0x0000000006003c48                savestateYosh_ZZZ_002_mesh
+                0x0000000006003c60                savestateYosh_Bone_005_skinned_mat_override_sunglasses_9
+                0x0000000006003c80                savestateYosh_Bone_005_skinned_mat_override_happy_8
+                0x0000000006003ca0                savestateYosh_Bone_005_skinned_mat_override_sleeping_7
+                0x0000000006003cc0                savestateYosh_Bone_005_skinned_mat_override_angry_6
+                0x0000000006003ce0                savestateYosh_Bone_005_skinned_mat_override_annoyed_5
+                0x0000000006003d00                savestateYosh_Bone_005_skinned_mat_override_smug_flamboyant_4
+                0x0000000006003d20                savestateYosh_Bone_005_skinned_mat_override_scared_3
+                0x0000000006003d40                savestateYosh_Bone_005_skinned_mat_override_sad_2
+                0x0000000006003d60                savestateYosh_Bone_005_skinned_mat_override_closed_1
+                0x0000000006003d80                savestateYosh_Bone_005_skinned_mat_override_halfopen_0
+                0x0000000006003da0                savestateYosh_Bone_005_skinned
+                0x0000000006003dc0                savestateYosh_Bone_005_mesh_mat_override_sunglasses_9
+                0x0000000006003de0                savestateYosh_Bone_005_mesh_mat_override_happy_8
+                0x0000000006003e00                savestateYosh_Bone_005_mesh_mat_override_sleeping_7
+                0x0000000006003e20                savestateYosh_Bone_005_mesh_mat_override_angry_6
+                0x0000000006003e40                savestateYosh_Bone_005_mesh_mat_override_annoyed_5
+                0x0000000006003e60                savestateYosh_Bone_005_mesh_mat_override_smug_flamboyant_4
+                0x0000000006003e80                savestateYosh_Bone_005_mesh_mat_override_scared_3
+                0x0000000006003ea0                savestateYosh_Bone_005_mesh_mat_override_sad_2
+                0x0000000006003ec0                savestateYosh_Bone_005_mesh_mat_override_closed_1
+                0x0000000006003ee0                savestateYosh_Bone_005_mesh_mat_override_halfopen_0
+                0x0000000006003f00                savestateYosh_Bone_005_mesh
+                0x0000000006003f20                savestateYosh_ZZZ_mesh_mat_override_sunglasses_9
+                0x0000000006003fa8                savestateYosh_ZZZ_mesh_mat_override_happy_8
+                0x0000000006004030                savestateYosh_ZZZ_mesh_mat_override_sleeping_7
+                0x00000000060040b8                savestateYosh_ZZZ_mesh_mat_override_angry_6
+                0x0000000006004148                savestateYosh_ZZZ_mesh_mat_override_annoyed_5
+                0x00000000060041d8                savestateYosh_ZZZ_mesh_mat_override_smug_flamboyant_4
+                0x0000000006004268                savestateYosh_ZZZ_mesh_mat_override_scared_3
+                0x00000000060042f8                savestateYosh_ZZZ_mesh_mat_override_sad_2
+                0x0000000006004388                savestateYosh_ZZZ_mesh_mat_override_closed_1
+                0x0000000006004410                savestateYosh_ZZZ_mesh_mat_override_halfopen_0
+                0x00000000060044a0                savestateYosh_ZZZ_mesh
+                0x0000000006004528                savestateYosh_AAAC_mesh
+                0x0000000006004578                savestateYosh_AAAB_001_mesh
+                0x0000000006004598                savestateYosh_AAAB_mesh
+                0x00000000060045e8                mat_savestateYosh_material_3_f3d
+                0x0000000006004648                mat_savestateYosh_sm64_material_008
+                0x0000000006004680                mat_revert_savestateYosh_sm64_material_009
+                0x00000000060046a0                mat_savestateYosh_sm64_material_009
+                0x0000000006004758                mat_revert_savestateYosh_sm64_material_011
+                0x0000000006004770                mat_savestateYosh_sm64_material_011
+                0x0000000006004820                mat_savestateYosh_sunglasses
+                0x0000000006004880                mat_savestateYosh_happy
+                0x00000000060048e0                mat_savestateYosh_sleeping
+                0x0000000006004940                mat_revert_savestateYosh_angry
+                0x0000000006004958                mat_savestateYosh_angry
+                0x00000000060049f0                mat_revert_savestateYosh_annoyed
+                0x0000000006004a08                mat_savestateYosh_annoyed
+                0x0000000006004aa0                mat_revert_savestateYosh_smug_flamboyant
+                0x0000000006004ab8                mat_savestateYosh_smug_flamboyant
+                0x0000000006004b50                mat_revert_savestateYosh_scared
+                0x0000000006004b68                mat_savestateYosh_scared
+                0x0000000006004c00                mat_revert_savestateYosh_sad
+                0x0000000006004c18                mat_savestateYosh_sad
+                0x0000000006004cb0                mat_savestateYosh_closed
+                0x0000000006004d10                mat_revert_savestateYosh_halfopen
+                0x0000000006004d28                mat_savestateYosh_halfopen
+                0x0000000006004dc0                mat_savestateYosh_sm64_material_012
+                0x0000000006004df8                mat_revert_savestateYosh_sm64_material_006
+                0x0000000006004e10                mat_savestateYosh_sm64_material_006
+                0x0000000006004e78                mat_revert_savestateYosh_sm64_material_005
+                0x0000000006004ea0                mat_savestateYosh_sm64_material_005
+                0x0000000006004f48                mat_savestateYosh_material_2_f3d
+                0x0000000006004fc0                mat_revert_savestateYosh_material_0_f3d
+                0x0000000006004fd8                mat_savestateYosh_material_0_f3d
+                0x0000000006005070                mat_revert_savestateYosh_spaceyosh
+                0x0000000006005088                mat_savestateYosh_spaceyosh
+                0x0000000006005108                mat_revert_savestateYosh_yoshi_space_f3d
+                0x0000000006005120                mat_savestateYosh_yoshi_space_f3d
+                0x00000000060051d0                mat_revert_savestateYosh_sm64_material
+                0x00000000060051e8                mat_savestateYosh_sm64_material
+                0x0000000006005268                mat_revert_savestateYosh_sm64_material_001
+                0x0000000006005288                mat_savestateYosh_sm64_material_001
+                0x0000000006005340                mat_revert_savestateYosh_sm64_material_004
+                0x0000000006005360                mat_savestateYosh_sm64_material_004
+                0x0000000006005418                mat_revert_savestateYosh_sm64_material_003
+                0x0000000006005430                mat_savestateYosh_sm64_material_003
+                0x00000000060054b0                savestateYosh_atail_001_skinned_tri_1
+                0x00000000060054c0                savestateYosh_atail_001_skinned_vtx_1
+                0x0000000006005510                savestateYosh_atail_001_skinned_tri_0
+                0x0000000006005520                savestateYosh_atail_001_skinned_vtx_0
+                0x0000000006005550                savestateYosh_atail_001_mesh_tri_1
+                0x0000000006005570                savestateYosh_atail_001_mesh_vtx_1
+                0x0000000006005580                savestateYosh_atail_001_mesh_tri_0
+                0x0000000006005598                savestateYosh_atail_001_mesh_vtx_0
+                0x00000000060055a8                savestateYosh_arm3_r_skinned_tri_0
+                0x00000000060055b8                savestateYosh_arm3_r_skinned_vtx_0
+                0x00000000060055e8                savestateYosh_arm3_r_mesh_tri_4
+                0x0000000006005610                savestateYosh_arm3_r_mesh_vtx_4
+                0x0000000006005670                savestateYosh_arm3_r_mesh_tri_3
+                0x00000000060056a8                savestateYosh_arm3_r_mesh_vtx_3
+                0x0000000006005788                savestateYosh_arm3_r_mesh_tri_2
+                0x00000000060057f8                savestateYosh_arm3_r_mesh_vtx_2
+                0x00000000060059b8                savestateYosh_arm3_r_mesh_tri_1
+                0x00000000060059e0                savestateYosh_arm3_r_mesh_vtx_1
+                0x0000000006005a40                savestateYosh_arm3_r_mesh_tri_0
+                0x0000000006005a70                savestateYosh_arm3_r_mesh_vtx_0
+                0x0000000006005ab0                savestateYosh_arm2_r_skinned_tri_0
+                0x0000000006005ac0                savestateYosh_arm2_r_skinned_vtx_0
+                0x0000000006005af0                savestateYosh_arm2_r_mesh_tri_0
+                0x0000000006005b18                savestateYosh_arm2_r_mesh_vtx_0
+                0x0000000006005b48                savestateYosh_arm1_r_skinned_tri_2
+                0x0000000006005b58                savestateYosh_arm1_r_skinned_vtx_2
+                0x0000000006005b88                savestateYosh_arm1_r_skinned_tri_1
+                0x0000000006005b98                savestateYosh_arm1_r_skinned_vtx_1
+                0x0000000006005bd8                savestateYosh_arm1_r_skinned_tri_0
+                0x0000000006005be8                savestateYosh_arm1_r_skinned_vtx_0
+                0x0000000006005c18                savestateYosh_arm1_r_mesh_tri_2
+                0x0000000006005c30                savestateYosh_arm1_r_mesh_vtx_2
+                0x0000000006005c40                savestateYosh_arm1_r_mesh_tri_1
+                0x0000000006005c60                savestateYosh_arm1_r_mesh_vtx_1
+                0x0000000006005ca0                savestateYosh_arm1_r_mesh_tri_0
+                0x0000000006005cc0                savestateYosh_arm1_r_mesh_vtx_0
+                0x0000000006005ce0                savestateYosh_arm3_l_skinned_tri_0
+                0x0000000006005cf0                savestateYosh_arm3_l_skinned_vtx_0
+                0x0000000006005d20                savestateYosh_arm3_l_mesh_tri_1
+                0x0000000006005d48                savestateYosh_arm3_l_mesh_vtx_1
+                0x0000000006005da8                savestateYosh_arm3_l_mesh_tri_0
+                0x0000000006005dd8                savestateYosh_arm3_l_mesh_vtx_0
+                0x0000000006005e18                savestateYosh_arm2_l_skinned_tri_0
+                0x0000000006005e28                savestateYosh_arm2_l_skinned_vtx_0
+                0x0000000006005e58                savestateYosh_arm2_l_mesh_tri_0
+                0x0000000006005e80                savestateYosh_arm2_l_mesh_vtx_0
+                0x0000000006005eb0                savestateYosh_arm1_l_skinned_tri_2
+                0x0000000006005ec0                savestateYosh_arm1_l_skinned_vtx_2
+                0x0000000006005ef0                savestateYosh_arm1_l_skinned_tri_1
+                0x0000000006005f00                savestateYosh_arm1_l_skinned_vtx_1
+                0x0000000006005f40                savestateYosh_arm1_l_skinned_tri_0
+                0x0000000006005f50                savestateYosh_arm1_l_skinned_vtx_0
+                0x0000000006005f80                savestateYosh_arm1_l_mesh_tri_2
+                0x0000000006005f98                savestateYosh_arm1_l_mesh_vtx_2
+                0x0000000006005fa8                savestateYosh_arm1_l_mesh_tri_1
+                0x0000000006005fc8                savestateYosh_arm1_l_mesh_vtx_1
+                0x0000000006006008                savestateYosh_arm1_l_mesh_tri_0
+                0x0000000006006028                savestateYosh_arm1_l_mesh_vtx_0
+                0x0000000006006048                savestateYosh_ZZZ_003_skinned_tri_0
+                0x0000000006006058                savestateYosh_ZZZ_003_skinned_vtx_0
+                0x0000000006006088                savestateYosh_ZZZ_003_mesh_tri_1
+                0x00000000060060e8                savestateYosh_ZZZ_003_mesh_vtx_1
+                0x00000000060062c8                savestateYosh_ZZZ_003_mesh_tri_0
+                0x00000000060062f0                savestateYosh_ZZZ_003_mesh_vtx_0
+                0x0000000006006320                savestateYosh_ZZZ_002_mesh_tri_0
+                0x0000000006006348                savestateYosh_ZZZ_002_mesh_vtx_0
+                0x00000000060063a8                savestateYosh_Bone_005_skinned_tri_0
+                0x00000000060063b8                savestateYosh_Bone_005_skinned_vtx_0
+                0x0000000006006438                savestateYosh_Bone_005_mesh_tri_0
+                0x0000000006006460                savestateYosh_Bone_005_mesh_vtx_0
+                0x0000000006006480                savestateYosh_ZZZ_mesh_tri_5
+                0x00000000060064a0                savestateYosh_ZZZ_mesh_vtx_5
+                0x00000000060064e0                savestateYosh_ZZZ_mesh_tri_4
+                0x0000000006006500                savestateYosh_ZZZ_mesh_vtx_4
+                0x0000000006006580                savestateYosh_ZZZ_mesh_tri_3
+                0x00000000060065c8                savestateYosh_ZZZ_mesh_vtx_3
+                0x0000000006006808                savestateYosh_ZZZ_mesh_tri_2
+                0x0000000006006840                savestateYosh_ZZZ_mesh_vtx_2
+                0x0000000006006940                savestateYosh_ZZZ_mesh_tri_1
+                0x00000000060069a0                savestateYosh_ZZZ_mesh_vtx_1
+                0x0000000006006b10                savestateYosh_ZZZ_mesh_tri_0
+                0x0000000006006be0                savestateYosh_ZZZ_mesh_vtx_0
+                0x0000000006006e80                savestateYosh_AAAC_mesh_tri_2
+                0x0000000006006eb8                savestateYosh_AAAC_mesh_vtx_2
+                0x0000000006006f98                savestateYosh_AAAC_mesh_tri_1
+                0x0000000006006fc0                savestateYosh_AAAC_mesh_vtx_1
+                0x0000000006007060                savestateYosh_AAAC_mesh_tri_0
+                0x0000000006007080                savestateYosh_AAAC_mesh_vtx_0
+                0x00000000060070e0                savestateYosh_AAAB_001_mesh_tri_0
+                0x0000000006007150                savestateYosh_AAAB_001_mesh_vtx_0
+                0x0000000006007330                savestateYosh_AAAB_mesh_tri_2
+                0x00000000060073c0                savestateYosh_AAAB_mesh_vtx_2
+                0x0000000006007640                savestateYosh_AAAB_mesh_tri_1
+                0x00000000060076b0                savestateYosh_AAAB_mesh_vtx_1
+                0x0000000006007860                savestateYosh_AAAB_mesh_tri_0
+                0x0000000006007888                savestateYosh_AAAB_mesh_vtx_0
+                0x0000000006007908                savestateYosh__5E58AD88_c_ia8
+                0x0000000006007a08                savestateYosh__5E58AD88_c_ia8_aligner
+                0x0000000006007a10                savestateYosh_Glover_84D68B06_0_0_FA510080_ciByRGBA_ci4_pal_rgba16
+                0x0000000006007a20                savestateYosh_Glover_84D68B06_0_0_FA510080_ciByRGBA_ci4_pal_rgba16_aligner
+                0x0000000006007a28                savestateYosh_Glover_84D68B06_0_0_FA510080_ciByRGBA_ci4
+                0x0000000006007c28                savestateYosh_Glover_84D68B06_0_0_FA510080_ciByRGBA_ci4_aligner
+                0x0000000006007c30                savestateYosh_MARIOKART64_2F42B8D1_0_2_all_ci4_pal_rgba16
+                0x0000000006007c50                savestateYosh_MARIOKART64_2F42B8D1_0_2_all_ci4_pal_rgba16_aligner
+                0x0000000006007c58                savestateYosh_MARIOKART64_2F42B8D1_0_2_all_ci4
+                0x0000000006007e58                savestateYosh_MARIOKART64_2F42B8D1_0_2_all_ci4_aligner
+                0x0000000006007e60                savestateYosh__0_8725_squirtle_glasses_png_ia8
+                0x0000000006008260                savestateYosh__0_8725_squirtle_glasses_png_ia8_aligner
+                0x0000000006008268                savestateYosh_Eye_Happy_ia8
+                0x0000000006008668                savestateYosh_Eye_Happy_ia8_aligner
+                0x0000000006008670                savestateYosh_Eye_Sleep__1__ia8
+                0x0000000006008a70                savestateYosh_Eye_Sleep__1__ia8_aligner
+                0x0000000006008a78                savestateYosh_realrealangry_ci8_pal_rgba16
+                0x0000000006008ad8                savestateYosh_realrealangry_ci8_pal_rgba16_aligner
+                0x0000000006008ae0                savestateYosh_realrealangry_ci8
+                0x0000000006008ee0                savestateYosh_realrealangry_ci8_aligner
+                0x0000000006008ee8                savestateYosh_annoying_ci8_pal_rgba16
+                0x0000000006008f48                savestateYosh_annoying_ci8_pal_rgba16_aligner
+                0x0000000006008f50                savestateYosh_annoying_ci8
+                0x0000000006009350                savestateYosh_annoying_ci8_aligner
+                0x0000000006009358                savestateYosh_angwy_ci8_pal_rgba16
+                0x00000000060093b8                savestateYosh_angwy_ci8_pal_rgba16_aligner
+                0x00000000060093c0                savestateYosh_angwy_ci8
+                0x00000000060097c0                savestateYosh_angwy_ci8_aligner
+                0x00000000060097c8                savestateYosh_scared_ci8_pal_rgba16
+                0x0000000006009828                savestateYosh_scared_ci8_pal_rgba16_aligner
+                0x0000000006009830                savestateYosh_scared_ci8
+                0x0000000006009c30                savestateYosh_scared_ci8_aligner
+                0x0000000006009c38                savestateYosh_realangry_ci8_pal_rgba16
+                0x0000000006009ca0                savestateYosh_realangry_ci8_pal_rgba16_aligner
+                0x0000000006009ca8                savestateYosh_realangry_ci8
+                0x000000000600a0a8                savestateYosh_realangry_ci8_aligner
+                0x000000000600a0b0                savestateYosh__34B9EA8451_closed_ia8
+                0x000000000600a4b0                savestateYosh__34B9EA8451_closed_ia8_aligner
+                0x000000000600a4b8                savestateYosh__34B9EA8451_halfclosed_ci8_pal_rgba16
+                0x000000000600a528                savestateYosh__34B9EA8451_halfclosed_ci8_pal_rgba16_aligner
+                0x000000000600a530                savestateYosh__34B9EA8451_halfclosed_ci8
+                0x000000000600a930                savestateYosh__34B9EA8451_halfclosed_ci8_aligner
+                0x000000000600a938                savestateYosh__0x26A0_i8
+                0x000000000600b938                savestateYosh__0x26A0_i8_aligner
+                0x000000000600b940                savestateYosh_yuka_ci8_pal_rgba16
+                0x000000000600ba48                savestateYosh_yuka_ci8_pal_rgba16_aligner
+                0x000000000600ba50                savestateYosh_yuka_ci8
+                0x000000000600be50                savestateYosh_yuka_ci8_aligner
+                0x000000000600be58                savestateYosh__34B9EA8451_c_ia8
+                0x000000000600c258                savestateYosh__34B9EA8451_c_ia8_aligner
+                0x000000000600c260                savestateYosh__3BA53B0B_c_ci4_pal_rgba16
+                0x000000000600c268                savestateYosh__3BA53B0B_c_ci4_pal_rgba16_aligner
+                0x000000000600c270                savestateYosh__3BA53B0B_c_ci4
+                0x000000000600c2f0                savestateYosh__3BA53B0B_c_ci4_aligner
+                0x000000000600c2f8                savestateYosh__1200px_Empty_Star_svg_ia8
+                0x000000000600d2f8                savestateYosh__1200px_Empty_Star_svg_ia8_aligner
+                0x000000000600d300                savestateYosh_d1114a79_ci4_pal_rgba16
+                0x000000000600d320                savestateYosh_d1114a79_ci4_pal_rgba16_aligner
+                0x000000000600d328                savestateYosh_d1114a79_ci4
+                0x000000000600db28                savestateYosh_d1114a79_ci4_aligner
+                0x000000000600db30                savestateYosh_ia8_ia8
+                0x000000000600df30                savestateYosh_ia8_ia8_aligner
+                0x000000000600df38                savestateYosh_floor02_dh_alb_ci8_pal_rgba16
+                0x000000000600df80                savestateYosh_floor02_dh_alb_ci8_pal_rgba16_aligner
+                0x000000000600df88                savestateYosh_floor02_dh_alb_ci8
+                0x000000000600e388                savestateYosh_floor02_dh_alb_ci8_aligner
+                0x000000000600e390                savestateYosh__0x5DC0_ci4_pal_rgba16
+                0x000000000600e3b0                savestateYosh__0x5DC0_ci4_pal_rgba16_aligner
+                0x000000000600e3b8                savestateYosh__0x5DC0_ci4
+                0x000000000600ebb8                savestateYosh__0x5DC0_ci4_aligner
+                0x000000000600ebc0                savestateYosh_rhop_boutperiscope_ia8
+                0x000000000600fbc0                savestateYosh_rhop_boutperiscope_ia8_aligner
+                0x000000000600fbc8                savestateYosh_sm64_material_008_lights
+                0x000000000600fbe0                savestateYosh_sm64_material_009_lights
+                0x000000000600fbf8                savestateYosh_sm64_material_011_lights
+                0x000000000600fc10                savestateYosh_sm64_material_012_lights
+                0x000000000600fc28                savestateYosh_material_2_f3d_lights
+                0x000000000600fc40                savestateYosh_spaceyosh_lights
+                0x000000000600fc58                savestateYosh_yoshi_space_f3d_lights
+                0x000000000600fc70                savestateYosh_sm64_material_lights
+                0x000000000600fc88                savestateYosh_sm64_material_001_lights
+                0x000000000600fca0                savestateYosh_sm64_material_004_lights
+                0x000000000600fcb8                savestateYosh_sm64_material_003_lights
+                0x000000000600fcd0                impact_smoke_seg6_dl_06062D18
+                0x000000000600fd70                impact_smoke_seg6_dl_06062C78
+                0x000000000600fe10                impact_smoke_seg6_dl_06062BD8
+                0x000000000600feb0                impact_smoke_seg6_dl_06062B38
+                0x000000000600ff50                impact_smoke_seg6_dl_06062B08
+                0x000000000600ff80                impact_smoke_seg6_dl_06062AF0
+                0x000000000600ff90                impact_smoke_seg6_dl_06062AD8
+                0x000000000600ffa0                impact_smoke_seg6_dl_06062AA8
+                0x0000000006018048                bomb_seg6_dl_0605A9C0
+                0x00000000060180a8                bomb_seg6_dl_0605A8A8
+                0x0000000006018170                bomb_seg6_dl_0605A830
+                0x00000000060181e8                bomb_seg6_dl_0605A7F8
+                0x0000000006018218                bomb_seg6_dl_0605A7C0
+                0x000000000601af60                bowser_seg6_unkmoveshorts_060576FC
+                0x000000000601b304                bowser_seg6_anims_06057690
+                0x000000000602f300                bowser_seg6_dl_06043698
+                0x000000000602f368                bowser_seg6_dl_06043648
+                0x000000000602f3a8                bowser_seg6_dl_06043548
+                0x000000000602f720                bowser_seg6_dl_060431F0
+                0x000000000602f7a8                bowser_seg6_dl_06043180
+                0x000000000602f7f8                bowser_seg6_dl_060430E8
+                0x000000000602f868                bowser_seg6_dl_06042EE0
+                0x0000000006030228                bowser_seg6_dl_06042608
+                0x0000000006030280                bowser_seg6_dl_060425B0
+                0x00000000060302d8                bowser_seg6_dl_06042558
+                0x0000000006030330                bowser_seg6_dl_06042500
+                0x0000000006030388                bowser_seg6_dl_060424A8
+                0x00000000060303e0                bowser_seg6_dl_06042450
+                0x0000000006030438                bowser_seg6_dl_060423F8
+                0x0000000006030490                bowser_seg6_dl_060423A0
+                0x00000000060304e8                bowser_seg6_dl_06042348
+                0x0000000006030540                bowser_seg6_dl_06042328
+                0x0000000006030560                bowser_seg6_dl_06042278
+                0x0000000006030610                bowser_seg6_dl_06042220
+                0x0000000006030648                bowser_seg6_dl_060421D8
+                0x0000000006030680                bowser_seg6_dl_06042140
+                0x00000000060306e0                bowser_seg6_dl_060420F0
+                0x0000000006030710                bowser_seg6_dl_06042098
+                0x0000000006030750                bowser_seg6_dl_06041F50
+                0x0000000006030820                bowser_seg6_dl_06041EA8
+                0x0000000006030890                bowser_seg6_dl_06041E48
+                0x00000000060308d8                bowser_seg6_dl_06041BA0
+                0x0000000006030a78                bowser_seg6_dl_06041A28
+                0x00000000060322c0                bowser_seg6_dl_06040358
+                0x0000000006032390                bowser_seg6_dl_06040210
+                0x0000000006032458                bowser_seg6_dl_060401F0
+                0x0000000006032470                bowser_seg6_dl_06040180
+                0x00000000060324c0                bowser_seg6_dl_0603FFA8
+                0x0000000006032600                bowser_seg6_dl_0603FEA8
+                0x00000000060326a8                bowser_seg6_dl_0603FDD0
+                0x0000000006032730                bowser_seg6_dl_0603FD38
+                0x0000000006032790                bowser_seg6_dl_0603FC18
+                0x0000000006032840                bowser_seg6_dl_0603FBA8
+                0x0000000006033d28                bowser_seg6_dl_0603E6B8
+                0x0000000006033d88                bowser_seg6_dl_0603E500
+                0x0000000006034368                bowser_seg6_dl_0603DFB0
+                0x00000000060343e8                bowser_seg6_dl_0603DDD0
+                0x0000000006034510                bowser_seg6_dl_0603DC70
+                0x0000000006034fe0                bowser_seg6_dl_0603D200
+                0x0000000006035060                bowser_seg6_dl_0603D098
+                0x0000000006035140                bowser_seg6_dl_0603CF28
+                0x00000000060359f0                bowser_seg6_dl_0603C6D0
+                0x0000000006035a78                bowser_seg6_dl_0603C650
+                0x0000000006035ad8                bowser_seg6_dl_0603C5A8
+                0x0000000006035b48                bowser_seg6_dl_0603C500
+                0x0000000006036070                bowser_seg6_dl_0603BFC8
+                0x00000000060360f8                bowser_seg6_dl_0603BF48
+                0x0000000006036158                bowser_seg6_dl_0603BEA0
+                0x00000000060361c8                bowser_seg6_dl_0603BDF8
+                0x00000000060366f0                bowser_seg6_dl_0603B948
+                0x0000000006036770                bowser_seg6_dl_0603B8D0
+                0x00000000060367e8                bowser_seg6_dl_0603B718
+                0x0000000006036d88                bowser_seg6_dl_0603B208
+                0x0000000006036e08                bowser_seg6_dl_0603B038
+                0x0000000006036f28                bowser_seg6_dl_0603AED8
+                0x0000000006037978                bowser_seg6_dl_0603A4E8
+                0x00000000060379f8                bowser_seg6_dl_0603A380
+                0x0000000006037ad8                bowser_seg6_dl_0603A210
+                0x0000000006038370                bowser_seg6_dl_060399D8
+                0x00000000060383f8                bowser_seg6_dl_06039958
+                0x0000000006038450                bowser_seg6_dl_060398B0
+                0x00000000060384c0                bowser_seg6_dl_06039808
+                0x00000000060389d8                bowser_seg6_dl_060392E0
+                0x0000000006038a60                bowser_seg6_dl_06039260
+                0x0000000006038ac0                bowser_seg6_dl_060391C8
+                0x0000000006038b28                bowser_seg6_dl_06039110
+                0x0000000006050850                yellow_sphere_seg6_dl_0601F3C0
+                0x00000000060508c0                yellow_sphere_seg6_dl_0601F388
+                0x0000000006051130                impact_ring_seg6_dl_0601EAC0
+                0x00000000060511b0                impact_ring_seg6_dl_0601EA88
+                0x00000000060511e0                impact_ring_seg6_dl_0601EA50
+                0x0000000006053290                flame_seg6_dl_0601C928
+                0x0000000006053330                flame_seg6_dl_0601C888
+                0x00000000060533d0                flame_seg6_dl_0601C7E8
+                0x0000000006053470                flame_seg6_dl_0601C748
+                0x0000000006053510                flame_seg6_dl_0601C6A8
+                0x00000000060535b0                flame_seg6_dl_0601C608
+                0x0000000006053650                flame_seg6_dl_0601C568
+                0x00000000060536f0                flame_seg6_dl_0601C4C8
+                0x0000000006053790                flame_seg6_dl_0601C428
+                0x0000000006053830                flame_seg6_dl_0601C388
+                0x00000000060538d0                flame_seg6_dl_0601C2E8
+                0x0000000006053970                flame_seg6_dl_0601C248
+                0x0000000006053a10                flame_seg6_dl_0601C1A8
+                0x0000000006053ab0                flame_seg6_dl_0601C108
+                0x0000000006053b50                flame_seg6_dl_0601C0E0
+                0x0000000006053b78                flame_seg6_dl_0601C0C8
+                0x0000000006053b88                flame_seg6_dl_0601C0B0
+                0x0000000006053b98                flame_seg6_dl_0601C080
+
+.data1
+ *(.data1)
+
+.got.plt
+ *(.got.plt)
+                0x000000000606fc40                . = .
+                0x0000000006077c30                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got)
+
+.sdata
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x000000000606fc40                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x000000000606fc40                . = .
+                0x000000000606fc40                __bss_start = .
+                0x000000000606fc40                _fbss = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x000000000606fc40        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000000606fc40        0x0 build/us/actors/group12.o
+ *(COMMON)
+                0x000000000606fc40                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000606fc40                . = ALIGN (0x4)
+                0x000000000606fc40                . = SEGMENT_START ("ldata-segment", .)
+                0x000000000606fc40                . = ALIGN (0x4)
+                0x000000000606fc40                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x000000000606fc40                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x12
+ *(.comment)
+ .comment       0x0000000000000000       0x12 build/us/actors/group12.o
+                                         0x13 (size before relaxing)
+
+.pdr            0x0000000000000000        0x0
+ .pdr           0x0000000000000000        0x0 build/us/actors/group12.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ *(.gnu.attributes)
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/actors/group12.o
+
+.gptab.sdata
+ *(.gptab.data)
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+
+.mdebug.abi32   0x0000000000000000        0x0
+ *(.mdebug.abi32)
+ .mdebug.abi32  0x0000000000000000        0x0 build/us/actors/group12.o
+
+.mdebug.abiN32
+ *(.mdebug.abiN32)
+
+.mdebug.abi64
+ *(.mdebug.abi64)
+
+.mdebug.abiO64
+ *(.mdebug.abiO64)
+
+.mdebug.eabi32
+ *(.mdebug.eabi32)
+
+.mdebug.eabi64
+ *(.mdebug.eabi64)
+
+.gcc_compiled_long32
+ *(.gcc_compiled_long32)
+
+.gcc_compiled_long64
+ *(.gcc_compiled_long64)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(build/us/actors/group12.elf elf32-bigmips)

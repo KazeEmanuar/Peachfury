@@ -1,0 +1,10 @@
+extern const GeoLayout bonzaibob_geo[];
+extern Lights1 bonzaibob_f3d_material_lights;
+extern u8 bonzaibob_mat_m_killer_ci4[];
+extern u8 bonzaibob_mat_m_killer_ci4_pal_rgba16[];
+extern Vtx bonzaibob_bonzaibill_mesh_layer_1_vtx_0[106];
+extern Gfx bonzaibob_bonzaibill_mesh_layer_1_tri_0[];
+extern Gfx mat_bonzaibob_f3d_material[];
+extern Gfx mat_revert_bonzaibob_f3d_material[];
+extern Gfx bonzaibob_bonzaibill_mesh_layer_1[];
+extern Gfx bonzaibob_material_revert_render_settings[];

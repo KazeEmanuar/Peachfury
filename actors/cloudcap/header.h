@@ -1,0 +1,16 @@
+extern Lights1 cloudcap_M_Logo_lights;
+extern Lights1 cloudcap_CloudCap_f3d_lights;
+extern u8 cloudcap_ClouMS02_ci8[];
+extern u8 cloudcap_ClouMS02_ci8_pal_rgba16[];
+extern u8 cloudcap_Cloud02_ci8[];
+extern u8 cloudcap_Cloud02_ci8_pal_rgba16[];
+extern Vtx cloudcap_cloud_mario_mesh_vtx_cull[8];
+extern Vtx cloudcap_cloud_mario_mesh_vtx_0[49];
+extern Gfx cloudcap_cloud_mario_mesh_tri_0[];
+extern Vtx cloudcap_cloud_mario_mesh_vtx_1[44];
+extern Gfx cloudcap_cloud_mario_mesh_tri_1[];
+extern Gfx mat_cloudcap_M_Logo[];
+extern Gfx mat_revert_cloudcap_M_Logo[];
+extern Gfx mat_cloudcap_CloudCap_f3d[];
+extern Gfx mat_revert_cloudcap_CloudCap_f3d[];
+extern Gfx cloudcap_cloud_mario_mesh[];

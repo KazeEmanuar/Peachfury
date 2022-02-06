@@ -1,0 +1,16 @@
+extern const GeoLayout bitpipegreyscale_geo[];
+extern Lights1 bitpipegreyscale_sm64_material_lights;
+extern Lights1 bitpipegreyscale_sm64_material_001_lights;
+extern u8 bitpipegreyscale_fort_i8[];
+extern u8 bitpipegreyscale_nite_ia8[];
+extern Vtx bitpipegreyscale_Plane_mesh_vtx_cull[8];
+extern Vtx bitpipegreyscale_Plane_mesh_vtx_0[48];
+extern Gfx bitpipegreyscale_Plane_mesh_tri_0[];
+extern Vtx bitpipegreyscale_Plane_mesh_vtx_1[4];
+extern Gfx bitpipegreyscale_Plane_mesh_tri_1[];
+extern Gfx mat_bitpipegreyscale_sm64_material[];
+extern Gfx mat_revert_bitpipegreyscale_sm64_material[];
+extern Gfx mat_bitpipegreyscale_sm64_material_001[];
+extern Gfx mat_revert_bitpipegreyscale_sm64_material_001[];
+extern Gfx bitpipegreyscale_Plane_mesh[];
+extern Gfx bitpipegreyscale_material_revert_render_settings[];

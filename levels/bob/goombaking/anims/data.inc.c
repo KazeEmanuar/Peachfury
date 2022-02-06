@@ -1,0 +1,5 @@
+#include "anim_sm64_anim.inc.c"
+#include "anim_sleep.inc.c"
+#include "anim_attackjump.inc.c"
+#include "anim_confused.inc.c"
+#include "anim_die.inc.c"

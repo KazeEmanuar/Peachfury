@@ -1,0 +1,98 @@
+{//05,3C, 02, 3B, 48, 46, 08
+    "date": "1996-03-19",
+    "sample_bank": "instruments",
+    "envelopes": {
+        "envelope0": [
+            [6, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope1": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope2": [
+            [6, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope3": [
+            [2, 32700],
+            [136, 0],
+            [32700, 0],
+            "hang"
+        ],
+        "envelope4": [
+            [3, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope5": [
+            [2, 32700],
+            [202, 0],
+            [1, 0],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 208,
+            "envelope": "envelope1",
+            "sound": "05"
+        },
+        "inst1": {
+            "release_rate": 19,
+            "normal_range_lo": 29,
+            "normal_range_hi": 63,
+            "envelope": "envelope1",
+            "sound_lo": "3B",
+            "sound": "3C",
+            "sound_hi": "3D"
+        },
+        "inst2": {
+            "release_rate": 208,
+            "envelope": "envelope1",
+            "sound": "1A"
+        },
+        "inst3": {
+            "release_rate": 19,
+            "normal_range_lo": 29,
+            "normal_range_hi": 63,
+            "envelope": "envelope1",
+            "sound_lo": "3B",
+            "sound": "3C",
+            "sound_hi": "3D"
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope1",
+            "sound": "48"
+        },
+        "inst5": {
+            "release_rate": 43,
+            "normal_range_hi": 47,
+            "envelope": "envelope3",
+            "sound": "46",
+            "sound_hi": "47"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "07"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6"
+    ]
+}

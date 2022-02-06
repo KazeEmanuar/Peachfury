@@ -1,0 +1,10 @@
+extern const GeoLayout cloud_geo[];
+extern Lights1 cloud_sm64_material_001_lights;
+extern u8 cloud_seamless_cloud_texture_3_by_xpm_ci4[];
+extern u8 cloud_seamless_cloud_texture_3_by_xpm_ci4_pal_rgba16[];
+extern Vtx cloud_Plane_001_mesh_vtx_0[56];
+extern Gfx cloud_Plane_001_mesh_tri_0[];
+extern Gfx mat_cloud_sm64_material_001[];
+extern Gfx mat_revert_cloud_sm64_material_001[];
+extern Gfx cloud_Plane_001_mesh[];
+extern Gfx cloud_material_revert_render_settings[];

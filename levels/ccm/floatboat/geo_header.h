@@ -1,0 +1,11 @@
+extern const GeoLayout floatboat_geo[];
+extern Lights1 floatboat_f3d_material_005_lights;
+extern u8 floatboat_BenchFlat_bmp_ci4[];
+extern u8 floatboat_BenchFlat_bmp_ci4_pal_rgba16[];
+extern Vtx floatboat_waterstill_001_mesh_layer_1_vtx_cull[8];
+extern Vtx floatboat_waterstill_001_mesh_layer_1_vtx_0[26];
+extern Gfx floatboat_waterstill_001_mesh_layer_1_tri_0[];
+extern Gfx mat_floatboat_f3d_material_005[];
+extern Gfx mat_revert_floatboat_f3d_material_005[];
+extern Gfx floatboat_waterstill_001_mesh_layer_1[];
+extern Gfx floatboat_material_revert_render_settings[];

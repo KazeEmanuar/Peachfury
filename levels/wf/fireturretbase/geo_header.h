@@ -1,0 +1,11 @@
+extern const GeoLayout fireturretbase_geo[];
+extern Lights1 fireturretbase_f3d_material_004_lights;
+extern u8 fireturretbase_Dark_Metallic_1_ci8[];
+extern u8 fireturretbase_Dark_Metallic_1_ci8_pal_rgba16[];
+extern Vtx fireturretbase_Circle_mesh_layer_1_vtx_cull[8];
+extern Vtx fireturretbase_Circle_mesh_layer_1_vtx_0[18];
+extern Gfx fireturretbase_Circle_mesh_layer_1_tri_0[];
+extern Gfx mat_fireturretbase_f3d_material_004[];
+extern Gfx mat_revert_fireturretbase_f3d_material_004[];
+extern Gfx fireturretbase_Circle_mesh_layer_1[];
+extern Gfx fireturretbase_material_revert_render_settings[];

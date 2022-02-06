@@ -1,0 +1,20 @@
+const Collision windmill2_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(6),
+	COL_VERTEX(-303, 80, -138),
+	COL_VERTEX(415, 79, 54),
+	COL_VERTEX(415, -33, -11),
+	COL_VERTEX(-303, -159, 0),
+	COL_VERTEX(415, -33, 119),
+	COL_VERTEX(-303, 80, 138),
+	COL_TRI_INIT(SURFACE_DEFAULT, 7),
+	COL_TRI(0, 1, 2),
+	COL_TRI(3, 2, 4),
+	COL_TRI(5, 4, 1),
+	COL_TRI(0, 5, 1),
+	COL_TRI(3, 0, 2),
+	COL_TRI(5, 3, 4),
+	COL_TRI(2, 1, 4),
+	COL_TRI_STOP(),
+	COL_END()
+};

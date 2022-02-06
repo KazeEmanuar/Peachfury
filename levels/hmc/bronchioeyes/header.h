@@ -1,0 +1,16 @@
+extern Lights1 bronchioeyes_closed_lights;
+extern Lights1 bronchioeyes_half_lights;
+extern u8 bronchioeyes__37a70000_fmt0431_slice0_mip00_128x128_tm04_ci4[];
+extern u8 bronchioeyes__37a70000_fmt0431_slice0_mip00_128x128_tm04_ci4_pal_rgba16[];
+extern u8 bronchioeyes__37a78000_fmt0431_slice0_mip00_128x128_tm04_ci4[];
+extern u8 bronchioeyes__37a78000_fmt0431_slice0_mip00_128x128_tm04_ci4_pal_rgba16[];
+extern Vtx bronchioeyes_Plane_mesh_vtx_cull[8];
+extern Vtx bronchioeyes_Plane_mesh_vtx_0[3];
+extern Gfx bronchioeyes_Plane_mesh_tri_0[];
+extern Vtx bronchioeyes_Plane_mesh_vtx_1[3];
+extern Gfx bronchioeyes_Plane_mesh_tri_1[];
+extern Gfx mat_bronchioeyes_closed[];
+extern Gfx mat_revert_bronchioeyes_closed[];
+extern Gfx mat_bronchioeyes_half[];
+extern Gfx mat_revert_bronchioeyes_half[];
+extern Gfx bronchioeyes_Plane_mesh[];

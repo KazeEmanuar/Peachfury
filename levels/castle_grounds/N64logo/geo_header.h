@@ -1,0 +1,37 @@
+extern const GeoLayout N64logo_geo[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_0[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_0[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_1[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_1[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_2[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_2[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_3[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_3[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_4[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_4[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_5[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_5[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_6[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_6[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_7[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_7[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_8[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_8[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_9[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_9[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_10[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_10[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_11[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_11[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_12[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_12[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_13[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_13[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_14[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_14[];
+extern Vtx N64logo_CrtDisplay_mesh_vtx_15[4];
+extern Gfx N64logo_CrtDisplay_mesh_tri_15[];
+
+extern Gfx N64logo_CrtDisplay_mesh[];
+extern Gfx N64logo_material_revert_render_settings[];
+

@@ -1,0 +1,11 @@
+extern const GeoLayout fallplatform1_geo[];
+extern Lights1 fallplatform1_f3d_material_lights;
+extern u8 fallplatform1_YIblock_ci4[];
+extern u8 fallplatform1_YIblock_ci4_pal_rgba16[];
+extern Vtx fallplatform1_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx fallplatform1_Cube_mesh_layer_1_vtx_0[80];
+extern Gfx fallplatform1_Cube_mesh_layer_1_tri_0[];
+extern Gfx mat_fallplatform1_f3d_material[];
+extern Gfx mat_revert_fallplatform1_f3d_material[];
+extern Gfx fallplatform1_Cube_mesh_layer_1[];
+extern Gfx fallplatform1_material_revert_render_settings[];

@@ -1,0 +1,154 @@
+Lights1 donutblock_sm64_material_002_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
+
+Gfx donutblock_donutblock_ci4_aligner[] = {gsSPEndDisplayList()};
+u8 donutblock_donutblock_ci4[] = {
+	0x1, 0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x10, 0x11, 
+	0x22, 0x22, 0x22, 0x22, 0x22, 0x31, 0x11, 0x12, 0x22, 
+	0x22, 0x22, 0x22, 0x22, 0x23, 0x11, 0x12, 0x22, 0x22, 
+	0x22, 0x22, 0x22, 0x23, 0x11, 0x12, 0x22, 0x21, 0x11, 
+	0x11, 0x22, 0x23, 0x11, 0x12, 0x22, 0x11, 0x11, 0x11, 
+	0x12, 0x23, 0x11, 0x12, 0x22, 0x11, 0x11, 0x11, 0x12, 
+	0x23, 0x11, 0x12, 0x22, 0x11, 0x11, 0x11, 0x12, 0x23, 
+	0x11, 0x12, 0x22, 0x11, 0x11, 0x11, 0x12, 0x23, 0x11, 
+	0x12, 0x22, 0x21, 0x11, 0x11, 0x22, 0x23, 0x11, 0x12, 
+	0x22, 0x22, 0x11, 0x12, 0x22, 0x23, 0x11, 0x1, 0x22, 
+	0x22, 0x22, 0x22, 0x22, 0x31, 0x10, 0x1, 0x32, 0x22, 
+	0x22, 0x22, 0x22, 0x31, 0x10, 0x0, 0x13, 0x32, 0x22, 
+	0x22, 0x33, 0x11, 0x0, 0x0, 0x1, 0x13, 0x33, 0x33, 
+	0x11, 0x10, 0x0, 0x0, 0x0, 0x1, 0x11, 0x11, 0x10, 
+	0x0, 0x0, 
+};
+
+Gfx donutblock_donutblock_ci4_pal_rgba16_aligner[] = {gsSPEndDisplayList()};
+u8 donutblock_donutblock_ci4_pal_rgba16[] = {
+	0xFF, 0xFE, 0x0, 0x1, 0xFD, 0xA9, 0xFD, 0x53, 
+};
+
+Vtx donutblock_Cube_mesh_vtx_cull[8] = {
+	{{{-125, 0, -125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{-125, 0, 125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{-125, 250, 125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{-125, 250, -125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{125, 0, -125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{125, 0, 125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{125, 250, 125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+	{{{125, 250, -125},0, {-16, -16},{0x0, 0x0, 0x0, 0xFF}}},
+};
+
+Vtx donutblock_Cube_mesh_vtx_0[40] = {
+	{{{-125, 0, -125},0, {-16, 496},{0x0, 0x0, 0x81, 0xFF}}},
+	{{{-125, 250, -125},0, {-16, -16},{0x0, 0x0, 0x81, 0xFF}}},
+	{{{125, 250, -125},0, {496, -16},{0x0, 0x0, 0x81, 0xFF}}},
+	{{{125, 0, -125},0, {496, 496},{0x0, 0x0, 0x81, 0xFF}}},
+	{{{125, 0, 125},0, {496, 496},{0x0, 0x0, 0x7F, 0xFF}}},
+	{{{125, 250, 125},0, {496, -16},{0x0, 0x0, 0x7F, 0xFF}}},
+	{{{-125, 250, 125},0, {-16, -16},{0x0, 0x0, 0x7F, 0xFF}}},
+	{{{-125, 0, 125},0, {-16, 496},{0x0, 0x0, 0x7F, 0xFF}}},
+	{{{-33, 0, 125},0, {20, 385},{0x0, 0x81, 0x0, 0xFF}}},
+	{{{-33, 0, -125},0, {437, 385},{0x0, 0x81, 0x0, 0xFF}}},
+	{{{33, 0, -125},0, {437, 385},{0x0, 0x81, 0x0, 0xFF}}},
+	{{{33, 0, 125},0, {20, 385},{0x0, 0x81, 0x0, 0xFF}}},
+	{{{125, 92, 125},0, {20, 385},{0x7F, 0x0, 0x0, 0xFF}}},
+	{{{125, 92, -125},0, {437, 385},{0x7F, 0x0, 0x0, 0xFF}}},
+	{{{125, 218, -125},0, {437, 385},{0x7F, 0x0, 0x0, 0xFF}}},
+	{{{125, 218, 125},0, {20, 385},{0x7F, 0x0, 0x0, 0xFF}}},
+	{{{93, 250, 125},0, {20, 385},{0x5A, 0x5A, 0x0, 0xFF}}},
+	{{{125, 218, 125},0, {20, 385},{0x5A, 0x5A, 0x0, 0xFF}}},
+	{{{125, 218, -125},0, {437, 385},{0x5A, 0x5A, 0x0, 0xFF}}},
+	{{{93, 250, -125},0, {437, 385},{0x5A, 0x5A, 0x0, 0xFF}}},
+	{{{-93, 250, -125},0, {437, 385},{0xA6, 0x5A, 0x0, 0xFF}}},
+	{{{-125, 218, -125},0, {437, 385},{0xA6, 0x5A, 0x0, 0xFF}}},
+	{{{-125, 218, 125},0, {20, 385},{0xA6, 0x5A, 0x0, 0xFF}}},
+	{{{-93, 250, 125},0, {20, 385},{0xA6, 0x5A, 0x0, 0xFF}}},
+	{{{93, 250, 125},0, {20, 385},{0x0, 0x7F, 0x0, 0xFF}}},
+	{{{93, 250, -125},0, {437, 385},{0x0, 0x7F, 0x0, 0xFF}}},
+	{{{-93, 250, -125},0, {437, 385},{0x0, 0x7F, 0x0, 0xFF}}},
+	{{{-93, 250, 125},0, {20, 385},{0x0, 0x7F, 0x0, 0xFF}}},
+	{{{125, 92, 125},0, {20, 385},{0x5A, 0xA6, 0x0, 0xFF}}},
+	{{{33, 0, 125},0, {20, 385},{0x5A, 0xA6, 0x0, 0xFF}}},
+	{{{33, 0, -125},0, {437, 385},{0x5A, 0xA6, 0x0, 0xFF}}},
+	{{{125, 92, -125},0, {437, 385},{0x5A, 0xA6, 0x0, 0xFF}}},
+	{{{-33, 0, 125},0, {20, 385},{0xA6, 0xA6, 0x0, 0xFF}}},
+	{{{-125, 92, 125},0, {20, 385},{0xA6, 0xA6, 0x0, 0xFF}}},
+	{{{-125, 92, -125},0, {437, 385},{0xA6, 0xA6, 0x0, 0xFF}}},
+	{{{-33, 0, -125},0, {437, 385},{0xA6, 0xA6, 0x0, 0xFF}}},
+	{{{-125, 218, 125},0, {20, 385},{0x81, 0x0, 0x0, 0xFF}}},
+	{{{-125, 218, -125},0, {437, 385},{0x81, 0x0, 0x0, 0xFF}}},
+	{{{-125, 92, -125},0, {437, 385},{0x81, 0x0, 0x0, 0xFF}}},
+	{{{-125, 92, 125},0, {20, 385},{0x81, 0x0, 0x0, 0xFF}}},
+};
+
+Gfx donutblock_Cube_mesh_tri_0[] = {
+	gsSPVertex(donutblock_Cube_mesh_vtx_0 + 0, 32, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSP2Triangles(8, 9, 10, 0, 8, 10, 11, 0),
+	gsSP2Triangles(12, 13, 14, 0, 12, 14, 15, 0),
+	gsSP2Triangles(16, 17, 18, 0, 16, 18, 19, 0),
+	gsSP2Triangles(20, 21, 22, 0, 20, 22, 23, 0),
+	gsSP2Triangles(24, 25, 26, 0, 24, 26, 27, 0),
+	gsSP2Triangles(28, 29, 30, 0, 28, 30, 31, 0),
+	gsSPVertex(donutblock_Cube_mesh_vtx_0 + 32, 8, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(4, 5, 6, 0, 4, 6, 7, 0),
+	gsSPEndDisplayList(),
+};
+
+
+Gfx mat_donutblock_sm64_material_002[] = {
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0),
+	gsSPClearGeometryMode(G_CULL_BACK),
+	gsDPSetTextureFilter(G_TF_POINT),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetTextureLUT(G_TT_RGBA16),
+	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, donutblock_donutblock_ci4_pal_rgba16),
+	gsDPTileSync(),
+	gsDPSetTile(0, 0, 0, 256, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadSync(),
+	gsDPLoadTLUTCmd(7, 3),
+	gsDPPipeSync(),
+	gsDPTileSync(),
+	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_8b, 8, donutblock_donutblock_ci4),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_8b, 1, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
+	gsDPLoadSync(),
+	gsDPLoadTile(7, 0, 0, 30, 60),
+	gsDPPipeSync(),
+	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0, G_TX_WRAP | G_TX_NOMIRROR, 4, 0),
+	gsDPSetTileSize(0, 0, 0, 60, 60),
+	gsSPSetLights1(donutblock_sm64_material_002_lights),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_revert_donutblock_sm64_material_002[] = {
+	gsDPPipeSync(),
+	gsSPSetGeometryMode(G_CULL_BACK),
+	gsDPSetTextureFilter(G_TF_BILERP),
+	gsDPSetTextureLUT(G_TT_NONE),
+	gsSPEndDisplayList(),
+};
+
+
+Gfx donutblock_Cube_mesh[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPDisplayList(mat_donutblock_sm64_material_002),
+	gsSPDisplayList(donutblock_Cube_mesh_tri_0),
+	gsSPDisplayList(mat_revert_donutblock_sm64_material_002),
+	gsSPEndDisplayList(),
+};
+
+
+
+Gfx donutblock_material_revert_render_settings[] = {
+	gsDPPipeSync(),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPClearGeometryMode(G_TEXTURE_GEN),
+	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT),
+	gsSPTexture(65535, 65535, 0, 0, 0),
+	gsDPSetEnvColor(255, 255, 255, 255),
+	gsDPSetAlphaCompare(G_AC_NONE),
+	gsSPEndDisplayList(),
+};

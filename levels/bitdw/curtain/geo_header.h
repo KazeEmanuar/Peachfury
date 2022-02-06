@@ -1,0 +1,10 @@
+extern const GeoLayout curtain_geo[];
+extern Lights1 curtain_f3d_material_013_lights;
+extern u8 curtain_HangingFlag__1__ci4[];
+extern u8 curtain_HangingFlag__1__ci4_pal_rgba16[];
+extern Vtx curtain_Layer1_026_mesh_layer_4_vtx_0[28];
+extern Gfx curtain_Layer1_026_mesh_layer_4_tri_0[];
+extern Gfx mat_curtain_f3d_material_013[];
+extern Gfx mat_revert_curtain_f3d_material_013[];
+extern Gfx curtain_Layer1_026_mesh_layer_4[];
+extern Gfx curtain_material_revert_render_settings[];

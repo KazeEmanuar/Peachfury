@@ -1,0 +1,26 @@
+#include "src/game/envfx_snow.h"
+
+const GeoLayout chainbridge_geo[] = {
+	GEO_CULLING_RADIUS(2000),
+	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 0, 0, 0, 90, 90),
+		GEO_OPEN_NODE(),
+			GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, chainbridge_Bone_mesh_layer_1),
+			GEO_OPEN_NODE(),
+				GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 1100, 0, 116, 93, -58),
+				GEO_OPEN_NODE(),
+					GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, NULL),
+					GEO_OPEN_NODE(),
+						GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 230, 0, 28, 16, 60),
+						GEO_OPEN_NODE(),
+							GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, chainbridge_Chain_l_001_mesh_layer_4),
+						GEO_CLOSE_NODE(),
+					GEO_CLOSE_NODE(),
+				GEO_CLOSE_NODE(),
+			GEO_CLOSE_NODE(),
+		GEO_CLOSE_NODE(),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, chainbridge_material_revert_render_settings),
+		GEO_DISPLAY_LIST(LAYER_ALPHA, chainbridge_material_revert_render_settings),
+	GEO_CLOSE_NODE(),
+	GEO_END(),
+};

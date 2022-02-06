@@ -1,0 +1,16 @@
+extern Lights1 dorrieeyes_eyeclosed_lights;
+extern Lights1 dorrieeyes_eyehalf_lights;
+extern u8 dorrieeyes_eyeframenessie2_ci4[];
+extern u8 dorrieeyes_eyeframenessie2_ci4_pal_rgba16[];
+extern u8 dorrieeyes_unkno2wn_ci4[];
+extern u8 dorrieeyes_unkno2wn_ci4_pal_rgba16[];
+extern Vtx dorrieeyes_Plane_mesh_vtx_cull[8];
+extern Vtx dorrieeyes_Plane_mesh_vtx_0[3];
+extern Gfx dorrieeyes_Plane_mesh_tri_0[];
+extern Vtx dorrieeyes_Plane_mesh_vtx_1[3];
+extern Gfx dorrieeyes_Plane_mesh_tri_1[];
+extern Gfx mat_dorrieeyes_eyeclosed[];
+extern Gfx mat_revert_dorrieeyes_eyeclosed[];
+extern Gfx mat_dorrieeyes_eyehalf[];
+extern Gfx mat_revert_dorrieeyes_eyehalf[];
+extern Gfx dorrieeyes_Plane_mesh[];

@@ -1,0 +1,14 @@
+Yoshi Village
+-------------
+
+00 = Viola
+01 = Marimba
+02 = Percussive Organ
+03 = Bassoon
+04 = Trombone
+05 = Low Monkey
+06 = High Monkey
+07 = Scratch
+08 = Whistle
+09 = Shaker
+0A = Cowbell

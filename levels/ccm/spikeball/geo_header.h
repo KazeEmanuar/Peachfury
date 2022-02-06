@@ -1,0 +1,15 @@
+extern const GeoLayout spikeball_geo[];
+extern Lights1 spikeball_f3d_material_001_lights;
+extern Lights1 spikeball_f3d_material_lights;
+extern u8 spikeball_spikebomb2_ci4[];
+extern u8 spikeball_spikebomb2_ci4_pal_rgba16[];
+extern Vtx spikeball_Circle_mesh_layer_1_vtx_cull[8];
+extern Vtx spikeball_Circle_mesh_layer_1_vtx_0[96];
+extern Gfx spikeball_Circle_mesh_layer_1_tri_0[];
+extern Vtx spikeball_Circle_mesh_layer_1_vtx_1[72];
+extern Gfx spikeball_Circle_mesh_layer_1_tri_1[];
+extern Gfx mat_spikeball_f3d_material_001[];
+extern Gfx mat_revert_spikeball_f3d_material_001[];
+extern Gfx mat_spikeball_f3d_material[];
+extern Gfx spikeball_Circle_mesh_layer_1[];
+extern Gfx spikeball_material_revert_render_settings[];

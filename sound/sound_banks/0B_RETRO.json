@@ -1,0 +1,61 @@
+{
+    "date": "2020-11-16",
+    "sample_bank": "pablo",
+    "envelopes":
+    {
+        "NES":
+        [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments":
+    {
+        "squareLead":
+        {
+            "release_rate": 208,
+			"normal_range_lo": 27,
+            "envelope": "NES",
+            "sound_lo": {"sample": "squareLead_lo", "tuning": 2},
+			"sound": {"sample": "squareLead_mid", "tuning": 1}
+        },
+        "triangle":
+        {
+            "release_rate": 208,
+			"normal_range_lo": 27,
+            "envelope": "NES",
+			"sound_lo": {"sample": "triangle_lo", "tuning": 4},
+            "sound": {"sample": "triangle_mid", "tuning": 1}
+        },
+        "percussion": [
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbBassDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbSnareDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbSnareDrum", "tuning": 1}},
+            {"release_rate": 10, "pan": 62, "envelope": "NES", "sound": {"sample": "smbHiHat", "tuning": 1}}
+        ]
+    },
+	"instrument_list": [
+        "squareLead",
+        "triangle"
+    ]
+}

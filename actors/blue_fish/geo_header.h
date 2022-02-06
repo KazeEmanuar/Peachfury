@@ -1,0 +1,12 @@
+extern const GeoLayout blue_fish_geo[];
+extern Lights1 blue_fish_f3d_material_lights;
+extern u8 blue_fish__0301B5E0_rgba16[];
+extern Vtx blue_fish_Bone_mesh_layer_1_vtx_0[6];
+extern Gfx blue_fish_Bone_mesh_layer_1_tri_0[];
+extern Vtx blue_fish_Bone_002_mesh_layer_1_vtx_0[3];
+extern Gfx blue_fish_Bone_002_mesh_layer_1_tri_0[];
+extern Gfx mat_blue_fish_f3d_material[];
+extern Gfx mat_revert_blue_fish_f3d_material[];
+extern Gfx blue_fish_Bone_mesh_layer_1[];
+extern Gfx blue_fish_Bone_002_mesh_layer_1[];
+extern Gfx blue_fish_material_revert_render_settings[];

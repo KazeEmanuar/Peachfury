@@ -1,0 +1,10 @@
+extern const GeoLayout bunnyarrows_geo[];
+extern Lights1 bunnyarrows_f3d_material_lights;
+extern u8 bunnyarrows_Grain01Gray_i4[];
+extern Vtx bunnyarrows_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx bunnyarrows_Cube_mesh_layer_1_vtx_0[24];
+extern Gfx bunnyarrows_Cube_mesh_layer_1_tri_0[];
+extern Gfx mat_bunnyarrows_f3d_material[];
+extern Gfx mat_revert_bunnyarrows_f3d_material[];
+extern Gfx bunnyarrows_Cube_mesh_layer_1[];
+extern Gfx bunnyarrows_material_revert_render_settings[];

@@ -1,0 +1,16 @@
+extern const GeoLayout ghostplatform_Armature_001[];
+extern const GeoLayout ghostplatform_geo[];
+extern Lights1 ghostplatform_f3d_material_lights;
+extern Lights1 ghostplatform_f3d_material_002_lights;
+extern u8 ghostplatform_SUPER_MARIO_64_FDDF5C31_0_2_rgb_i8[];
+extern Vtx ghostplatform_Bone_mesh_layer_1_vtx_0[16];
+extern Gfx ghostplatform_Bone_mesh_layer_1_tri_0[];
+extern Vtx ghostplatform_Bone_002_mesh_layer_5_vtx_0[25];
+extern Gfx ghostplatform_Bone_002_mesh_layer_5_tri_0[];
+extern Gfx mat_ghostplatform_f3d_material[];
+extern Gfx mat_revert_ghostplatform_f3d_material[];
+extern Gfx mat_ghostplatform_f3d_material_002[];
+extern Gfx mat_revert_ghostplatform_f3d_material_002[];
+extern Gfx ghostplatform_Bone_mesh_layer_1[];
+extern Gfx ghostplatform_Bone_002_mesh_layer_5[];
+extern Gfx ghostplatform_material_revert_render_settings[];

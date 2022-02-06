@@ -1,0 +1,18 @@
+extern const GeoLayout enginepart_geo[];
+extern Lights1 enginepart_f3d_material_007_lights;
+extern Lights1 enginepart_f3d_material_006_lights;
+extern u8 enginepart__0x6740_ci4[];
+extern u8 enginepart__0x6740_ci4_pal_rgba16[];
+extern u8 enginepart_fortnite_gear_4_ci4[];
+extern u8 enginepart_fortnite_gear_4_ci4_pal_rgba16[];
+extern Vtx enginepart_Circle_mesh_layer_4_vtx_cull[8];
+extern Vtx enginepart_Circle_mesh_layer_4_vtx_0[18];
+extern Gfx enginepart_Circle_mesh_layer_4_tri_0[];
+extern Vtx enginepart_Circle_mesh_layer_4_vtx_1[5];
+extern Gfx enginepart_Circle_mesh_layer_4_tri_1[];
+extern Gfx mat_enginepart_f3d_material_007[];
+extern Gfx mat_revert_enginepart_f3d_material_007[];
+extern Gfx mat_enginepart_f3d_material_006[];
+extern Gfx mat_revert_enginepart_f3d_material_006[];
+extern Gfx enginepart_Circle_mesh_layer_4[];
+extern Gfx enginepart_material_revert_render_settings[];

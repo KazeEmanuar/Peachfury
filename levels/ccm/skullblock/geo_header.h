@@ -1,0 +1,17 @@
+extern const GeoLayout skullblock_Bone_opt1[];
+extern const GeoLayout skullblock_geo[];
+extern Lights1 skullblock_f3d_material_lights;
+extern Lights1 skullblock_f3d_material_001_lights;
+extern u8 skullblock_skullblock1_ci4[];
+extern u8 skullblock_skullblock1_ci4_pal_rgba16[];
+extern u8 skullblock_skullblock2_ci4[];
+extern u8 skullblock_skullblock2_ci4_pal_rgba16[];
+extern Vtx skullblock_Bone_001_mesh_layer_4_vtx_0[20];
+extern Gfx skullblock_Bone_001_mesh_layer_4_tri_0[];
+extern Gfx mat_skullblock_f3d_material[];
+extern Gfx mat_revert_skullblock_f3d_material[];
+extern Gfx mat_skullblock_f3d_material_001[];
+extern Gfx mat_revert_skullblock_f3d_material_001[];
+extern Gfx skullblock_Bone_001_mesh_layer_4[];
+extern Gfx skullblock_Bone_001_mesh_layer_4_mat_override_f3d_material_001_0[];
+extern Gfx skullblock_material_revert_render_settings[];

@@ -1,0 +1,17 @@
+const Collision bendleaf_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(6),
+	COL_VERTEX(0, 65, 409),
+	COL_VERTEX(125, 106, 265),
+	COL_VERTEX(-125, 106, 265),
+	COL_VERTEX(125, 94, 68),
+	COL_VERTEX(-125, 94, 68),
+	COL_VERTEX(0, 0, -2),
+	COL_TRI_INIT(SURFACE_DEFAULT, 4),
+	COL_TRI(0, 1, 2),
+	COL_TRI(2, 1, 3),
+	COL_TRI(2, 3, 4),
+	COL_TRI(4, 3, 5),
+	COL_TRI_STOP(),
+	COL_END()
+};

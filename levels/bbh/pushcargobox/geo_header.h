@@ -1,0 +1,17 @@
+extern const GeoLayout pushcargobox_geo[];
+extern Lights1 pushcargobox_f3d_material_063_lights;
+extern Lights1 pushcargobox_f3d_material_064_lights;
+extern u8 pushcargobox__3481232_ci8[];
+extern u8 pushcargobox__3481232_ci8_pal_rgba16[];
+extern u8 pushcargobox__34812322_ci4[];
+extern u8 pushcargobox__34812322_ci4_pal_rgba16[];
+extern Vtx pushcargobox_Plane_032_mesh_layer_1_vtx_0[16];
+extern Gfx pushcargobox_Plane_032_mesh_layer_1_tri_0[];
+extern Vtx pushcargobox_Plane_032_mesh_layer_1_vtx_1[4];
+extern Gfx pushcargobox_Plane_032_mesh_layer_1_tri_1[];
+extern Gfx mat_pushcargobox_f3d_material_063[];
+extern Gfx mat_revert_pushcargobox_f3d_material_063[];
+extern Gfx mat_pushcargobox_f3d_material_064[];
+extern Gfx mat_revert_pushcargobox_f3d_material_064[];
+extern Gfx pushcargobox_Plane_032_mesh_layer_1[];
+extern Gfx pushcargobox_material_revert_render_settings[];

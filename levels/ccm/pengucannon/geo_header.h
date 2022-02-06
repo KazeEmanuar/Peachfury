@@ -1,0 +1,11 @@
+extern const GeoLayout pengucannon_geo[];
+extern Lights1 pengucannon_f3d_material_lights;
+extern u8 pengucannon__3552976_ci4[];
+extern u8 pengucannon__3552976_ci4_pal_rgba16[];
+extern Vtx pengucannon_Plane_mesh_layer_1_vtx_cull[8];
+extern Vtx pengucannon_Plane_mesh_layer_1_vtx_0[50];
+extern Gfx pengucannon_Plane_mesh_layer_1_tri_0[];
+extern Gfx mat_pengucannon_f3d_material[];
+extern Gfx mat_revert_pengucannon_f3d_material[];
+extern Gfx pengucannon_Plane_mesh_layer_1[];
+extern Gfx pengucannon_material_revert_render_settings[];

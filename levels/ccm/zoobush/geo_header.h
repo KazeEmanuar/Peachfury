@@ -1,0 +1,11 @@
+extern const GeoLayout zoobush_geo[];
+extern Lights1 zoobush_sm64_material_004_lights;
+extern u8 zoobush_GrdYorsterGrassF_ci4[];
+extern u8 zoobush_GrdYorsterGrassF_ci4_pal_rgba16[];
+extern Vtx zoobush_Circle_009_mesh_vtx_cull[8];
+extern Vtx zoobush_Circle_009_mesh_vtx_0[4];
+extern Gfx zoobush_Circle_009_mesh_tri_0[];
+extern Gfx mat_zoobush_sm64_material_004[];
+extern Gfx mat_revert_zoobush_sm64_material_004[];
+extern Gfx zoobush_Circle_009_mesh[];
+extern Gfx zoobush_material_revert_render_settings[];

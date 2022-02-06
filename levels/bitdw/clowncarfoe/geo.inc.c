@@ -1,0 +1,57 @@
+#include "src/game/envfx_snow.h"
+
+const GeoLayout clowncarfoe_Bone_001_opt1[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 50, -15, -90, 0, 0),
+		GEO_OPEN_NODE(),
+			GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, clowncarfoe_Bone_002_mesh_layer_1_mat_override_F2_0),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout clowncarfoe_Bone_001_opt2[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 50, -15, -90, 0, 0),
+		GEO_OPEN_NODE(),
+			GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, clowncarfoe_Bone_002_mesh_layer_1_mat_override_F3_1),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout clowncarfoe_Bone_001_opt3[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 50, -15, -90, 0, 0),
+		GEO_OPEN_NODE(),
+			GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, clowncarfoe_Bone_002_mesh_layer_1_mat_override_F4_2),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout clowncarfoe_geo[] = {
+	GEO_CULLING_RADIUS(750),
+	GEO_OPEN_NODE(),
+		GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, clowncarfoe_Bone_mesh_layer_4),
+		GEO_OPEN_NODE(),
+			GEO_DISPLAY_LIST(LAYER_OPAQUE, clowncarfoe_Bone_mesh_layer_1),
+			GEO_SWITCH_CASE(4, geo_switch_anim_state),
+			GEO_OPEN_NODE(),
+				GEO_NODE_START(),
+				GEO_OPEN_NODE(),
+					GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 50, -15, -90, 0, 0),
+					GEO_OPEN_NODE(),
+						GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, clowncarfoe_Bone_002_mesh_layer_1),
+					GEO_CLOSE_NODE(),
+				GEO_CLOSE_NODE(),
+				GEO_BRANCH(1, clowncarfoe_Bone_001_opt1),
+				GEO_BRANCH(1, clowncarfoe_Bone_001_opt2),
+				GEO_BRANCH(1, clowncarfoe_Bone_001_opt3),
+			GEO_CLOSE_NODE(),
+		GEO_CLOSE_NODE(),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, clowncarfoe_material_revert_render_settings),
+		GEO_DISPLAY_LIST(LAYER_ALPHA, clowncarfoe_material_revert_render_settings),
+	GEO_CLOSE_NODE(),
+	GEO_END(),
+};

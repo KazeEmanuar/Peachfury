@@ -1,0 +1,17 @@
+extern const GeoLayout rotatething_geo[];
+extern Lights1 rotatething_f3d_material_007_lights;
+extern Lights1 rotatething_f3d_material_006_lights;
+extern u8 rotatething_iwa_iwa_woodtif_ci8[];
+extern u8 rotatething_iwa_iwa_woodtif_ci8_pal_rgba16[];
+extern u8 rotatething_GrdRCruiseShipSaku_ia4[];
+extern Vtx rotatething_Circle_001_mesh_layer_1_vtx_0[22];
+extern Gfx rotatething_Circle_001_mesh_layer_1_tri_0[];
+extern Vtx rotatething_Circle_001_mesh_layer_4_vtx_0[30];
+extern Gfx rotatething_Circle_001_mesh_layer_4_tri_0[];
+extern Gfx mat_rotatething_f3d_material_007[];
+extern Gfx mat_revert_rotatething_f3d_material_007[];
+extern Gfx mat_rotatething_f3d_material_006[];
+extern Gfx mat_revert_rotatething_f3d_material_006[];
+extern Gfx rotatething_Circle_001_mesh_layer_1[];
+extern Gfx rotatething_Circle_001_mesh_layer_4[];
+extern Gfx rotatething_material_revert_render_settings[];

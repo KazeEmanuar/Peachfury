@@ -1,0 +1,176 @@
+{
+    "date": "2021-05-14",
+    "sample_bank": "instruments",
+    "envelopes": {
+        "envelope0": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope1": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope2": [
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope3": [
+            [6, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope4": [
+            [2, 32700],
+            [500, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope5": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope6": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope7": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope8": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope9": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope10": [
+            [6, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope11": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope12": [
+            [2, 32700],
+            [205, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope13": [
+            [3, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ],
+        "snareEnvelope": [
+            [2, 32700],
+            [55, 32700],
+            [127, 0],
+            "hang"
+        ],
+		"hardFadeOut": [
+            [2, 32700],
+            [500, 32700],
+            [1, 0],
+            "hang"
+        ],
+		"NES":
+        [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "acousticBass": {
+            "release_rate": 30,
+            "envelope": "envelope2",
+            "sound": {"sample": "acousticBass2", "tuning": 3.563595}
+        },
+        "percussiveOrgan": {
+            "release_rate": 208,
+            "envelope": "envelope2",
+            "sound": "35"
+        },
+		"snare": {
+            "release_rate": 10,
+            "normal_range_lo": 18,
+            "envelope": "snareEnvelope",
+            "sound_lo": "12",
+            "sound": "13"
+        },
+		"NESTriangle":
+        {
+            "release_rate": 208,
+			"normal_range_lo": 27,
+            "envelope": "NES",
+			"sound_lo": {"sample": "triangle_lo", "tuning": 4},
+            "sound": {"sample": "triangle_mid", "tuning": 1}
+        },
+        "hiHats": {
+            "release_rate": 10,
+            "normal_range_lo": 24,
+            "envelope": "envelope6",
+            "sound_lo": "0E",
+            "sound": "0F"
+        },
+        "crashCymbal": {
+            "release_rate": 10,
+            "normal_range_lo": 28,
+            "normal_range_hi": 28,
+            "envelope": "envelope7",
+            "sound_lo": "10",
+            "sound": "11",
+            "sound_hi": "10"
+        },
+        "triangle": {
+            "release_rate": 208,
+            "normal_range_lo": 60,
+            "normal_range_hi": 60,
+            "envelope": "envelope8",
+            "sound_lo": "1E",
+            "sound": "1F",
+            "sound_hi": "20"
+        }
+    },
+    "instrument_list": [
+        "percussiveOrgan",
+		"snare",
+        "NESTriangle",
+		"acousticBass",
+        null,
+		null,
+		null,
+		null,
+		null,
+		null,
+        "hiHats",
+        "crashCymbal",
+        "triangle"
+    ]
+}

@@ -1,0 +1,10 @@
+extern const GeoLayout bombwall_geo[];
+extern Lights1 bombwall_sm64_material_002_v4_lights;
+extern u8 bombwall_garekici4_ci4[];
+extern u8 bombwall_garekici4_ci4_pal_rgba16[];
+extern Vtx bombwall_Icosphere_mesh_layer_1_vtx_0[25];
+extern Gfx bombwall_Icosphere_mesh_layer_1_tri_0[];
+extern Gfx mat_bombwall_sm64_material_002_v4[];
+extern Gfx mat_revert_bombwall_sm64_material_002_v4[];
+extern Gfx bombwall_Icosphere_mesh_layer_1[];
+extern Gfx bombwall_material_revert_render_settings[];

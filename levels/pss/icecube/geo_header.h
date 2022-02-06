@@ -1,0 +1,17 @@
+extern const GeoLayout icecube_geo[];
+extern Lights1 icecube_f3d_material_002_lights;
+extern Lights1 icecube_f3d_material_001_lights;
+extern u8 icecube_mado_ice_ci8[];
+extern u8 icecube_mado_ice_ci8_pal_rgba16[];
+extern u8 icecube_SUPER_MARIO_64_FE55B4F9_3_2_all_ia8[];
+extern Vtx icecube_Cube_mesh_layer_1_vtx_0[14];
+extern Gfx icecube_Cube_mesh_layer_1_tri_0[];
+extern Vtx icecube_Cube_mesh_layer_5_vtx_0[14];
+extern Gfx icecube_Cube_mesh_layer_5_tri_0[];
+extern Gfx mat_icecube_f3d_material_002[];
+extern Gfx mat_revert_icecube_f3d_material_002[];
+extern Gfx mat_icecube_f3d_material_001[];
+extern Gfx mat_revert_icecube_f3d_material_001[];
+extern Gfx icecube_Cube_mesh_layer_1[];
+extern Gfx icecube_Cube_mesh_layer_5[];
+extern Gfx icecube_material_revert_render_settings[];

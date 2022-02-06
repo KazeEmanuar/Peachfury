@@ -1,0 +1,5 @@
+#include "anim_TURNON.inc.c"
+#include "anim_STARE.inc.c"
+#include "anim_GOTHIT.inc.c"
+#include "anim_SPOITFIRE.inc.c"
+#include "anim_DIE.inc.c"

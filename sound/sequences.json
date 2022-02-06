@@ -1,0 +1,72 @@
+
+{
+    "comment": "replaceable banks 0c, 0d, 0e, 0f, 10, 12, 13, 14, 15, 16, 18, 19, 1a, 1b, 1c, 1d, 1e, 20, 21swappable 1F, 22, 24This file lists all sequences together with the sound banks they use. If a sequence uses multiple banks, the first bank will be used by default, and it can switch between them using the chan_setbank command; e.g. chan_setbank 0 will switch to the first bank in the given list.",
+    "00_sound_player": ["00", "01_terrain", "02_water", "03", "04", "05", "06", "07", "08_mario", "09", "0A_mario_peach"],
+    "01_cutscene_collect_star": ["28_streamed"], //done swapped
+    "02_menu_title_screen": ["11"], //unused
+    "03_level_grass": ["22"], //unused
+    "04_level_inside_castle": ["0E"], //unused
+    "05_level_water": ["13"], //unused
+	"06_GhostShip": ["29_stinkypoopyman"],
+    "07_level_boss_koopa": ["12"], //unused
+    "08_level_snow": ["0B_RETRO"], //unused
+    "09_level_slide": ["25"], 
+    "0A_level_spooky": ["10", "21"], //unused
+    "0B_event_piranha_plant": ["14_piranha_music_box"], //unused
+    "0C_level_underground": ["15"], //unused
+    "0D_menu_star_select": ["16_course_start"], //swap
+    "0E_event_powerup": ["17"], //unused
+    "0F_event_metal_cap": ["18"], //unused
+    "10_event_koopa_message": ["12"], //unused
+    "11_level_koopa_road": ["19"], //unused
+    "12_event_high_score": ["1F"], //swap
+    "13_event_merry_go_round": ["21"], //unused
+    "14_event_race": ["1A"], //unused
+    "15_cutscene_star_spawn": ["0E"], //swap
+    "16_event_boss": ["1A"], //unused
+    "17_cutscene_collect_key": ["1A"], //unused
+    "18_event_endless_stairs": ["1C_endless_stairs"], //unused
+    "19_level_boss_koopa_final": ["1D_bowser_organ"], //unused
+    "1A_cutscene_credits": ["25"], //unused
+    "1B_event_solve_puzzle": ["14_piranha_music_box"],
+    "1C_event_toad_message": ["20"], //unused
+    "1D_event_peach_message": ["1E"], //unused
+    "1E_cutscene_intro": ["1B"], //unused
+    "1F_cutscene_victory": ["1A"], //unused
+    "20_cutscene_ending": ["23"], //unused
+    "21_menu_file_select": ["24"], //swap
+    "22_cutscene_lakitu":  ["1B"], //unused
+    "23_yard_forest": ["23"],
+    "24_fly_me_to_the_moon": ["17"],
+    "25_smb3underground": ["11"],
+    "26_happyvillage": ["26_sh"],
+    "27_deep_sea": ["27_Deep"],
+    "28_bunnybrushwoods": ["28_streamed"],
+    "29_bubbledome": ["28_streamed"],
+    "2A_boopathic": ["27_Deep"],
+    "2B_nipperboss": ["27_Deep"],
+    "2C_SMB_W1L1": ["0B_RETRO"],
+    "2D_butt_slider": ["27_Deep"],
+    "2E_rainbow_grotto": ["27_Deep"],
+    "2F_marios_house": ["25"],
+    "30_introplace": ["28_streamed"],
+    "31_yoshibeat": ["28_streamed"],
+    "32_starselect": ["28_streamed"],
+    "33_secret_grotto": ["27_Deep"],
+    "34_flying_ship": ["27_Deep"],
+	"35_icecave": ["29_stinkypoopyman"],
+	"36_smw_castle": ["0D_SMW"],
+    "37_piranha": ["28_streamed"],
+	"38_themepark": ["2A_ThemePark"],
+	"39_jail_sneak":  ["27_Deep"],
+	"3A_Wario_Castle":  ["30_Reimu"],
+	"3B_eelJokes":  ["28_streamed"],
+	"3C_unagi_comedy_club": ["2B_unagi_comedy_club"],
+	"3D_inside_ghostship": ["29_stinkypoopyman"],
+	"3E_YoshiVillage": ["28_streamed"],
+	"3F_ShyGuy_Captain": ["29_stinkypoopyman"],
+	"40_icepower": ["2C"],
+	"41_aestethique": ["2C"],
+	"42_Le_Carrot": ["29_stinkypoopyman"],
+	"43_dinodino": ["28_streamed"]
+}

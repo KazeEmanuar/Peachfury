@@ -1,0 +1,16 @@
+extern const GeoLayout underwaterdoor_Bone_001_opt1[];
+extern const GeoLayout underwaterdoor_geo[];
+extern Lights1 underwaterdoor_sm64_material_012_layer1_lights;
+extern Lights1 underwaterdoor_closeddoor_layer1_lights;
+extern u8 underwaterdoor_trd_doatif_ia8[];
+extern u8 underwaterdoor__23804E96B3FDF23B496994478B9BC426_ci4[];
+extern u8 underwaterdoor__23804E96B3FDF23B496994478B9BC426_ci4_pal_rgba16[];
+extern Vtx underwaterdoor_Bone_002_mesh_layer_1_vtx_0[12];
+extern Gfx underwaterdoor_Bone_002_mesh_layer_1_tri_0[];
+extern Gfx mat_underwaterdoor_sm64_material_012_layer1[];
+extern Gfx mat_revert_underwaterdoor_sm64_material_012_layer1[];
+extern Gfx mat_underwaterdoor_closeddoor_layer1[];
+extern Gfx mat_revert_underwaterdoor_closeddoor_layer1[];
+extern Gfx underwaterdoor_Bone_002_mesh_layer_1[];
+extern Gfx underwaterdoor_Bone_002_mesh_layer_1_mat_override_closeddoor_0[];
+extern Gfx underwaterdoor_material_revert_render_settings[];

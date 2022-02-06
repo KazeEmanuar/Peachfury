@@ -1,0 +1,6 @@
+#include "anim_Armature_lAction.inc.c"
+#include "anim_ROAT.inc.c"
+#include "anim_Idle.inc.c"
+#include "anim_RUN.inc.c"
+#include "anim_SNIFFLES.inc.c"
+#include "anim_JUMPEAT.inc.c"

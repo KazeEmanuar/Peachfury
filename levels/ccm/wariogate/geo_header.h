@@ -1,0 +1,11 @@
+extern const GeoLayout wariogate_geo[];
+extern Lights1 wariogate_f3d_material_005_lights;
+extern u8 wariogate_ST_0xD81F8_32x64_RGBA16_ci8[];
+extern u8 wariogate_ST_0xD81F8_32x64_RGBA16_ci8_pal_rgba16[];
+extern Vtx wariogate_Plane_004_mesh_layer_4_vtx_cull[8];
+extern Vtx wariogate_Plane_004_mesh_layer_4_vtx_0[4];
+extern Gfx wariogate_Plane_004_mesh_layer_4_tri_0[];
+extern Gfx mat_wariogate_f3d_material_005[];
+extern Gfx mat_revert_wariogate_f3d_material_005[];
+extern Gfx wariogate_Plane_004_mesh_layer_4[];
+extern Gfx wariogate_material_revert_render_settings[];

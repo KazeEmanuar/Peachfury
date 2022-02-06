@@ -1,0 +1,10 @@
+extern void scroll_sts_mat_ccm_dl_ZOOWATER_layer5();
+extern void scroll_ccm_dl_waterstill_mesh_layer_5_vtx_1();
+extern void scroll_ccm_dl_ZZZZWATERFALL_mesh_layer_5_vtx_0();
+extern void scroll_ccm_dl_ZZZZWATERFALL_mesh_layer_5_vtx_1();
+extern void scroll_ccm_dl_ZZZZWATERFALL_mesh_layer_6_vtx_0();
+extern void scroll_ccm_dl_Circle_007_mesh_vtx_0();
+extern void scroll_ccm_dl_Plane_036_mesh_layer_5_vtx_1();
+extern void scroll_ccm_dl_Lava_mesh_layer_1_vtx_0();
+extern void scroll_ccm_dl_Plane_039_mesh_layer_5_vtx_0();
+extern void scroll_ccm();

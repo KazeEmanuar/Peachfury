@@ -1,0 +1,17 @@
+extern const GeoLayout blue_coin_switch_geo[];
+extern Lights1 blue_coin_switch_f3d_material_006_lights;
+extern Lights1 blue_coin_switch_f3d_material_007_lights;
+extern u8 blue_coin_switch_KKIIDDZZ_DAT_1714__p00_i8[];
+extern u8 blue_coin_switch_RMGP01_ea75dad0_14_ci8[];
+extern u8 blue_coin_switch_RMGP01_ea75dad0_14_ci8_pal_rgba16[];
+extern Vtx blue_coin_switch_Plane_mesh_layer_1_vtx_cull[8];
+extern Vtx blue_coin_switch_Plane_mesh_layer_1_vtx_0[18];
+extern Gfx blue_coin_switch_Plane_mesh_layer_1_tri_0[];
+extern Vtx blue_coin_switch_Plane_mesh_layer_1_vtx_1[8];
+extern Gfx blue_coin_switch_Plane_mesh_layer_1_tri_1[];
+extern Gfx mat_blue_coin_switch_f3d_material_006[];
+extern Gfx mat_revert_blue_coin_switch_f3d_material_006[];
+extern Gfx mat_blue_coin_switch_f3d_material_007[];
+extern Gfx mat_revert_blue_coin_switch_f3d_material_007[];
+extern Gfx blue_coin_switch_Plane_mesh_layer_1[];
+extern Gfx blue_coin_switch_material_revert_render_settings[];

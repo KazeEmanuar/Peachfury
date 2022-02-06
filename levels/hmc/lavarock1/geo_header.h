@@ -1,0 +1,10 @@
+extern const GeoLayout lavarock1_geo[];
+extern Lights1 lavarock1_f3d_material_lights;
+extern u8 lavarock1_i8rzerztitziTxe_Ekaze2_rock_1_i8[];
+extern Vtx lavarock1_Plane_mesh_layer_1_vtx_cull[8];
+extern Vtx lavarock1_Plane_mesh_layer_1_vtx_0[17];
+extern Gfx lavarock1_Plane_mesh_layer_1_tri_0[];
+extern Gfx mat_lavarock1_f3d_material[];
+extern Gfx mat_revert_lavarock1_f3d_material[];
+extern Gfx lavarock1_Plane_mesh_layer_1[];
+extern Gfx lavarock1_material_revert_render_settings[];

@@ -1,0 +1,5 @@
+#include "anim_Idle.inc.c"
+#include "anim_Tpos.inc.c"
+#include "anim_Attack.inc.c"
+#include "anim_Attackup.inc.c"
+#include "anim_SAD.inc.c"

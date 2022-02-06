@@ -1,0 +1,106 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "streamed",
+    "envelopes": {
+        "envelope0": [
+            [2, 32700],
+            [6,32700],
+            [32700,29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0B_realBrushWoods"
+        },
+        "inst1": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0C_YoshiVillage"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "02_stardanceleft"
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "03_stardanceright"
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "04_introjingle"
+        },
+        "inst5": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "05_yoshibeat"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "06_starselect"
+        },
+        "inst7": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "07_piranha"
+        },
+        "inst8": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "08_LaughTrack"
+        },
+        "inst9": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "09_domeR"
+        },
+        "inst10": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0A_domeL"
+        },
+        "inst11": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0D_dinodinoL"
+        },
+        "inst12": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0E_dinodinoR"
+        },
+        "inst13": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "0F_scene"
+        },
+        "inst14": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "10_scene"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11",
+        "inst12",
+        "inst13",
+        "inst14"
+    ]
+}

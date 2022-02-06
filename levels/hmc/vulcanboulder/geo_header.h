@@ -1,0 +1,10 @@
+extern const GeoLayout vulcanboulder_geo[];
+extern Lights1 vulcanboulder_f3d_material_006_layer1_lights;
+extern u8 vulcanboulder_R_Fortress_0020_tex_i4[];
+extern u8 vulcanboulder_mim_hachinosutif_rgba16[];
+extern Vtx vulcanboulder_Icosphere_001_mesh_layer_1_vtx_0[240];
+extern Gfx vulcanboulder_Icosphere_001_mesh_layer_1_tri_0[];
+extern Gfx mat_vulcanboulder_f3d_material_006_layer1[];
+extern Gfx mat_revert_vulcanboulder_f3d_material_006_layer1[];
+extern Gfx vulcanboulder_Icosphere_001_mesh_layer_1[];
+extern Gfx vulcanboulder_material_revert_render_settings[];

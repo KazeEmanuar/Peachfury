@@ -1,0 +1,5 @@
+#include "anim_ArmatureAction_001.inc.c"
+#include "anim_SPAWN.inc.c"
+#include "anim_vulnerable.inc.c"
+#include "anim_damaged.inc.c"
+#include "anim_despawn.inc.c"

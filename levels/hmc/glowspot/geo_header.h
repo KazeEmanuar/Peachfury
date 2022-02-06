@@ -1,0 +1,16 @@
+extern const GeoLayout glowspot_geo[];
+extern Lights1 glowspot_f3d_material_006_lights;
+extern Lights1 glowspot_f3d_material_007_layer6_lights;
+extern u8 glowspot_lmapshine_i8[];
+extern u8 glowspot_LightBeam2_ia16[];
+extern Vtx glowspot_Plane_mesh_layer_6_vtx_cull[8];
+extern Vtx glowspot_Plane_mesh_layer_6_vtx_0[5];
+extern Gfx glowspot_Plane_mesh_layer_6_tri_0[];
+extern Vtx glowspot_Plane_mesh_layer_6_vtx_1[14];
+extern Gfx glowspot_Plane_mesh_layer_6_tri_1[];
+extern Gfx mat_glowspot_f3d_material_006[];
+extern Gfx mat_revert_glowspot_f3d_material_006[];
+extern Gfx mat_glowspot_f3d_material_007_layer6[];
+extern Gfx mat_revert_glowspot_f3d_material_007_layer6[];
+extern Gfx glowspot_Plane_mesh_layer_6[];
+extern Gfx glowspot_material_revert_render_settings[];

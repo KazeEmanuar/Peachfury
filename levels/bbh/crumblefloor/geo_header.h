@@ -1,0 +1,10 @@
+extern const GeoLayout crumblefloor_geo[];
+extern Lights1 crumblefloor_f3d_material_083_lights;
+extern u8 crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4[];
+extern u8 crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4_pal_rgba16[];
+extern Vtx crumblefloor_Plane_044_mesh_layer_1_vtx_0[32];
+extern Gfx crumblefloor_Plane_044_mesh_layer_1_tri_0[];
+extern Gfx mat_crumblefloor_f3d_material_083[];
+extern Gfx mat_revert_crumblefloor_f3d_material_083[];
+extern Gfx crumblefloor_Plane_044_mesh_layer_1[];
+extern Gfx crumblefloor_material_revert_render_settings[];

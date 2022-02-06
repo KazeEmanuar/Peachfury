@@ -1,0 +1,17 @@
+extern u8 breathmeter_Airmeterempty_rgba16[];
+extern u8 breathmeter_Airmeterfull_rgba16[];
+extern u8 breathmeter_breathmeter_nothing_rgba16[];
+extern Vtx breathmeter_Circle_mesh_vtx_cull[8];
+extern Vtx breathmeter_Circle_mesh_vtx_0[3];
+extern Gfx breathmeter_Circle_mesh_tri_0[];
+extern Vtx breathmeter_Circle_mesh_vtx_1[3];
+extern Gfx breathmeter_Circle_mesh_tri_1[];
+extern Vtx breathmeter_Circle_mesh_vtx_2[3];
+extern Gfx breathmeter_Circle_mesh_tri_2[];
+extern Gfx mat_breathmeter_f3d_material_005[];
+extern Gfx mat_revert_breathmeter_f3d_material_005[];
+extern Gfx mat_breathmeter_f3d_material_004[];
+extern Gfx mat_revert_breathmeter_f3d_material_004[];
+extern Gfx mat_breathmeter_f3d_material_006[];
+extern Gfx mat_revert_breathmeter_f3d_material_006[];
+extern Gfx breathmeter_Circle_mesh[];

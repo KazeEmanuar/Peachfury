@@ -1,0 +1,25 @@
+#include "src/game/envfx_snow.h"
+
+
+const GeoLayout seaweed_geo2[] = {
+	GEO_CULLING_RADIUS(2000),
+	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_ROTATE(LAYER_ALPHA, -452, 0, 0, 0, 0, -90),
+		GEO_OPEN_NODE(),
+			GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, NULL),
+			GEO_OPEN_NODE(),
+				GEO_ANIMATED_PART(LAYER_ALPHA, 0, 436, 0, limb1),
+				GEO_OPEN_NODE(),
+					GEO_ANIMATED_PART(LAYER_ALPHA, 0, 675, 0, limb2),
+					GEO_OPEN_NODE(),
+						GEO_ANIMATED_PART(LAYER_ALPHA, 0, 875, 0, limb3),
+						GEO_OPEN_NODE(),
+							GEO_ANIMATED_PART(LAYER_ALPHA, 0, 878, 0, limb4),
+						GEO_CLOSE_NODE(),
+					GEO_CLOSE_NODE(),
+				GEO_CLOSE_NODE(),
+			GEO_CLOSE_NODE(),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_END(),
+};

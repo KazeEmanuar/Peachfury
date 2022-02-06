@@ -1,0 +1,7 @@
+#include "anim_PIANO.inc.c"
+#include "anim_TALKTOMARIO.inc.c"
+#include "anim_IDLEFIGHT.inc.c"
+#include "anim_SPINATTACK.inc.c"
+#include "anim_FLAMEATTACK.inc.c"
+#include "anim_DAMAGED.inc.c"
+#include "anim_DASHTOPIANO.inc.c"

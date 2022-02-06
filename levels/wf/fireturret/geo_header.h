@@ -1,0 +1,18 @@
+extern const GeoLayout fireturret_geo[];
+extern Lights1 fireturret_f3d_material_006_lights;
+extern Lights1 fireturret_f3d_material_005_lights;
+extern u8 fireturret_Texture0565_RGB_ci8[];
+extern u8 fireturret_Texture0565_RGB_ci8_pal_rgba16[];
+extern u8 fireturret_Texture0564_RGB_ci8[];
+extern u8 fireturret_Texture0564_RGB_ci8_pal_rgba16[];
+extern Vtx fireturret_Circle_001_mesh_layer_1_vtx_cull[8];
+extern Vtx fireturret_Circle_001_mesh_layer_1_vtx_0[20];
+extern Gfx fireturret_Circle_001_mesh_layer_1_tri_0[];
+extern Vtx fireturret_Circle_001_mesh_layer_1_vtx_1[5];
+extern Gfx fireturret_Circle_001_mesh_layer_1_tri_1[];
+extern Gfx mat_fireturret_f3d_material_006[];
+extern Gfx mat_revert_fireturret_f3d_material_006[];
+extern Gfx mat_fireturret_f3d_material_005[];
+extern Gfx mat_revert_fireturret_f3d_material_005[];
+extern Gfx fireturret_Circle_001_mesh_layer_1[];
+extern Gfx fireturret_material_revert_render_settings[];

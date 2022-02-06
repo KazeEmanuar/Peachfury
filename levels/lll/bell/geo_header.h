@@ -1,0 +1,16 @@
+extern const GeoLayout bell_geo[];
+extern Lights1 bell_rope_lights;
+extern Lights1 bell_bronze_lights;
+extern u8 bell_ropes_ci4[];
+extern u8 bell_ropes_ci4_pal_rgba16[];
+extern u8 bell_bronzeBells_i8[];
+extern Vtx bell_rope_002_mesh_vtx_0[8];
+extern Gfx bell_rope_002_mesh_tri_0[];
+extern Vtx bell_rope_002_mesh_vtx_1[28];
+extern Gfx bell_rope_002_mesh_tri_1[];
+extern Gfx mat_bell_rope[];
+extern Gfx mat_revert_bell_rope[];
+extern Gfx mat_bell_bronze[];
+extern Gfx mat_revert_bell_bronze[];
+extern Gfx bell_rope_002_mesh[];
+extern Gfx bell_material_revert_render_settings[];

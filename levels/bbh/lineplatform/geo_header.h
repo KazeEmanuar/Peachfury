@@ -1,0 +1,11 @@
+extern const GeoLayout lineplatform_geo[];
+extern Lights1 lineplatform_f3d_material_lights;
+extern u8 lineplatform_platform_ci4[];
+extern u8 lineplatform_platform_ci4_pal_rgba16[];
+extern Vtx lineplatform_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx lineplatform_Cube_mesh_layer_1_vtx_0[24];
+extern Gfx lineplatform_Cube_mesh_layer_1_tri_0[];
+extern Gfx mat_lineplatform_f3d_material[];
+extern Gfx mat_revert_lineplatform_f3d_material[];
+extern Gfx lineplatform_Cube_mesh_layer_1[];
+extern Gfx lineplatform_material_revert_render_settings[];

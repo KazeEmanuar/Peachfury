@@ -1,0 +1,2582 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x7000000
+LOAD build/us/bin/spooky.elf
+LOAD build/us/levels/bbh/leveldata.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x400000))
+                0x0000000000400000                . = SEGMENT_START ("text-segment", 0x400000)
+
+.interp
+ *(.interp)
+
+.MIPS.abiflags  0x0000000000400000       0x18
+ *(.MIPS.abiflags)
+ .MIPS.abiflags
+                0x0000000000400000       0x18 build/us/levels/bbh/leveldata.o
+
+.reginfo        0x0000000000400018       0x18
+ *(.reginfo)
+ .reginfo       0x0000000000400018       0x18 build/us/levels/bbh/leveldata.o
+
+.MIPS.xhash
+ *(.MIPS.xhash)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.dynamic
+ *(.dynamic)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x0000000000400018        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.dyn)
+ .rel.dyn       0x0000000000400018        0x0 build/us/levels/bbh/leveldata.o
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+                [!provide]                        PROVIDE (__rel_iplt_end = .)
+
+.rela.dyn       0x0000000000400018        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT_NONE(.init))
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000007000000        0x0
+                0x0000000007000000                _ftext = .
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000007000000        0x0 build/us/levels/bbh/leveldata.o
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x0000000007000000                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x0000000007000000        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000007000000        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000007000000        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000007000000        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+                0x0000000007000000                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000007000000    0xedb24
+                0x0000000007000000                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000007000000    0xedb24 build/us/levels/bbh/leveldata.o
+                0x0000000007000000                lineplatform_collision
+                0x0000000007000090                lineplatform_material_revert_render_settings
+                0x00000000070000c8                lineplatform_Cube_mesh_layer_1
+                0x0000000007000108                mat_revert_lineplatform_f3d_material
+                0x0000000007000128                mat_lineplatform_f3d_material
+                0x00000000070001e0                lineplatform_Cube_mesh_layer_1_tri_0
+                0x0000000007000220                lineplatform_Cube_mesh_layer_1_vtx_0
+                0x00000000070003a0                lineplatform_Cube_mesh_layer_1_vtx_cull
+                0x0000000007000420                lineplatform_platform_ci4_pal_rgba16
+                0x0000000007000438                lineplatform_platform_ci4_pal_rgba16_aligner
+                0x0000000007000440                lineplatform_platform_ci4
+                0x0000000007000c40                lineplatform_platform_ci4_aligner
+                0x0000000007000c48                lineplatform_f3d_material_lights
+                0x0000000007000c60                fallplatform2_collision
+                0x0000000007000cf0                fallplatform2_material_revert_render_settings
+                0x0000000007000d28                fallplatform2_Cube_003_mesh_layer_1
+                0x0000000007000d68                mat_revert_fallplatform2_f3d_material
+                0x0000000007000d88                mat_fallplatform2_f3d_material
+                0x0000000007000e40                fallplatform2_Cube_003_mesh_layer_1_tri_0
+                0x0000000007000fa0                fallplatform2_Cube_003_mesh_layer_1_vtx_0
+                0x0000000007001920                fallplatform2_Cube_003_mesh_layer_1_vtx_cull
+                0x00000000070019a0                fallplatform2_YIblock_ci4_pal_rgba16
+                0x00000000070019b0                fallplatform2_YIblock_ci4_pal_rgba16_aligner
+                0x00000000070019b8                fallplatform2_YIblock_ci4
+                0x00000000070021b8                fallplatform2_YIblock_ci4_aligner
+                0x00000000070021c0                fallplatform2_f3d_material_lights
+                0x00000000070021d8                fallplatform1_collision
+                0x0000000007002268                fallplatform1_material_revert_render_settings
+                0x00000000070022a0                fallplatform1_Cube_mesh_layer_1
+                0x00000000070022e0                mat_revert_fallplatform1_f3d_material
+                0x0000000007002300                mat_fallplatform1_f3d_material
+                0x00000000070023b8                fallplatform1_Cube_mesh_layer_1_tri_0
+                0x0000000007002478                fallplatform1_Cube_mesh_layer_1_vtx_0
+                0x0000000007002978                fallplatform1_Cube_mesh_layer_1_vtx_cull
+                0x00000000070029f8                fallplatform1_YIblock_ci4_pal_rgba16
+                0x0000000007002a08                fallplatform1_YIblock_ci4_pal_rgba16_aligner
+                0x0000000007002a10                fallplatform1_YIblock_ci4
+                0x0000000007003210                fallplatform1_YIblock_ci4_aligner
+                0x0000000007003218                fallplatform1_f3d_material_lights
+                0x0000000007003230                shyguycaptain_anims
+                0x0000000007009738                captainVerts
+                0x0000000007009c18                shyguycaptain_material_revert_render_settings
+                0x0000000007009c50                shyguycaptain_lowerarm_r_mesh_layer_1
+                0x0000000007009c68                shyguycaptain_lowerarm_r_mesh_layer_5
+                0x0000000007009c90                shyguycaptain_lowerarm_r_skinned_mesh_layer_5
+                0x0000000007009cb0                shyguycaptain_uparm_r_mesh_layer_5
+                0x0000000007009cd0                shyguycaptain_uparm_r_skinned_mesh_layer_5
+                0x0000000007009cf0                shyguycaptain_lowerarm_l_001_mesh_layer_4
+                0x0000000007009d10                shyguycaptain_lowerarm_l_001_mesh_layer_1
+                0x0000000007009d60                shyguycaptain_lowerarm_l_mesh_layer_1
+                0x0000000007009d78                shyguycaptain_lowerarm_l_mesh_layer_5
+                0x0000000007009da0                shyguycaptain_lowerarm_l_skinned_mesh_layer_5
+                0x0000000007009dc0                shyguycaptain_uparm_l_mesh_layer_5
+                0x0000000007009de0                shyguycaptain_uparm_l_skinned_mesh_layer_5
+                0x0000000007009e00                shyguycaptain_Bone_004_mesh_layer_1
+                0x0000000007009e40                shyguycaptain_Bone_004_skinned_mesh_layer_1
+                0x0000000007009e58                shyguycaptain_BODY_mesh_layer_5
+                0x0000000007009e78                mat_revert_shyguycaptain_Teeth_f3d
+                0x0000000007009e90                mat_shyguycaptain_Teeth_f3d
+                0x0000000007009f10                mat_revert_shyguycaptain_f3d_material
+                0x0000000007009f28                mat_shyguycaptain_f3d_material
+                0x0000000007009fa8                mat_revert_shyguycaptain_f3d_material_001
+                0x0000000007009fc0                mat_shyguycaptain_f3d_material_001
+                0x000000000700a070                mat_revert_shyguycaptain_SwordMap_f3d
+                0x000000000700a088                mat_shyguycaptain_SwordMap_f3d
+                0x000000000700a138                mat_revert_shyguycaptain_Hat_f3d
+                0x000000000700a150                mat_shyguycaptain_Hat_f3d
+                0x000000000700a1d8                mat_shyguycaptain_Face_f3d
+                0x000000000700a258                mat_revert_shyguycaptain_Coat_f3d
+                0x000000000700a270                mat_shyguycaptain_Coat_f3d
+                0x000000000700a2f8                shyguycaptain_lowerarm_r_mesh_layer_1_tri_0
+                0x000000000700a318                shyguycaptain_lowerarm_r_mesh_layer_1_vtx_0
+                0x000000000700a368                shyguycaptain_lowerarm_r_mesh_layer_5_tri_1
+                0x000000000700a3a8                shyguycaptain_lowerarm_r_mesh_layer_5_vtx_1
+                0x000000000700a4f8                shyguycaptain_lowerarm_r_mesh_layer_5_tri_0
+                0x000000000700a528                shyguycaptain_lowerarm_r_mesh_layer_5_vtx_0
+                0x000000000700a578                shyguycaptain_lowerarm_r_skinned_mesh_layer_5_tri_0
+                0x000000000700a588                shyguycaptain_lowerarm_r_skinned_mesh_layer_5_vtx_0
+                0x000000000700a5d8                shyguycaptain_uparm_r_mesh_layer_5_tri_0
+                0x000000000700a608                shyguycaptain_uparm_r_mesh_layer_5_vtx_0
+                0x000000000700a658                shyguycaptain_uparm_r_skinned_mesh_layer_5_tri_0
+                0x000000000700a668                shyguycaptain_uparm_r_skinned_mesh_layer_5_vtx_0
+                0x000000000700a6b8                shyguycaptain_lowerarm_l_001_mesh_layer_4_tri_0
+                0x000000000700a6d0                shyguycaptain_lowerarm_l_001_mesh_layer_4_vtx_0
+                0x000000000700a710                shyguycaptain_lowerarm_l_001_mesh_layer_1_tri_2
+                0x000000000700a748                shyguycaptain_lowerarm_l_001_mesh_layer_1_vtx_2
+                0x000000000700a848                shyguycaptain_lowerarm_l_001_mesh_layer_1_tri_1
+                0x000000000700a870                shyguycaptain_lowerarm_l_001_mesh_layer_1_vtx_1
+                0x000000000700a930                shyguycaptain_lowerarm_l_001_mesh_layer_1_tri_0
+                0x000000000700aa28                shyguycaptain_lowerarm_l_001_mesh_layer_1_vtx_0
+                0x000000000700af38                shyguycaptain_lowerarm_l_mesh_layer_1_tri_0
+                0x000000000700af58                shyguycaptain_lowerarm_l_mesh_layer_1_vtx_0
+                0x000000000700afa8                shyguycaptain_lowerarm_l_mesh_layer_5_tri_1
+                0x000000000700afe8                shyguycaptain_lowerarm_l_mesh_layer_5_vtx_1
+                0x000000000700b138                shyguycaptain_lowerarm_l_mesh_layer_5_tri_0
+                0x000000000700b168                shyguycaptain_lowerarm_l_mesh_layer_5_vtx_0
+                0x000000000700b1b8                shyguycaptain_lowerarm_l_skinned_mesh_layer_5_tri_0
+                0x000000000700b1c8                shyguycaptain_lowerarm_l_skinned_mesh_layer_5_vtx_0
+                0x000000000700b218                shyguycaptain_uparm_l_mesh_layer_5_tri_0
+                0x000000000700b248                shyguycaptain_uparm_l_mesh_layer_5_vtx_0
+                0x000000000700b298                shyguycaptain_uparm_l_skinned_mesh_layer_5_tri_0
+                0x000000000700b2a8                shyguycaptain_uparm_l_skinned_mesh_layer_5_vtx_0
+                0x000000000700b2f8                shyguycaptain_Bone_004_mesh_layer_1_tri_2
+                0x000000000700b3a0                shyguycaptain_Bone_004_mesh_layer_1_vtx_2
+                0x000000000700b6a0                shyguycaptain_Bone_004_mesh_layer_1_tri_1
+                0x000000000700b708                shyguycaptain_Bone_004_mesh_layer_1_vtx_1
+                0x000000000700b8e8                shyguycaptain_Bone_004_mesh_layer_1_tri_0
+                0x000000000700b948                shyguycaptain_Bone_004_mesh_layer_1_vtx_0
+                0x000000000700ba48                shyguycaptain_Bone_004_skinned_mesh_layer_1_tri_0
+                0x000000000700ba58                shyguycaptain_Bone_004_skinned_mesh_layer_1_vtx_0
+                0x000000000700bb58                shyguycaptain_BODY_mesh_layer_5_tri_0
+                0x000000000700bc88                shyguycaptain_BODY_mesh_layer_5_vtx_0
+                0x000000000700c168                shyguycaptain_Razortooth_ia8
+                0x000000000700d168                shyguycaptain_Razortooth_ia8_aligner
+                0x000000000700d170                shyguycaptain_hiltLow_rgba16
+                0x000000000700e170                shyguycaptain_hiltLow_rgba16_aligner
+                0x000000000700e178                shyguycaptain_hilt2low_ci4_pal_rgba16
+                0x000000000700e198                shyguycaptain_hilt2low_ci4_pal_rgba16_aligner
+                0x000000000700e1a0                shyguycaptain_hilt2low_ci4
+                0x000000000700e9a0                shyguycaptain_hilt2low_ci4_aligner
+                0x000000000700e9a8                shyguycaptain_SWORDLOW_ci4_pal_rgba16
+                0x000000000700e9c8                shyguycaptain_SWORDLOW_ci4_pal_rgba16_aligner
+                0x000000000700e9d0                shyguycaptain_SWORDLOW_ci4
+                0x000000000700f1d0                shyguycaptain_SWORDLOW_ci4_aligner
+                0x000000000700f1d8                shyguycaptain_HatGhostLow_i8
+                0x00000000070101d8                shyguycaptain_HatGhostLow_i8_aligner
+                0x00000000070101e0                shyguycaptain_FaceGhostlow_i8
+                0x00000000070111e0                shyguycaptain_FaceGhostlow_i8_aligner
+                0x00000000070111e8                shyguycaptain_CoatGhostlow_ia8
+                0x00000000070121e8                shyguycaptain_CoatGhostlow_ia8_aligner
+                0x00000000070121f0                shyguycaptain_Teeth_f3d_lights
+                0x0000000007012208                shyguycaptain_f3d_material_lights
+                0x0000000007012220                shyguycaptain_f3d_material_001_lights
+                0x0000000007012238                shyguycaptain_SwordMap_f3d_lights
+                0x0000000007012250                shyguycaptain_Hat_f3d_lights
+                0x0000000007012268                shyguycaptain_Face_f3d_lights
+                0x0000000007012280                shyguycaptain_Coat_f3d_lights
+                0x0000000007012298                rumbottle_material_revert_render_settings
+                0x00000000070122d0                rumbottle_Plane_mesh_layer_1
+                0x00000000070122f0                mat_revert_rumbottle_f3d_material
+                0x0000000007012308                mat_rumbottle_f3d_material
+                0x0000000007012370                rumbottle_Plane_mesh_layer_1_tri_0
+                0x00000000070123d0                rumbottle_Plane_mesh_layer_1_vtx_0
+                0x0000000007012520                rumbottle_depositphotos_57582131_stock_illustration_poison_icon_ia8
+                0x0000000007012d20                rumbottle_depositphotos_57582131_stock_illustration_poison_icon_ia8_aligner
+                0x0000000007012d28                movecrate_collision
+                0x0000000007012da8                movecrate_material_revert_render_settings
+                0x0000000007012de0                movecrate_Plane_040_mesh_layer_1
+                0x0000000007012e18                mat_revert_movecrate_f3d_material_019
+                0x0000000007012e38                mat_movecrate_f3d_material_019
+                0x0000000007012ef0                mat_revert_movecrate_f3d_material_018
+                0x0000000007012f10                mat_movecrate_f3d_material_018
+                0x0000000007012fc8                movecrate_Plane_040_mesh_layer_1_tri_1
+                0x0000000007012fe0                movecrate_Plane_040_mesh_layer_1_vtx_1
+                0x0000000007013020                movecrate_Plane_040_mesh_layer_1_tri_0
+                0x0000000007013050                movecrate_Plane_040_mesh_layer_1_vtx_0
+                0x00000000070130f0                movecrate__34812322_ci4_pal_rgba16
+                0x0000000007013110                movecrate__34812322_ci4_pal_rgba16_aligner
+                0x0000000007013118                movecrate__34812322_ci4
+                0x0000000007013518                movecrate__34812322_ci4_aligner
+                0x0000000007013520                movecrate__3481232_ci8_pal_rgba16
+                0x0000000007013640                movecrate__3481232_ci8_pal_rgba16_aligner
+                0x0000000007013648                movecrate__3481232_ci8
+                0x0000000007013e48                movecrate__3481232_ci8_aligner
+                0x0000000007013e50                movecrate_f3d_material_019_lights
+                0x0000000007013e68                movecrate_f3d_material_018_lights
+                0x0000000007013e80                guybed_collision
+                0x0000000007013f18                guybed_material_revert_render_settings
+                0x0000000007013f50                guybed_Plane_mesh_layer_4
+                0x0000000007013f90                mat_revert_guybed_f3d_material
+                0x0000000007013fb0                mat_guybed_f3d_material
+                0x0000000007014068                guybed_Plane_mesh_layer_4_tri_0
+                0x00000000070140c8                guybed_Plane_mesh_layer_4_vtx_0
+                0x00000000070141f8                guybed_Plane_mesh_layer_4_vtx_cull
+                0x0000000007014278                guybed__3252176_ci4_pal_rgba16
+                0x0000000007014298                guybed__3252176_ci4_pal_rgba16_aligner
+                0x00000000070142a0                guybed__3252176_ci4
+                0x0000000007014aa0                guybed__3252176_ci4_aligner
+                0x0000000007014aa8                guybed_f3d_material_lights
+                0x0000000007014ac0                Shyguysays_anims
+                0x0000000007016f48                Shyguysays_material_revert_render_settings
+                0x0000000007016f80                Shyguysays_arm_r_mesh_layer_1
+                0x0000000007016fb8                Shyguysays_arm_r_mesh_layer_5
+                0x0000000007016fe0                Shyguysays_arm_r_skinned_mesh_layer_5
+                0x0000000007017000                Shyguysays_arm_l_mesh_layer_1
+                0x0000000007017038                Shyguysays_arm_l_mesh_layer_5
+                0x0000000007017060                Shyguysays_arm_l_skinned_mesh_layer_5
+                0x0000000007017080                Shyguysays_Bone_003_mesh_layer_5
+                0x00000000070170a8                Shyguysays_Bone_003_skinned_mesh_layer_5
+                0x00000000070170c8                Shyguysays_Bone_001_mesh_layer_5
+                0x00000000070170f0                Shyguysays_Bone_001_skinned_mesh_layer_5
+                0x0000000007017110                Shyguysays_Bone_mesh_layer_5
+                0x0000000007017130                mat_revert_Shyguysays_f3d_material_002
+                0x0000000007017148                mat_Shyguysays_f3d_material_002
+                0x00000000070171c8                mat_revert_Shyguysays_f3d_material_001
+                0x00000000070171e0                mat_Shyguysays_f3d_material_001
+                0x0000000007017220                mat_revert_Shyguysays_BooGuy2_f3d_material_f3d
+                0x0000000007017240                mat_Shyguysays_BooGuy2_f3d_material_f3d
+                0x00000000070172f8                Shyguysays_arm_r_mesh_layer_1_tri_1
+                0x0000000007017328                Shyguysays_arm_r_mesh_layer_1_vtx_1
+                0x0000000007017388                Shyguysays_arm_r_mesh_layer_1_tri_0
+                0x00000000070173a0                Shyguysays_arm_r_mesh_layer_1_vtx_0
+                0x00000000070173e0                Shyguysays_arm_r_mesh_layer_5_tri_1
+                0x00000000070173f8                Shyguysays_arm_r_mesh_layer_5_vtx_1
+                0x0000000007017428                Shyguysays_arm_r_mesh_layer_5_tri_0
+                0x0000000007017448                Shyguysays_arm_r_mesh_layer_5_vtx_0
+                0x0000000007017468                Shyguysays_arm_r_skinned_mesh_layer_5_tri_0
+                0x0000000007017478                Shyguysays_arm_r_skinned_mesh_layer_5_vtx_0
+                0x00000000070174d8                Shyguysays_arm_l_mesh_layer_1_tri_1
+                0x00000000070174f0                Shyguysays_arm_l_mesh_layer_1_vtx_1
+                0x0000000007017530                Shyguysays_arm_l_mesh_layer_1_tri_0
+                0x0000000007017560                Shyguysays_arm_l_mesh_layer_1_vtx_0
+                0x00000000070175c0                Shyguysays_arm_l_mesh_layer_5_tri_1
+                0x00000000070175d8                Shyguysays_arm_l_mesh_layer_5_vtx_1
+                0x0000000007017608                Shyguysays_arm_l_mesh_layer_5_tri_0
+                0x0000000007017628                Shyguysays_arm_l_mesh_layer_5_vtx_0
+                0x0000000007017648                Shyguysays_arm_l_skinned_mesh_layer_5_tri_0
+                0x0000000007017658                Shyguysays_arm_l_skinned_mesh_layer_5_vtx_0
+                0x00000000070176b8                Shyguysays_Bone_003_mesh_layer_5_tri_1
+                0x00000000070176d8                Shyguysays_Bone_003_mesh_layer_5_vtx_1
+                0x0000000007017728                Shyguysays_Bone_003_mesh_layer_5_tri_0
+                0x0000000007017768                Shyguysays_Bone_003_mesh_layer_5_vtx_0
+                0x00000000070177a8                Shyguysays_Bone_003_skinned_mesh_layer_5_tri_0
+                0x00000000070177b8                Shyguysays_Bone_003_skinned_mesh_layer_5_vtx_0
+                0x0000000007017838                Shyguysays_Bone_001_mesh_layer_5_tri_1
+                0x00000000070178b0                Shyguysays_Bone_001_mesh_layer_5_vtx_1
+                0x0000000007017a80                Shyguysays_Bone_001_mesh_layer_5_tri_0
+                0x0000000007017ad0                Shyguysays_Bone_001_mesh_layer_5_vtx_0
+                0x0000000007017b70                Shyguysays_Bone_001_skinned_mesh_layer_5_tri_0
+                0x0000000007017b80                Shyguysays_Bone_001_skinned_mesh_layer_5_vtx_0
+                0x0000000007017c20                Shyguysays_Bone_mesh_layer_5_tri_0
+                0x0000000007017cf8                Shyguysays_Bone_mesh_layer_5_vtx_0
+                0x0000000007018078                Shyguysays__1200px_Empty_Star_svg_ia8
+                0x0000000007018478                Shyguysays__1200px_Empty_Star_svg_ia8_aligner
+                0x0000000007018480                Shyguysays_GreenBandana_ci4_pal_rgba16
+                0x00000000070184a0                Shyguysays_GreenBandana_ci4_pal_rgba16_aligner
+                0x00000000070184a8                Shyguysays_GreenBandana_ci4
+                0x0000000007018ca8                Shyguysays_GreenBandana_ci4_aligner
+                0x0000000007018cb0                Shyguysays_f3d_material_002_lights
+                0x0000000007018cc8                Shyguysays_f3d_material_001_lights
+                0x0000000007018ce0                Shyguysays_BooGuy2_f3d_material_f3d_lights
+                0x0000000007018cf8                shyguyblock_collision
+                0x0000000007018d78                shyguyblock_material_revert_render_settings
+                0x0000000007018db0                shyguyblock_33_333_mesh_layer_4
+                0x0000000007018dd0                shyguyblock_444_44444_mesh_layer_1
+                0x0000000007018df0                shyguyblock_22_222_mesh_layer_4
+                0x0000000007018e10                shyguyblock_Bone_001_mesh_layer_1
+                0x0000000007018e30                mat_revert_shyguyblock_f3d_material_001
+                0x0000000007018e48                mat_shyguyblock_f3d_material_001
+                0x0000000007018ec8                mat_revert_shyguyblock_f3d_material
+                0x0000000007018ee0                mat_shyguyblock_f3d_material
+                0x0000000007018f60                shyguyblock_33_333_mesh_layer_4_tri_0
+                0x0000000007018fa0                shyguyblock_33_333_mesh_layer_4_vtx_0
+                0x0000000007019070                shyguyblock_444_44444_mesh_layer_1_tri_0
+                0x00000000070190b0                shyguyblock_444_44444_mesh_layer_1_vtx_0
+                0x0000000007019180                shyguyblock_22_222_mesh_layer_4_tri_0
+                0x00000000070191c0                shyguyblock_22_222_mesh_layer_4_vtx_0
+                0x0000000007019290                shyguyblock_Bone_001_mesh_layer_1_tri_0
+                0x00000000070192d0                shyguyblock_Bone_001_mesh_layer_1_vtx_0
+                0x00000000070193a0                shyguyblock_boxyalpha_ia8
+                0x000000000701a3a0                shyguyblock_boxyalpha_ia8_aligner
+                0x000000000701a3a8                shyguyblock__381c3000_fmt0431_slice0_mip00_128x128_tm04_i8
+                0x000000000701b3a8                shyguyblock__381c3000_fmt0431_slice0_mip00_128x128_tm04_i8_aligner
+                0x000000000701b3b0                shyguyblock_f3d_material_001_lights
+                0x000000000701b3c8                shyguyblock_f3d_material_lights
+                0x000000000701b3e0                crumblefloor_collision
+                0x000000000701b448                crumblefloor_material_revert_render_settings
+                0x000000000701b480                crumblefloor_Plane_044_mesh_layer_1
+                0x000000000701b4a0                mat_revert_crumblefloor_f3d_material_083
+                0x000000000701b4c0                mat_crumblefloor_f3d_material_083
+                0x000000000701b578                crumblefloor_Plane_044_mesh_layer_1_tri_0
+                0x000000000701b5f8                crumblefloor_Plane_044_mesh_layer_1_vtx_0
+                0x000000000701b7f8                crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4_pal_rgba16
+                0x000000000701b818                crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4_pal_rgba16_aligner
+                0x000000000701b820                crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4
+                0x000000000701c020                crumblefloor_KKIIDDZZ_DAT_2097__p00_ci4_aligner
+                0x000000000701c028                crumblefloor_f3d_material_083_lights
+                0x000000000701c040                ropebridge_collision
+                0x000000000701c0c0                ropebridge_material_revert_render_settings
+                0x000000000701c0f8                ropebridge_Plane_031_mesh_layer_4
+                0x000000000701c118                mat_revert_ropebridge_f3d_material_079
+                0x000000000701c138                mat_ropebridge_f3d_material_079
+                0x000000000701c1f0                ropebridge_Plane_031_mesh_layer_4_tri_0
+                0x000000000701c220                ropebridge_Plane_031_mesh_layer_4_vtx_0
+                0x000000000701c2c0                ropebridge__3252176_ci4_pal_rgba16
+                0x000000000701c2e0                ropebridge__3252176_ci4_pal_rgba16_aligner
+                0x000000000701c2e8                ropebridge__3252176_ci4
+                0x000000000701cae8                ropebridge__3252176_ci4_aligner
+                0x000000000701caf0                ropebridge_f3d_material_079_lights
+                0x000000000701cb08                pushshelf_collision
+                0x000000000701cb88                pushshelf_material_revert_render_settings
+                0x000000000701cbc0                pushshelf_Plane_033_mesh_layer_1
+                0x000000000701cbf8                mat_revert_pushshelf_f3d_material_067
+                0x000000000701cc18                mat_pushshelf_f3d_material_067
+                0x000000000701ccd0                mat_revert_pushshelf_f3d_material_065
+                0x000000000701ccf0                mat_pushshelf_f3d_material_065
+                0x000000000701cda8                pushshelf_Plane_033_mesh_layer_1_tri_1
+                0x000000000701cdd8                pushshelf_Plane_033_mesh_layer_1_vtx_1
+                0x000000000701cec8                pushshelf_Plane_033_mesh_layer_1_tri_0
+                0x000000000701cee0                pushshelf_Plane_033_mesh_layer_1_vtx_0
+                0x000000000701cf20                pushshelf_Z_kai_main4_ci8_pal_rgba16
+                0x000000000701cf68                pushshelf_Z_kai_main4_ci8_pal_rgba16_aligner
+                0x000000000701cf70                pushshelf_Z_kai_main4_ci8
+                0x000000000701d770                pushshelf_Z_kai_main4_ci8_aligner
+                0x000000000701d778                pushshelf_th_hon00_ci8_pal_rgba16
+                0x000000000701d870                pushshelf_th_hon00_ci8_pal_rgba16_aligner
+                0x000000000701d878                pushshelf_th_hon00_ci8
+                0x000000000701e078                pushshelf_th_hon00_ci8_aligner
+                0x000000000701e080                pushshelf_f3d_material_067_lights
+                0x000000000701e098                pushshelf_f3d_material_065_lights
+                0x000000000701e0b0                pushcargobox_collision
+                0x000000000701e130                pushcargobox_material_revert_render_settings
+                0x000000000701e168                pushcargobox_Plane_032_mesh_layer_1
+                0x000000000701e1a0                mat_revert_pushcargobox_f3d_material_064
+                0x000000000701e1c0                mat_pushcargobox_f3d_material_064
+                0x000000000701e278                mat_revert_pushcargobox_f3d_material_063
+                0x000000000701e298                mat_pushcargobox_f3d_material_063
+                0x000000000701e350                pushcargobox_Plane_032_mesh_layer_1_tri_1
+                0x000000000701e368                pushcargobox_Plane_032_mesh_layer_1_vtx_1
+                0x000000000701e3a8                pushcargobox_Plane_032_mesh_layer_1_tri_0
+                0x000000000701e3d8                pushcargobox_Plane_032_mesh_layer_1_vtx_0
+                0x000000000701e4d8                pushcargobox__34812322_ci4_pal_rgba16
+                0x000000000701e4f8                pushcargobox__34812322_ci4_pal_rgba16_aligner
+                0x000000000701e500                pushcargobox__34812322_ci4
+                0x000000000701e900                pushcargobox__34812322_ci4_aligner
+                0x000000000701e908                pushcargobox__3481232_ci8_pal_rgba16
+                0x000000000701ea28                pushcargobox__3481232_ci8_pal_rgba16_aligner
+                0x000000000701ea30                pushcargobox__3481232_ci8
+                0x000000000701f230                pushcargobox__3481232_ci8_aligner
+                0x000000000701f238                pushcargobox_f3d_material_064_lights
+                0x000000000701f250                pushcargobox_f3d_material_063_lights
+                0x000000000701f268                chandelier_collision
+                0x000000000701f3f0                chandelier_material_revert_render_settings
+                0x000000000701f428                chandelier_Circle_mesh_layer_4
+                0x000000000701f448                chandelier_Circle_mesh_layer_1
+                0x000000000701f498                mat_revert_chandelier_f3d_material
+                0x000000000701f4b0                mat_chandelier_f3d_material
+                0x000000000701f530                mat_revert_chandelier_f3d_material_001
+                0x000000000701f550                mat_chandelier_f3d_material_001
+                0x000000000701f608                mat_revert_chandelier_f3d_material_002
+                0x000000000701f628                mat_chandelier_f3d_material_002
+                0x000000000701f6e0                mat_revert_chandelier_f3d_material_003
+                0x000000000701f6f8                mat_chandelier_f3d_material_003
+                0x000000000701f778                chandelier_Circle_mesh_layer_4_tri_0
+                0x000000000701f7e0                chandelier_Circle_mesh_layer_4_vtx_0
+                0x000000000701fa60                chandelier_Circle_mesh_layer_1_tri_2
+                0x000000000701fb60                chandelier_Circle_mesh_layer_1_vtx_2
+                0x000000000701fef0                chandelier_Circle_mesh_layer_1_tri_1
+                0x000000000701ffa8                chandelier_Circle_mesh_layer_1_vtx_1
+                0x0000000007020208                chandelier_Circle_mesh_layer_1_tri_0
+                0x0000000007020258                chandelier_Circle_mesh_layer_1_vtx_0
+                0x0000000007020378                chandelier_GZLE01_2518b360_14_ia8
+                0x0000000007020b78                chandelier_GZLE01_2518b360_14_ia8_aligner
+                0x0000000007020b80                chandelier__87D2F3A4FB49A9938E8DEFFC2F175C1A_ci8_pal_rgba16
+                0x0000000007020bc0                chandelier__87D2F3A4FB49A9938E8DEFFC2F175C1A_ci8_pal_rgba16_aligner
+                0x0000000007020bc8                chandelier__87D2F3A4FB49A9938E8DEFFC2F175C1A_ci8
+                0x00000000070213c8                chandelier__87D2F3A4FB49A9938E8DEFFC2F175C1A_ci8_aligner
+                0x00000000070213d0                chandelier_GLME01_63a2ci44f98_14_ci4_pal_rgba16
+                0x00000000070213f0                chandelier_GLME01_63a2ci44f98_14_ci4_pal_rgba16_aligner
+                0x00000000070213f8                chandelier_GLME01_63a2ci44f98_14_ci4
+                0x0000000007021bf8                chandelier_GLME01_63a2ci44f98_14_ci4_aligner
+                0x0000000007021c00                chandelier_GLME01_63a242f98_14_rgba16
+                0x0000000007022c00                chandelier_GLME01_63a242f98_14_rgba16_aligner
+                0x0000000007022c08                chandelier_f3d_material_lights
+                0x0000000007022c20                chandelier_f3d_material_001_lights
+                0x0000000007022c38                chandelier_f3d_material_002_lights
+                0x0000000007022c50                chandelier_f3d_material_003_lights
+                0x0000000007022c68                tunnel2_collision
+                0x0000000007023088                tunnel2_material_revert_render_settings
+                0x00000000070230c0                tunnel2_Plane_001_mesh_layer_1
+                0x00000000070230e0                mat_revert_tunnel2_f3d_material_030
+                0x0000000007023100                mat_tunnel2_f3d_material_030
+                0x00000000070231b8                tunnel2_Plane_001_mesh_layer_1_tri_0
+                0x0000000007023408                tunnel2_Plane_001_mesh_layer_1_vtx_0
+                0x0000000007023e68                tunnel2__0xDDE0_ci4_pal_rgba16
+                0x0000000007023e88                tunnel2__0xDDE0_ci4_pal_rgba16_aligner
+                0x0000000007023e90                tunnel2__0xDDE0_ci4
+                0x0000000007024690                tunnel2__0xDDE0_ci4_aligner
+                0x0000000007024698                tunnel2_f3d_material_030_lights
+                0x00000000070246b0                tunnel_collision
+                0x0000000007024a58                tunnel_material_revert_render_settings
+                0x0000000007024a90                tunnel_Plane_002_mesh_layer_1
+                0x0000000007024ab0                mat_revert_tunnel_f3d_material_030
+                0x0000000007024ad0                mat_tunnel_f3d_material_030
+                0x0000000007024b88                tunnel_Plane_002_mesh_layer_1_tri_0
+                0x0000000007024d78                tunnel_Plane_002_mesh_layer_1_vtx_0
+                0x00000000070256d8                tunnel__0xDDE0_ci4_pal_rgba16
+                0x00000000070256f8                tunnel__0xDDE0_ci4_pal_rgba16_aligner
+                0x0000000007025700                tunnel__0xDDE0_ci4
+                0x0000000007025f00                tunnel__0xDDE0_ci4_aligner
+                0x0000000007025f08                tunnel_f3d_material_030_lights
+                0x0000000007025f20                wallsword_material_revert_render_settings
+                0x0000000007025f58                wallsword_Jolene_s_Sword_mesh_layer_1
+                0x0000000007025f78                mat_revert_wallsword_mt_sword_f3d
+                0x0000000007025f90                mat_wallsword_mt_sword_f3d
+                0x0000000007026040                wallsword_Jolene_s_Sword_mesh_layer_1_tri_0
+                0x00000000070260d8                wallsword_Jolene_s_Sword_mesh_layer_1_vtx_0
+                0x00000000070262d8                wallsword_mt_sword_ci8_pal_rgba16
+                0x00000000070263a0                wallsword_mt_sword_ci8_pal_rgba16_aligner
+                0x00000000070263a8                wallsword_mt_sword_ci8
+                0x00000000070267a8                wallsword_mt_sword_ci8_aligner
+                0x00000000070267b0                wallsword_mt_sword_f3d_lights
+                0x00000000070267c8                paintguy_material_revert_render_settings
+                0x0000000007026800                paintguy_Plane_027_mesh_layer_6
+                0x0000000007026820                mat_revert_paintguy_f3d_material_062
+                0x0000000007026838                mat_paintguy_f3d_material_062
+                0x00000000070268b8                paintguy_Plane_027_mesh_layer_6_tri_0
+                0x00000000070268d0                paintguy_Plane_027_mesh_layer_6_vtx_0
+                0x0000000007026910                paintguy_booguyimg_ia8
+                0x0000000007027910                paintguy_booguyimg_ia8_aligner
+                0x0000000007027918                paintguy_f3d_material_062_lights
+                0x0000000007027930                jellyblock_collision
+                0x00000000070279b0                jellyblock_material_revert_render_settings
+                0x00000000070279e8                jellyblock_Cube_mesh_layer_5
+                0x0000000007027a08                mat_revert_jellyblock_f3d_material
+                0x0000000007027a20                mat_jellyblock_f3d_material
+                0x0000000007027ad8                jellyblock_Cube_mesh_layer_5_tri_0
+                0x0000000007027b50                jellyblock_Cube_mesh_layer_5_vtx_0
+                0x0000000007027cd0                jellyblock_blockface_ci8_pal_rgba16
+                0x0000000007027d60                jellyblock_blockface_ci8_pal_rgba16_aligner
+                0x0000000007027d68                jellyblock_blockface_ci8
+                0x0000000007028568                jellyblock_blockface_ci8_aligner
+                0x0000000007028570                jellyblock_f3d_material_lights
+                0x0000000007028588                jokeUnagi_anims
+                0x000000000702ce48                jokeUnagi_material_revert_render_settings
+                0x000000000702ce80                jokeUnagi_003_offset_mesh_layer_1
+                0x000000000702cec0                jokeUnagi_003_offset_skinned_mesh_layer_1
+                0x000000000702cee0                jokeUnagi_002_offset_002_mesh_layer_4
+                0x000000000702cf00                jokeUnagi_001_offset_mesh_layer_1
+                0x000000000702cf38                jokeUnagi_000_offset_008_mesh_layer_4
+                0x000000000702cf58                jokeUnagi_000_offset_006_mesh_layer_4
+                0x000000000702cf78                jokeUnagi_000_offset_005_mesh_layer_1
+                0x000000000702cfb0                jokeUnagi_000_offset_005_skinned_mesh_layer_1
+                0x000000000702cfd0                jokeUnagi_000_offset_004_mesh_layer_1
+                0x000000000702d008                jokeUnagi_000_offset_004_skinned_mesh_layer_1
+                0x000000000702d028                jokeUnagi_000_offset_003_mesh_layer_1
+                0x000000000702d048                jokeUnagi_000_offset_003_skinned_mesh_layer_1
+                0x000000000702d068                jokeUnagi_000_offset_002_mesh_layer_1
+                0x000000000702d088                jokeUnagi_000_offset_002_skinned_mesh_layer_1
+                0x000000000702d0a8                mat_revert_jokeUnagi_f3d_material_005
+                0x000000000702d0c0                mat_jokeUnagi_f3d_material_005
+                0x000000000702d170                mat_revert_jokeUnagi_f3d_material
+                0x000000000702d188                mat_jokeUnagi_f3d_material
+                0x000000000702d238                mat_revert_jokeUnagi_f3d_material_004
+                0x000000000702d258                mat_jokeUnagi_f3d_material_004
+                0x000000000702d310                mat_revert_jokeUnagi_f3d_material_003
+                0x000000000702d330                mat_jokeUnagi_f3d_material_003
+                0x000000000702d3e8                mat_revert_jokeUnagi_mt_normal_mat_f3d
+                0x000000000702d400                mat_jokeUnagi_mt_normal_mat_f3d
+                0x000000000702d480                mat_revert_jokeUnagi_f3d_material_002
+                0x000000000702d498                mat_jokeUnagi_f3d_material_002
+                0x000000000702d548                mat_revert_jokeUnagi_f3d_material_001
+                0x000000000702d560                mat_jokeUnagi_f3d_material_001
+                0x000000000702d610                jokeUnagi_003_offset_mesh_layer_1_tri_2
+                0x000000000702d638                jokeUnagi_003_offset_mesh_layer_1_vtx_2
+                0x000000000702d6a8                jokeUnagi_003_offset_mesh_layer_1_tri_1
+                0x000000000702d710                jokeUnagi_003_offset_mesh_layer_1_vtx_1
+                0x000000000702d840                jokeUnagi_003_offset_mesh_layer_1_tri_0
+                0x000000000702d880                jokeUnagi_003_offset_mesh_layer_1_vtx_0
+                0x000000000702d8e0                jokeUnagi_003_offset_skinned_mesh_layer_1_tri_0
+                0x000000000702d8f0                jokeUnagi_003_offset_skinned_mesh_layer_1_vtx_0
+                0x000000000702d940                jokeUnagi_002_offset_002_mesh_layer_4_tri_0
+                0x000000000702d968                jokeUnagi_002_offset_002_mesh_layer_4_vtx_0
+                0x000000000702da28                jokeUnagi_001_offset_mesh_layer_1_tri_1
+                0x000000000702da50                jokeUnagi_001_offset_mesh_layer_1_vtx_1
+                0x000000000702dac0                jokeUnagi_001_offset_mesh_layer_1_tri_0
+                0x000000000702db10                jokeUnagi_001_offset_mesh_layer_1_vtx_0
+                0x000000000702dbe0                jokeUnagi_000_offset_008_mesh_layer_4_tri_0
+                0x000000000702dc08                jokeUnagi_000_offset_008_mesh_layer_4_vtx_0
+                0x000000000702dcc8                jokeUnagi_000_offset_006_mesh_layer_4_tri_0
+                0x000000000702dce8                jokeUnagi_000_offset_006_mesh_layer_4_vtx_0
+                0x000000000702dd78                jokeUnagi_000_offset_005_mesh_layer_1_tri_1
+                0x000000000702deb8                jokeUnagi_000_offset_005_mesh_layer_1_vtx_1
+                0x000000000702e1a8                jokeUnagi_000_offset_005_mesh_layer_1_tri_0
+                0x000000000702e1e0                jokeUnagi_000_offset_005_mesh_layer_1_vtx_0
+                0x000000000702e230                jokeUnagi_000_offset_005_skinned_mesh_layer_1_tri_0
+                0x000000000702e240                jokeUnagi_000_offset_005_skinned_mesh_layer_1_vtx_0
+                0x000000000702e280                jokeUnagi_000_offset_004_mesh_layer_1_tri_1
+                0x000000000702e2b0                jokeUnagi_000_offset_004_mesh_layer_1_vtx_1
+                0x000000000702e320                jokeUnagi_000_offset_004_mesh_layer_1_tri_0
+                0x000000000702e350                jokeUnagi_000_offset_004_mesh_layer_1_vtx_0
+                0x000000000702e390                jokeUnagi_000_offset_004_skinned_mesh_layer_1_tri_0
+                0x000000000702e3a0                jokeUnagi_000_offset_004_skinned_mesh_layer_1_vtx_0
+                0x000000000702e3e0                jokeUnagi_000_offset_003_mesh_layer_1_tri_0
+                0x000000000702e410                jokeUnagi_000_offset_003_mesh_layer_1_vtx_0
+                0x000000000702e450                jokeUnagi_000_offset_003_skinned_mesh_layer_1_tri_0
+                0x000000000702e460                jokeUnagi_000_offset_003_skinned_mesh_layer_1_vtx_0
+                0x000000000702e4b0                jokeUnagi_000_offset_002_mesh_layer_1_tri_0
+                0x000000000702e4e0                jokeUnagi_000_offset_002_mesh_layer_1_vtx_0
+                0x000000000702e520                jokeUnagi_000_offset_002_skinned_mesh_layer_1_tri_0
+                0x000000000702e530                jokeUnagi_000_offset_002_skinned_mesh_layer_1_vtx_0
+                0x000000000702e570                jokeUnagi__0500C320_ci4_pal_rgba16
+                0x000000000702e590                jokeUnagi__0500C320_ci4_pal_rgba16_aligner
+                0x000000000702e598                jokeUnagi__0500C320_ci4
+                0x000000000702e5b8                jokeUnagi__0500C320_ci4_aligner
+                0x000000000702e5c0                jokeUnagi__0500B920_ci8_pal_rgba16
+                0x000000000702e6b8                jokeUnagi__0500B920_ci8_pal_rgba16_aligner
+                0x000000000702e6c0                jokeUnagi__0500B920_ci8
+                0x000000000702eac0                jokeUnagi__0500B920_ci8_aligner
+                0x000000000702eac8                jokeUnagi__0500C120_ci8_pal_rgba16
+                0x000000000702eb50                jokeUnagi__0500C120_ci8_pal_rgba16_aligner
+                0x000000000702eb58                jokeUnagi__0500C120_ci8
+                0x000000000702ec58                jokeUnagi__0500C120_ci8_aligner
+                0x000000000702ec60                jokeUnagi__0500B720_ci8_pal_rgba16
+                0x000000000702ecd0                jokeUnagi__0500B720_ci8_pal_rgba16_aligner
+                0x000000000702ecd8                jokeUnagi__0500B720_ci8
+                0x000000000702edd8                jokeUnagi__0500B720_ci8_aligner
+                0x000000000702ede0                jokeUnagi_Ribbon_Normal_Red_i8
+                0x000000000702fde0                jokeUnagi_Ribbon_Normal_Red_i8_aligner
+                0x000000000702fde8                jokeUnagi__0500C3A0_ci8_pal_rgba16
+                0x000000000702feb0                jokeUnagi__0500C3A0_ci8_pal_rgba16_aligner
+                0x000000000702feb8                jokeUnagi__0500C3A0_ci8
+                0x00000000070302b8                jokeUnagi__0500C3A0_ci8_aligner
+                0x00000000070302c0                jokeUnagi__0500AF20_ci8_pal_rgba16
+                0x0000000007030348                jokeUnagi__0500AF20_ci8_pal_rgba16_aligner
+                0x0000000007030350                jokeUnagi__0500AF20_ci8
+                0x0000000007030750                jokeUnagi__0500AF20_ci8_aligner
+                0x0000000007030758                jokeUnagi_f3d_material_005_lights
+                0x0000000007030770                jokeUnagi_f3d_material_lights
+                0x0000000007030788                jokeUnagi_f3d_material_004_lights
+                0x00000000070307a0                jokeUnagi_f3d_material_003_lights
+                0x00000000070307b8                jokeUnagi_mt_normal_mat_f3d_lights
+                0x00000000070307d0                jokeUnagi_f3d_material_002_lights
+                0x00000000070307e8                jokeUnagi_f3d_material_001_lights
+                0x0000000007030800                booguy_anims
+                0x0000000007032eb8                booguy_material_revert_render_settings
+                0x0000000007032ef0                booguy_arm_r_mesh_layer_5
+                0x0000000007032f08                booguy_arm_r_skinned_mesh_layer_5
+                0x0000000007032f18                booguy_arm_l_mesh_layer_5
+                0x0000000007032f28                booguy_arm_l_skinned_mesh_layer_5
+                0x0000000007032f38                booguy_Bone_003_mesh_layer_5
+                0x0000000007032f50                booguy_Bone_003_skinned_mesh_layer_5
+                0x0000000007032f60                booguy_Bone_001_mesh_layer_5
+                0x0000000007032f78                booguy_Bone_001_skinned_mesh_layer_5
+                0x0000000007032f88                booguy_Bone_mesh_layer_5
+                0x0000000007032fa0                mat_revert_booguy_f3d_material
+                0x0000000007032fc0                mat_booguy_f3d_material
+                0x0000000007033080                booguy_arm_r_mesh_layer_5_tri_0
+                0x00000000070330a0                booguy_arm_r_mesh_layer_5_vtx_0
+                0x00000000070330c0                booguy_arm_r_skinned_mesh_layer_5_tri_0
+                0x00000000070330d0                booguy_arm_r_skinned_mesh_layer_5_vtx_0
+                0x0000000007033130                booguy_arm_l_mesh_layer_5_tri_0
+                0x0000000007033150                booguy_arm_l_mesh_layer_5_vtx_0
+                0x0000000007033170                booguy_arm_l_skinned_mesh_layer_5_tri_0
+                0x0000000007033180                booguy_arm_l_skinned_mesh_layer_5_vtx_0
+                0x00000000070331e0                booguy_Bone_003_mesh_layer_5_tri_1
+                0x0000000007033230                booguy_Bone_003_mesh_layer_5_vtx_1
+                0x0000000007033300                booguy_Bone_003_mesh_layer_5_tri_0
+                0x0000000007033350                booguy_Bone_003_mesh_layer_5_vtx_0
+                0x00000000070333d0                booguy_Bone_003_skinned_mesh_layer_5_tri_0
+                0x00000000070333e0                booguy_Bone_003_skinned_mesh_layer_5_vtx_0
+                0x0000000007033460                booguy_Bone_001_mesh_layer_5_tri_1
+                0x0000000007033508                booguy_Bone_001_mesh_layer_5_vtx_1
+                0x0000000007033768                booguy_Bone_001_mesh_layer_5_tri_0
+                0x00000000070337b8                booguy_Bone_001_mesh_layer_5_vtx_0
+                0x0000000007033888                booguy_Bone_001_skinned_mesh_layer_5_tri_0
+                0x0000000007033898                booguy_Bone_001_skinned_mesh_layer_5_vtx_0
+                0x0000000007033958                booguy_Bone_mesh_layer_5_tri_0
+                0x00000000070339a8                booguy_Bone_mesh_layer_5_vtx_0
+                0x0000000007033b58                booguy_Booguy_64_ci4_pal_rgba16
+                0x0000000007033b78                booguy_Booguy_64_ci4_pal_rgba16_aligner
+                0x0000000007033b80                booguy_Booguy_64_ci4
+                0x0000000007034380                booguy_Booguy_64_ci4_aligner
+                0x0000000007034388                booguy_f3d_material_lights
+                0x00000000070343a0                floorbreak_collision
+                0x00000000070343d8                floorbreak_material_revert_render_settings
+                0x0000000007034410                floorbreak_Plane_019_mesh_layer_1
+                0x0000000007034430                mat_revert_floorbreak_badwood5
+                0x0000000007034448                mat_floorbreak_badwood5
+                0x00000000070344c8                floorbreak_Plane_019_mesh_layer_1_tri_0
+                0x00000000070344e0                floorbreak_Plane_019_mesh_layer_1_vtx_0
+                0x0000000007034520                floorbreak_badwood5_i8
+                0x0000000007035520                floorbreak_badwood5_i8_aligner
+                0x0000000007035528                floorbreak_badwood5_lights
+                0x0000000007035540                booguybarrell_anims
+                0x00000000070363b0                booguybarrell_material_revert_render_settings
+                0x00000000070363e8                booguybarrell_Bone_001_mesh_layer_1
+                0x0000000007036410                booguybarrell_Bone_001_skinned_mesh_layer_1
+                0x0000000007036430                booguybarrell_Bone_003_mesh_layer_1
+                0x0000000007036450                booguybarrell_Bone_005_mesh_layer_5
+                0x0000000007036470                mat_revert_booguybarrell_f3d_material_033
+                0x0000000007036490                mat_booguybarrell_f3d_material_033
+                0x0000000007036548                mat_revert_booguybarrell_f3d_material
+                0x0000000007036560                mat_booguybarrell_f3d_material
+                0x0000000007036618                booguybarrell_Bone_001_mesh_layer_1_tri_1
+                0x0000000007036638                booguybarrell_Bone_001_mesh_layer_1_vtx_1
+                0x0000000007036688                booguybarrell_Bone_001_mesh_layer_1_tri_0
+                0x00000000070366a8                booguybarrell_Bone_001_mesh_layer_1_vtx_0
+                0x00000000070366d8                booguybarrell_Bone_001_skinned_mesh_layer_1_tri_0
+                0x00000000070366e8                booguybarrell_Bone_001_skinned_mesh_layer_1_vtx_0
+                0x0000000007036708                booguybarrell_Bone_003_mesh_layer_1_tri_0
+                0x0000000007036790                booguybarrell_Bone_003_mesh_layer_1_vtx_0
+                0x0000000007036950                booguybarrell_Bone_005_mesh_layer_5_tri_0
+                0x0000000007036b30                booguybarrell_Bone_005_mesh_layer_5_vtx_0
+                0x0000000007037280                booguybarrell_fk_mokusei00_ci4_pal_rgba16
+                0x00000000070372a0                booguybarrell_fk_mokusei00_ci4_pal_rgba16_aligner
+                0x00000000070372a8                booguybarrell_fk_mokusei00_ci4
+                0x0000000007037aa8                booguybarrell_fk_mokusei00_ci4_aligner
+                0x0000000007037ab0                booguybarrell_Booguy_64_ci4_pal_rgba16
+                0x0000000007037ad0                booguybarrell_Booguy_64_ci4_pal_rgba16_aligner
+                0x0000000007037ad8                booguybarrell_Booguy_64_ci4
+                0x00000000070382d8                booguybarrell_Booguy_64_ci4_aligner
+                0x00000000070382e0                booguybarrell_f3d_material_033_lights
+                0x00000000070382f8                booguybarrell_f3d_material_lights
+                0x0000000007038310                destroybarrel_collision
+                0x0000000007038478                destroybarrel_material_revert_render_settings
+                0x00000000070384b0                destroybarrel_Plane_019_mesh_layer_1
+                0x00000000070384f0                mat_revert_destroybarrel_f3d_material_033
+                0x0000000007038510                mat_destroybarrel_f3d_material_033
+                0x00000000070385c8                destroybarrel_Plane_019_mesh_layer_1_tri_0
+                0x0000000007038670                destroybarrel_Plane_019_mesh_layer_1_vtx_0
+                0x00000000070388d0                destroybarrel_Plane_019_mesh_layer_1_vtx_cull
+                0x0000000007038950                destroybarrel_fk_mokusei00_ci4_pal_rgba16
+                0x0000000007038970                destroybarrel_fk_mokusei00_ci4_pal_rgba16_aligner
+                0x0000000007038978                destroybarrel_fk_mokusei00_ci4
+                0x0000000007039178                destroybarrel_fk_mokusei00_ci4_aligner
+                0x0000000007039180                destroybarrel_f3d_material_033_lights
+                0x0000000007039198                ghostplatform_collision
+                0x0000000007039228                ghostlantern_material_revert_render_settings
+                0x0000000007039260                ghostlantern_Cube_001_mesh
+                0x0000000007039280                ghostlantern_Plane_mesh_layer_4
+                0x00000000070392a0                ghostlantern_Plane_mesh_layer_1
+                0x00000000070392c0                mat_revert_ghostlantern_sm64_material_004
+                0x00000000070392d8                mat_ghostlantern_sm64_material_004
+                0x0000000007039358                mat_revert_ghostlantern_f3d_material_004
+                0x0000000007039378                mat_ghostlantern_f3d_material_004
+                0x0000000007039418                mat_revert_ghostlantern_f3d_material_003
+                0x0000000007039438                mat_ghostlantern_f3d_material_003
+                0x00000000070394f0                ghostlantern_Cube_001_mesh_tri_0
+                0x0000000007039508                ghostlantern_Cube_001_mesh_vtx_0
+                0x0000000007039548                ghostlantern_Plane_mesh_layer_4_tri_0
+                0x0000000007039560                ghostlantern_Plane_mesh_layer_4_vtx_0
+                0x00000000070395a0                ghostlantern_Plane_mesh_layer_1_tri_0
+                0x00000000070395e8                ghostlantern_Plane_mesh_layer_1_vtx_0
+                0x0000000007039718                ghostlantern__222_png_ia16
+                0x000000000703a718                ghostlantern__222_png_ia16_aligner
+                0x000000000703a720                ghostlantern_ring_ci8_pal_rgba16
+                0x000000000703a7f0                ghostlantern_ring_ci8_pal_rgba16_aligner
+                0x000000000703a7f8                ghostlantern_ring_ci8
+                0x000000000703abf8                ghostlantern_ring_ci8_aligner
+                0x000000000703ac00                ghostlantern_floor02_dh_alb_ci4_pal_rgba16
+                0x000000000703ac18                ghostlantern_floor02_dh_alb_ci4_pal_rgba16_aligner
+                0x000000000703ac20                ghostlantern_floor02_dh_alb_ci4
+                0x000000000703ae20                ghostlantern_floor02_dh_alb_ci4_aligner
+                0x000000000703ae28                ghostlantern_sm64_material_004_lights
+                0x000000000703ae40                ghostlantern_f3d_material_003_lights
+                0x000000000703ae58                ghostplatform_material_revert_render_settings
+                0x000000000703ae90                ghostplatform_Bone_002_mesh_layer_5
+                0x000000000703aeb0                ghostplatform_Bone_mesh_layer_1
+                0x000000000703aed0                mat_revert_ghostplatform_f3d_material_002
+                0x000000000703aee8                mat_ghostplatform_f3d_material_002
+                0x000000000703af28                mat_revert_ghostplatform_f3d_material
+                0x000000000703af40                mat_ghostplatform_f3d_material
+                0x000000000703afc0                ghostplatform_Bone_002_mesh_layer_5_tri_0
+                0x000000000703b030                ghostplatform_Bone_002_mesh_layer_5_vtx_0
+                0x000000000703b1c0                ghostplatform_Bone_mesh_layer_1_tri_0
+                0x000000000703b200                ghostplatform_Bone_mesh_layer_1_vtx_0
+                0x000000000703b300                ghostplatform_SUPER_MARIO_64_FDDF5C31_0_2_rgb_i8
+                0x000000000703c300                ghostplatform_SUPER_MARIO_64_FDDF5C31_0_2_rgb_i8_aligner
+                0x000000000703c308                ghostplatform_f3d_material_002_lights
+                0x000000000703c320                ghostplatform_f3d_material_lights
+                0x000000000703c338                cannonbarrelcoll_collision
+                0x000000000703c438                ghostsail_anims
+                0x000000000703d608                lightning_material_revert_render_settings
+                0x000000000703d640                lightning_Cube_mesh_layer_5
+                0x000000000703d680                mat_revert_lightning_f3d_material
+                0x000000000703d698                mat_lightning_f3d_material
+                0x000000000703d718                lightning_Cube_mesh_layer_5_tri_0
+                0x000000000703d730                lightning_Cube_mesh_layer_5_vtx_0
+                0x000000000703d770                lightning_Cube_mesh_layer_5_vtx_cull
+                0x000000000703d7f0                lightning_istockphoto_629835950_170667a_i8
+                0x000000000703e7f0                lightning_istockphoto_629835950_170667a_i8_aligner
+                0x000000000703e7f8                lightning_f3d_material_lights
+                0x000000000703e810                bbh_dl_material_revert_render_settings
+                0x000000000703e850                bbh_dl_Plane_082_mesh_layer_4
+                0x000000000703e870                bbh_dl_Plane_081_mesh_layer_4
+                0x000000000703e890                bbh_dl_Plane_080_mesh_layer_4
+                0x000000000703e8b0                bbh_dl_Plane_079_mesh_layer_4
+                0x000000000703e8d0                bbh_dl_Plane_078_mesh_layer_4
+                0x000000000703e8f0                bbh_dl_Plane_077_mesh_layer_4
+                0x000000000703e910                bbh_dl_Plane_076_mesh_layer_4
+                0x000000000703e930                bbh_dl_Plane_075_mesh_layer_4
+                0x000000000703e950                bbh_dl_Plane_074_mesh_layer_4
+                0x000000000703e970                bbh_dl_Plane_073_mesh_layer_4
+                0x000000000703e990                bbh_dl_Plane_072_mesh_layer_4
+                0x000000000703e9b0                bbh_dl_Plane_071_mesh_layer_4
+                0x000000000703e9d0                bbh_dl_Plane_070_mesh_layer_4
+                0x000000000703e9f0                bbh_dl_Plane_069_mesh_layer_4
+                0x000000000703ea10                bbh_dl_Plane_068_mesh_layer_4
+                0x000000000703ea30                bbh_dl_Plane_067_mesh_layer_4
+                0x000000000703ea50                bbh_dl_Plane_066_mesh_layer_4
+                0x000000000703ea70                bbh_dl_Plane_065_mesh_layer_4
+                0x000000000703ea90                bbh_dl_Plane_064_mesh_layer_4
+                0x000000000703eab0                bbh_dl_Plane_063_mesh_layer_4
+                0x000000000703ead0                bbh_dl_Plane_062_mesh_layer_4
+                0x000000000703eaf0                bbh_dl_Plane_061_mesh_layer_4
+                0x000000000703eb10                bbh_dl_Plane_060_mesh_layer_4
+                0x000000000703eb30                bbh_dl_Plane_059_mesh_layer_4
+                0x000000000703eb50                bbh_dl_Plane_058_mesh_layer_4
+                0x000000000703eb70                bbh_dl_Plane_057_mesh_layer_4
+                0x000000000703eb90                bbh_dl_Plane_056_mesh_layer_4
+                0x000000000703ebb0                bbh_dl_Plane_055_mesh_layer_4
+                0x000000000703ebd0                bbh_dl_Plane_054_mesh_layer_4
+                0x000000000703ebf0                bbh_dl_Plane_053_mesh_layer_4
+                0x000000000703ec10                bbh_dl_Plane_052_mesh_layer_4
+                0x000000000703ec30                bbh_dl_Plane_051_mesh_layer_4
+                0x000000000703ec50                bbh_dl_Plane_050_mesh_layer_4
+                0x000000000703ec70                bbh_dl_Plane_049_mesh_layer_4
+                0x000000000703ec90                bbh_dl_Plane_048_mesh_layer_4
+                0x000000000703ecb0                bbh_dl_Plane_047_mesh_layer_4
+                0x000000000703ecd0                bbh_dl_Plane_045_mesh_layer_1
+                0x000000000703ed10                bbh_dl_Plane_044_mesh_layer_4
+                0x000000000703ed48                bbh_dl_Plane_043_mesh_layer_1
+                0x000000000703eda0                bbh_dl_Plane_041_mesh_layer_1
+                0x000000000703edf8                bbh_dl_Plane_040_mesh_layer_1
+                0x000000000703ee38                bbh_dl_Plane_039_mesh_layer_1
+                0x000000000703ee90                bbh_dl_Plane_038_mesh_layer_1
+                0x000000000703eed0                bbh_dl_Plane_037_mesh_layer_1
+                0x000000000703ef28                bbh_dl_Plane_036_mesh_layer_1
+                0x000000000703ef68                bbh_dl_Plane_035_mesh_layer_1
+                0x000000000703efa8                bbh_dl_Plane_034_mesh_layer_1
+                0x000000000703f000                bbh_dl_Plane_033_mesh_layer_4
+                0x000000000703f020                bbh_dl_Plane_032_mesh_layer_4
+                0x000000000703f040                bbh_dl_Plane_031_mesh_layer_4
+                0x000000000703f060                bbh_dl_Plane_030_mesh_layer_4
+                0x000000000703f080                bbh_dl_Plane_029_mesh_layer_4
+                0x000000000703f0a0                bbh_dl_Plane_028_mesh_layer_1
+                0x000000000703f0e0                bbh_dl_Plane_027_mesh_layer_1
+                0x000000000703f138                bbh_dl_Plane_023_mesh_layer_1
+                0x000000000703f190                bbh_dl_Plane_021_mesh_layer_1
+                0x000000000703f1e8                bbh_dl_Plane_019_mesh_layer_4
+                0x000000000703f208                bbh_dl_Plane_018_mesh_layer_4
+                0x000000000703f228                bbh_dl_Plane_017_mesh_layer_4
+                0x000000000703f248                bbh_dl_Plane_016_mesh_layer_4
+                0x000000000703f268                bbh_dl_Plane_015_mesh_layer_4
+                0x000000000703f288                bbh_dl_Plane_014_mesh_layer_1
+                0x000000000703f2e0                bbh_dl_Plane_013_mesh_layer_1
+                0x000000000703f320                bbh_dl_Plane_009_mesh_layer_4
+                0x000000000703f340                bbh_dl_Plane_004_mesh_layer_4
+                0x000000000703f360                bbh_dl_Plane_003_mesh_layer_4
+                0x000000000703f380                bbh_dl_Plane_002_mesh_layer_1
+                0x000000000703f3a0                bbh_dl_LinePlatformPath1_001_mesh_layer_4
+                0x000000000703f3c0                bbh_dl_BGCMountain_mesh_layer_0
+                0x000000000703f3f8                bbh_dl_BGBMoon_mesh_layer_0
+                0x000000000703f418                bbh_dl_BGASky_mesh_layer_0
+                0x000000000703f438                bbh_dl_Plane_026_mesh_layer_1
+                0x000000000703f4d0                bbh_dl_Plane_025_mesh_layer_2
+                0x000000000703f510                bbh_dl_Plane_mesh_layer_5
+                0x000000000703f530                bbh_dl_Cube_001_mesh_layer_4
+                0x000000000703f568                bbh_dl_Room9Layer4_mesh_layer_4
+                0x000000000703f588                bbh_dl_Room9Layer1_mesh_layer_1
+                0x000000000703f638                bbh_dl_Room8Layer4_mesh_layer_4
+                0x000000000703f658                bbh_dl_Room8Layer1_mesh_layer_1
+                0x000000000703f708                bbh_dl_Room7Layer4_mesh_layer_4
+                0x000000000703f728                bbh_dl_Room7Layer1_mesh_layer_1
+                0x000000000703f7d8                bbh_dl_Room6Layer4_mesh_layer_4
+                0x000000000703f7f8                bbh_dl_Room6Layer1_mesh_layer_1
+                0x000000000703f8a8                bbh_dl_Room5Layer6_mesh_layer_6
+                0x000000000703f8c8                bbh_dl_Room5Layer4_mesh_layer_4
+                0x000000000703f900                bbh_dl_Room5Layer1_mesh_layer_1
+                0x000000000703fa10                bbh_dl_Room4Layer4_mesh_layer_4
+                0x000000000703fa30                bbh_dl_Room4Layer1_mesh_layer_1
+                0x000000000703fb40                bbh_dl_Room3Layer6_mesh_layer_6
+                0x000000000703fb60                bbh_dl_Room3Layer4_mesh_layer_4
+                0x000000000703fbb0                bbh_dl_Room3Layer2_mesh_layer_2
+                0x000000000703fc48                bbh_dl_Room3Layer1_mesh_layer_1
+                0x000000000703ff08                bbh_dl_Room2Layer6_mesh_layer_6
+                0x000000000703ff40                bbh_dl_Room2Layer5_mesh_layer_5
+                0x000000000703ff60                bbh_dl_Room2Layer4_mesh_layer_4
+                0x000000000703ff98                bbh_dl_Room2Layer2_mesh_layer_2
+                0x000000000703ffe8                bbh_dl_Room2Layer1_mesh_layer_1
+                0x0000000007040278                bbh_dl_Room1Layer4_mesh_layer_4
+                0x00000000070402f8                bbh_dl_Room1Layer1_mesh_layer_1
+                0x0000000007040468                bbh_dl_Zail_005_mesh_layer_4
+                0x0000000007040488                bbh_dl_Zail_004_mesh_layer_4
+                0x00000000070404a8                bbh_dl_Zail_003_mesh_layer_4
+                0x00000000070404c8                bbh_dl_Zail_002_mesh_layer_4
+                0x00000000070404e8                bbh_dl_Zail_001_mesh_layer_4
+                0x0000000007040508                bbh_dl_Zail_mesh_layer_4
+                0x0000000007040528                bbh_dl_Plane_042_mesh_layer_6
+                0x0000000007040548                bbh_dl_Plane_001_mesh_layer_4
+                0x00000000070405b0                bbh_dl_OCEAN_mesh_layer_1
+                0x00000000070405d0                bbh_dl_AAAPlane_mesh_layer_4
+                0x00000000070405f0                bbh_dl_AAAPlane_mesh_layer_1
+                0x0000000007040778                bbh_dl_AAAAAAAFirst_mesh_layer_4
+                0x0000000007040798                bbh_dl_AAAAAAABackGround_mesh_layer_0
+                0x00000000070407d0                mat_revert_bbh_dl_f3d_material_017
+                0x00000000070407f0                mat_bbh_dl_f3d_material_017
+                0x0000000007040868                mat_revert_bbh_dl_f3d_material_016
+                0x0000000007040888                mat_bbh_dl_f3d_material_016
+                0x0000000007040900                mat_revert_bbh_dl_f3d_material_008
+                0x0000000007040920                mat_bbh_dl_f3d_material_008
+                0x00000000070409d8                mat_revert_bbh_dl_f3d_material_002
+                0x0000000007040a00                mat_bbh_dl_f3d_material_002
+                0x0000000007040ac0                mat_revert_bbh_dl_f3d_material_011
+                0x0000000007040ae0                mat_bbh_dl_f3d_material_011
+                0x0000000007040b80                mat_revert_bbh_dl_f3d_material_012
+                0x0000000007040b98                mat_bbh_dl_f3d_material_012
+                0x0000000007040bd8                mat_revert_bbh_dl_f3d_material_009
+                0x0000000007040bf8                mat_bbh_dl_f3d_material_009
+                0x0000000007040cb0                mat_revert_bbh_dl_f3d_material_006
+                0x0000000007040cd8                mat_bbh_dl_f3d_material_006
+                0x0000000007040d88                mat_revert_bbh_dl_f3d_material_001_layer1
+                0x0000000007040db8                mat_bbh_dl_f3d_material_001_layer1
+                0x0000000007040e90                mat_revert_bbh_dl_f3d_material_013
+                0x0000000007040eb0                mat_bbh_dl_f3d_material_013
+                0x0000000007040f38                mat_revert_bbh_dl_f3d_material_003_layer0
+                0x0000000007040f70                mat_bbh_dl_f3d_material_003_layer0
+                0x0000000007041040                mat_revert_bbh_dl_f3d_material_004_layer0
+                0x0000000007041078                mat_bbh_dl_f3d_material_004_layer0
+                0x0000000007041130                mat_revert_bbh_dl_f3d_material_015_layer0
+                0x0000000007041160                mat_bbh_dl_f3d_material_015_layer0
+                0x0000000007041210                mat_revert_bbh_dl_YINIGHTSKY_layer0
+                0x0000000007041238                mat_bbh_dl_YINIGHTSKY_layer0
+                0x00000000070412c8                mat_revert_bbh_dl_f3d_material_042_v4
+                0x00000000070412e0                mat_bbh_dl_f3d_material_042_v4
+                0x0000000007041360                mat_revert_bbh_dl_f3d_material_043_v4
+                0x0000000007041380                mat_bbh_dl_f3d_material_043_v4
+                0x0000000007041438                mat_revert_bbh_dl_f3d_material_060_v4
+                0x0000000007041450                mat_bbh_dl_f3d_material_060_v4
+                0x00000000070414d0                mat_revert_bbh_dl_f3d_material_054_v4
+                0x00000000070414e8                mat_bbh_dl_f3d_material_054_v4
+                0x0000000007041568                mat_revert_bbh_dl_badwood0_001_v4
+                0x0000000007041580                mat_bbh_dl_badwood0_001_v4
+                0x0000000007041600                mat_revert_bbh_dl_f3d_material_056_v4_layer1
+                0x0000000007041628                mat_bbh_dl_f3d_material_056_v4_layer1
+                0x00000000070416f8                mat_revert_bbh_dl_f3d_material_041_v4
+                0x0000000007041718                mat_bbh_dl_f3d_material_041_v4
+                0x00000000070417d0                mat_revert_bbh_dl_f3d_material_033_v4
+                0x00000000070417f0                mat_bbh_dl_f3d_material_033_v4
+                0x00000000070418b0                mat_revert_bbh_dl_f3d_material_044_v4
+                0x00000000070418c8                mat_bbh_dl_f3d_material_044_v4
+                0x0000000007041948                mat_revert_bbh_dl_UNAGISIGN
+                0x0000000007041960                mat_bbh_dl_UNAGISIGN
+                0x00000000070419a0                mat_revert_bbh_dl_f3d_material_087_v4
+                0x00000000070419b8                mat_bbh_dl_f3d_material_087_v4
+                0x0000000007041a38                mat_revert_bbh_dl_f3d_material_084_v4
+                0x0000000007041a50                mat_bbh_dl_f3d_material_084_v4
+                0x0000000007041a90                mat_revert_bbh_dl_f3d_material_029_v4
+                0x0000000007041ab0                mat_bbh_dl_f3d_material_029_v4
+                0x0000000007041b68                mat_revert_bbh_dl_f3d_material_085_v4_layer1
+                0x0000000007041b90                mat_bbh_dl_f3d_material_085_v4_layer1
+                0x0000000007041c60                mat_revert_bbh_dl_f3d_material_096_v4
+                0x0000000007041c78                mat_bbh_dl_f3d_material_096_v4
+                0x0000000007041cf8                mat_revert_bbh_dl_f3d_material_091_v4
+                0x0000000007041d18                mat_bbh_dl_f3d_material_091_v4
+                0x0000000007041dd0                mat_revert_bbh_dl_f3d_material_097_v4
+                0x0000000007041df0                mat_bbh_dl_f3d_material_097_v4
+                0x0000000007041ea8                mat_revert_bbh_dl_f3d_material_099_v4
+                0x0000000007041ec8                mat_bbh_dl_f3d_material_099_v4
+                0x0000000007041f80                mat_revert_bbh_dl_f3d_material_098_v4
+                0x0000000007041f98                mat_bbh_dl_f3d_material_098_v4
+                0x0000000007042018                mat_revert_bbh_dl_InsideWater
+                0x0000000007042030                mat_bbh_dl_InsideWater
+                0x00000000070420b8                mat_revert_bbh_dl_f3d_material_092_v4
+                0x00000000070420d8                mat_bbh_dl_f3d_material_092_v4
+                0x0000000007042190                mat_revert_bbh_dl_f3d_material_093_v4
+                0x00000000070421a8                mat_bbh_dl_f3d_material_093_v4
+                0x0000000007042228                mat_revert_bbh_dl_f3d_material_089_v4
+                0x0000000007042240                mat_bbh_dl_f3d_material_089_v4
+                0x0000000007042280                mat_revert_bbh_dl_f3d_material_090_v4
+                0x0000000007042298                mat_bbh_dl_f3d_material_090_v4
+                0x0000000007042320                mat_revert_bbh_dl_f3d_material_086_v4
+                0x0000000007042340                mat_bbh_dl_f3d_material_086_v4
+                0x00000000070423f8                mat_revert_bbh_dl_f3d_material_123_v4
+                0x0000000007042410                mat_bbh_dl_f3d_material_123_v4
+                0x0000000007042490                mat_revert_bbh_dl_f3d_material_117_v4
+                0x00000000070424a8                mat_bbh_dl_f3d_material_117_v4
+                0x0000000007042528                mat_revert_bbh_dl_f3d_material_113_v4
+                0x0000000007042540                mat_bbh_dl_f3d_material_113_v4
+                0x00000000070425c0                mat_revert_bbh_dl_f3d_material_112_v4
+                0x00000000070425d8                mat_bbh_dl_f3d_material_112_v4
+                0x0000000007042658                mat_revert_bbh_dl_f3d_material_048_v4
+                0x0000000007042670                mat_bbh_dl_f3d_material_048_v4
+                0x00000000070426b0                mat_revert_bbh_dl_f3d_material_049_v4
+                0x00000000070426c8                mat_bbh_dl_f3d_material_049_v4
+                0x0000000007042748                mat_revert_bbh_dl_f3d_material_001_v4_001
+                0x0000000007042760                mat_bbh_dl_f3d_material_001_v4_001
+                0x00000000070427a0                mat_revert_bbh_dl_f3d_material_077_v4
+                0x00000000070427c0                mat_bbh_dl_f3d_material_077_v4
+                0x0000000007042878                mat_revert_bbh_dl_f3d_material_075_v4
+                0x0000000007042898                mat_bbh_dl_f3d_material_075_v4
+                0x0000000007042950                mat_revert_bbh_dl_f3d_material_078_v4
+                0x0000000007042970                mat_bbh_dl_f3d_material_078_v4
+                0x0000000007042a28                mat_revert_bbh_dl_f3d_material_072_v4
+                0x0000000007042a48                mat_bbh_dl_f3d_material_072_v4
+                0x0000000007042b00                mat_revert_bbh_dl_sm64_material_072_v4
+                0x0000000007042b20                mat_bbh_dl_sm64_material_072_v4
+                0x0000000007042bd8                mat_revert_bbh_dl_Tex_0008_0_f3d_v4
+                0x0000000007042bf8                mat_bbh_dl_Tex_0008_0_f3d_v4
+                0x0000000007042cb0                mat_revert_bbh_dl_f3d_material_118_v4
+                0x0000000007042cd0                mat_bbh_dl_f3d_material_118_v4
+                0x0000000007042d88                mat_revert_bbh_dl_trasurechest_chest_f3d_v4
+                0x0000000007042da8                mat_bbh_dl_trasurechest_chest_f3d_v4
+                0x0000000007042e60                mat_revert_bbh_dl_treasurechest_lock_f3d_v4
+                0x0000000007042e80                mat_bbh_dl_treasurechest_lock_f3d_v4
+                0x0000000007042f38                mat_revert_bbh_dl_f3d_material_068_v4
+                0x0000000007042f58                mat_bbh_dl_f3d_material_068_v4
+                0x0000000007043010                mat_revert_bbh_dl_f3d_material_070_v4
+                0x0000000007043030                mat_bbh_dl_f3d_material_070_v4
+                0x00000000070430e8                mat_revert_bbh_dl_f3d_material_069_v4
+                0x0000000007043108                mat_bbh_dl_f3d_material_069_v4
+                0x00000000070431c0                mat_revert_bbh_dl_f3d_material_120_v4
+                0x00000000070431d8                mat_bbh_dl_f3d_material_120_v4
+                0x0000000007043258                mat_revert_bbh_dl_f3d_material_065_v4
+                0x0000000007043278                mat_bbh_dl_f3d_material_065_v4
+                0x0000000007043330                mat_revert_bbh_dl_f3d_material_067_v4
+                0x0000000007043350                mat_bbh_dl_f3d_material_067_v4
+                0x0000000007043408                mat_revert_bbh_dl_f3d_material_080_v4
+                0x0000000007043420                mat_bbh_dl_f3d_material_080_v4
+                0x00000000070434a0                mat_revert_bbh_dl_f3d_material_026_v4
+                0x00000000070434b8                mat_bbh_dl_f3d_material_026_v4
+                0x0000000007043538                mat_revert_bbh_dl_f3d_material_110_v4
+                0x0000000007043550                mat_bbh_dl_f3d_material_110_v4
+                0x00000000070435d0                mat_revert_bbh_dl_f3d_material_116_v4
+                0x00000000070435e8                mat_bbh_dl_f3d_material_116_v4
+                0x0000000007043668                mat_revert_bbh_dl_LIGHTBEAMANIMATION_v4
+                0x0000000007043680                mat_bbh_dl_LIGHTBEAMANIMATION_v4
+                0x0000000007043700                mat_revert_bbh_dl_f3d_material_066_v4
+                0x0000000007043718                mat_bbh_dl_f3d_material_066_v4
+                0x0000000007043798                mat_revert_bbh_dl_f3d_material_061_v4
+                0x00000000070437b8                mat_bbh_dl_f3d_material_061_v4
+                0x0000000007043870                mat_revert_bbh_dl_f3d_material_114_v4
+                0x0000000007043890                mat_bbh_dl_f3d_material_114_v4
+                0x0000000007043948                mat_revert_bbh_dl_f3d_material_115_v4
+                0x0000000007043968                mat_bbh_dl_f3d_material_115_v4
+                0x0000000007043a20                mat_revert_bbh_dl_f3d_material_076_v4
+                0x0000000007043a38                mat_bbh_dl_f3d_material_076_v4
+                0x0000000007043ab8                mat_revert_bbh_dl_f3d_material_073_v4
+                0x0000000007043ad0                mat_bbh_dl_f3d_material_073_v4
+                0x0000000007043b50                mat_revert_bbh_dl_f3d_material_095_v4
+                0x0000000007043b68                mat_bbh_dl_f3d_material_095_v4
+                0x0000000007043be8                mat_revert_bbh_dl_f3d_material_111_v4
+                0x0000000007043c00                mat_bbh_dl_f3d_material_111_v4
+                0x0000000007043c80                mat_revert_bbh_dl_f3d_material_121_v4
+                0x0000000007043c98                mat_bbh_dl_f3d_material_121_v4
+                0x0000000007043d18                mat_revert_bbh_dl_f3d_material_109_v4
+                0x0000000007043d30                mat_bbh_dl_f3d_material_109_v4
+                0x0000000007043db0                mat_revert_bbh_dl_f3d_material_126_v4
+                0x0000000007043dd0                mat_bbh_dl_f3d_material_126_v4
+                0x0000000007043e88                mat_revert_bbh_dl_f3d_material_124_v4
+                0x0000000007043ea0                mat_bbh_dl_f3d_material_124_v4
+                0x0000000007043f20                mat_revert_bbh_dl_f3d_material_125_v4
+                0x0000000007043f38                mat_bbh_dl_f3d_material_125_v4
+                0x0000000007043fb8                mat_revert_bbh_dl_f3d_material_108_v4
+                0x0000000007043fd8                mat_bbh_dl_f3d_material_108_v4
+                0x0000000007044090                mat_revert_bbh_dl_sm64_material_081_v4
+                0x00000000070440b0                mat_bbh_dl_sm64_material_081_v4
+                0x0000000007044168                mat_revert_bbh_dl_f3d_material_165_v4
+                0x0000000007044188                mat_bbh_dl_f3d_material_165_v4
+                0x0000000007044240                mat_revert_bbh_dl_f3d_material_064_v4
+                0x0000000007044260                mat_bbh_dl_f3d_material_064_v4
+                0x0000000007044318                mat_revert_bbh_dl_f3d_material_063_v4
+                0x0000000007044338                mat_bbh_dl_f3d_material_063_v4
+                0x00000000070443f0                mat_revert_bbh_dl_f3d_material_119_v4_layer1
+                0x0000000007044418                mat_bbh_dl_f3d_material_119_v4_layer1
+                0x00000000070444e8                mat_revert_bbh_dl_f3d_material_122_v4
+                0x0000000007044500                mat_bbh_dl_f3d_material_122_v4
+                0x0000000007044580                mat_revert_bbh_dl_f3d_material_101_v4
+                0x0000000007044598                mat_bbh_dl_f3d_material_101_v4
+                0x0000000007044618                mat_revert_bbh_dl_f3d_material_103_v4
+                0x0000000007044630                mat_bbh_dl_f3d_material_103_v4
+                0x00000000070446b0                mat_revert_bbh_dl_f3d_material_088_v4
+                0x00000000070446c8                mat_bbh_dl_f3d_material_088_v4
+                0x0000000007044748                mat_revert_bbh_dl_f3d_material_083_v4
+                0x0000000007044768                mat_bbh_dl_f3d_material_083_v4
+                0x0000000007044820                mat_revert_bbh_dl_f3d_material_104_v4
+                0x0000000007044838                mat_bbh_dl_f3d_material_104_v4
+                0x00000000070448b8                mat_revert_bbh_dl_f3d_material_105_v4
+                0x00000000070448d0                mat_bbh_dl_f3d_material_105_v4
+                0x0000000007044950                mat_revert_bbh_dl_f3d_material_100_v4
+                0x0000000007044968                mat_bbh_dl_f3d_material_100_v4
+                0x00000000070449e8                mat_revert_bbh_dl_f3d_material_039_v4
+                0x0000000007044a08                mat_bbh_dl_f3d_material_039_v4
+                0x0000000007044aa8                mat_revert_bbh_dl_sm64_material_050_v4
+                0x0000000007044ac0                mat_bbh_dl_sm64_material_050_v4
+                0x0000000007044b40                mat_revert_bbh_dl_f3d_material_027_v4
+                0x0000000007044b60                mat_bbh_dl_f3d_material_027_v4
+                0x0000000007044c18                mat_revert_bbh_dl_f3d_material_032_v4
+                0x0000000007044c38                mat_bbh_dl_f3d_material_032_v4
+                0x0000000007044cf0                mat_revert_bbh_dl_f3d_material_028_v4
+                0x0000000007044d08                mat_bbh_dl_f3d_material_028_v4
+                0x0000000007044d88                mat_revert_bbh_dl_f3d_material_040_v4
+                0x0000000007044da8                mat_bbh_dl_f3d_material_040_v4
+                0x0000000007044e60                mat_revert_bbh_dl_f3d_material_082_v4
+                0x0000000007044e80                mat_bbh_dl_f3d_material_082_v4
+                0x0000000007044f38                mat_revert_bbh_dl_insidewalls_v4_layer1
+                0x0000000007044f60                mat_bbh_dl_insidewalls_v4_layer1
+                0x0000000007045030                mat_revert_bbh_dl_f3d_material_030_v4
+                0x0000000007045048                mat_bbh_dl_f3d_material_030_v4
+                0x00000000070450c8                mat_revert_bbh_dl_f3d_material_038_v4
+                0x00000000070450e8                mat_bbh_dl_f3d_material_038_v4
+                0x00000000070451a0                mat_revert_bbh_dl_f3d_material_036_v4
+                0x00000000070451b8                mat_bbh_dl_f3d_material_036_v4
+                0x00000000070451f8                mat_revert_bbh_dl_f3d_material_031_v4
+                0x0000000007045210                mat_bbh_dl_f3d_material_031_v4
+                0x0000000007045278                mat_revert_bbh_dl_sm64_material_060_v4
+                0x0000000007045298                mat_bbh_dl_sm64_material_060_v4
+                0x0000000007045350                mat_revert_bbh_dl_roof_v4
+                0x0000000007045368                mat_bbh_dl_roof_v4
+                0x00000000070453e8                mat_revert_bbh_dl_f3d_material_025
+                0x0000000007045400                mat_bbh_dl_f3d_material_025
+                0x0000000007045480                mat_revert_bbh_dl_badwood4_v4
+                0x0000000007045498                mat_bbh_dl_badwood4_v4
+                0x0000000007045518                mat_revert_bbh_dl_badwood1_v4
+                0x0000000007045530                mat_bbh_dl_badwood1_v4
+                0x00000000070455b0                mat_revert_bbh_dl_badwood3_v4
+                0x00000000070455c8                mat_bbh_dl_badwood3_v4
+                0x0000000007045648                mat_revert_bbh_dl_badwood0_v4
+                0x0000000007045660                mat_bbh_dl_badwood0_v4
+                0x00000000070456e0                mat_revert_bbh_dl_badwood2_v4
+                0x00000000070456f8                mat_bbh_dl_badwood2_v4
+                0x0000000007045778                mat_revert_bbh_dl_f3d_material_007
+                0x0000000007045790                mat_bbh_dl_f3d_material_007
+                0x0000000007045810                mat_revert_bbh_dl_f3d_material_146_v4
+                0x0000000007045828                mat_bbh_dl_f3d_material_146_v4
+                0x00000000070458a8                mat_revert_bbh_dl_f3d_material_017_v4
+                0x00000000070458c8                mat_bbh_dl_f3d_material_017_v4
+                0x0000000007045980                mat_revert_bbh_dl_f3d_material_023_v4
+                0x00000000070459a0                mat_bbh_dl_f3d_material_023_v4
+                0x0000000007045a58                mat_revert_bbh_dl_f3d_material_003_v4_001
+                0x0000000007045a78                mat_bbh_dl_f3d_material_003_v4_001
+                0x0000000007045b30                mat_revert_bbh_dl_f3d_material_009_v4_001
+                0x0000000007045b50                mat_bbh_dl_f3d_material_009_v4_001
+                0x0000000007045c08                mat_revert_bbh_dl_OCEANWATER_layer1_area1
+                0x0000000007045c30                mat_bbh_dl_OCEANWATER_layer1_area1
+                0x0000000007045d10                mat_revert_bbh_dl_f3d_material_010_v4_001
+                0x0000000007045d30                mat_bbh_dl_f3d_material_010_v4_001
+                0x0000000007045de8                mat_revert_bbh_dl_f3d_material_006_v4_001
+                0x0000000007045e00                mat_bbh_dl_f3d_material_006_v4_001
+                0x0000000007045e80                mat_revert_bbh_dl_f3d_material_016_v4_001
+                0x0000000007045ea0                mat_bbh_dl_f3d_material_016_v4_001
+                0x0000000007045f58                mat_revert_bbh_dl_f3d_material_127_v4
+                0x0000000007045f70                mat_bbh_dl_f3d_material_127_v4
+                0x0000000007045ff0                mat_revert_bbh_dl_f3d_material_011_v4_001
+                0x0000000007046010                mat_bbh_dl_f3d_material_011_v4_001
+                0x00000000070460b0                mat_revert_bbh_dl_f3d_material_012_v4_001
+                0x00000000070460c8                mat_bbh_dl_f3d_material_012_v4_001
+                0x0000000007046148                mat_revert_bbh_dl_f3d_material
+                0x0000000007046168                mat_bbh_dl_f3d_material
+                0x0000000007046220                mat_revert_bbh_dl_f3d_material_022_v4
+                0x0000000007046240                mat_bbh_dl_f3d_material_022_v4
+                0x00000000070462f8                mat_revert_bbh_dl_f3d_material_004_v4_001
+                0x0000000007046310                mat_bbh_dl_f3d_material_004_v4_001
+                0x0000000007046390                mat_revert_bbh_dl_f3d_material_021_v4
+                0x00000000070463a8                mat_bbh_dl_f3d_material_021_v4
+                0x0000000007046428                mat_revert_bbh_dl_f3d_material_081_v4
+                0x0000000007046448                mat_bbh_dl_f3d_material_081_v4
+                0x0000000007046500                mat_revert_bbh_dl_wood_v4
+                0x0000000007046518                mat_bbh_dl_wood_v4
+                0x0000000007046598                mat_revert_bbh_dl_f3d_material_010_v4
+                0x00000000070465b8                mat_bbh_dl_f3d_material_010_v4
+                0x0000000007046670                mat_revert_bbh_dl_f3d_material_020_v4
+                0x0000000007046690                mat_bbh_dl_f3d_material_020_v4
+                0x0000000007046748                mat_revert_bbh_dl_f3d_material_013_v4
+                0x0000000007046760                mat_bbh_dl_f3d_material_013_v4
+                0x00000000070467e0                mat_revert_bbh_dl_f3d_material_015_v4_001
+                0x00000000070467f8                mat_bbh_dl_f3d_material_015_v4_001
+                0x0000000007046878                mat_revert_bbh_dl_f3d_material_v4
+                0x0000000007046898                mat_bbh_dl_f3d_material_v4
+                0x0000000007046950                mat_revert_bbh_dl_f3d_material_002_v4_001_layer4_area1
+                0x0000000007046988                mat_bbh_dl_f3d_material_002_v4_001_layer4_area1
+                0x0000000007046a68                mat_revert_bbh_dl_f3d_material_014_v4_layer0
+                0x0000000007046a88                mat_bbh_dl_f3d_material_014_v4_layer0
+                0x0000000007046ab8                mat_revert_bbh_dl_f3d_material_005_layer0
+                0x0000000007046ad8                mat_bbh_dl_f3d_material_005_layer0
+                0x0000000007046b20                bbh_dl_Plane_082_mesh_layer_4_tri_0
+                0x0000000007046b38                bbh_dl_Plane_082_mesh_layer_4_vtx_0
+                0x0000000007046b78                bbh_dl_Plane_081_mesh_layer_4_tri_0
+                0x0000000007046b90                bbh_dl_Plane_081_mesh_layer_4_vtx_0
+                0x0000000007046bd0                bbh_dl_Plane_080_mesh_layer_4_tri_0
+                0x0000000007046be8                bbh_dl_Plane_080_mesh_layer_4_vtx_0
+                0x0000000007046c28                bbh_dl_Plane_079_mesh_layer_4_tri_0
+                0x0000000007046c40                bbh_dl_Plane_079_mesh_layer_4_vtx_0
+                0x0000000007046c80                bbh_dl_Plane_078_mesh_layer_4_tri_0
+                0x0000000007046c98                bbh_dl_Plane_078_mesh_layer_4_vtx_0
+                0x0000000007046cd8                bbh_dl_Plane_077_mesh_layer_4_tri_0
+                0x0000000007046cf0                bbh_dl_Plane_077_mesh_layer_4_vtx_0
+                0x0000000007046d30                bbh_dl_Plane_076_mesh_layer_4_tri_0
+                0x0000000007046d48                bbh_dl_Plane_076_mesh_layer_4_vtx_0
+                0x0000000007046d88                bbh_dl_Plane_075_mesh_layer_4_tri_0
+                0x0000000007046da0                bbh_dl_Plane_075_mesh_layer_4_vtx_0
+                0x0000000007046de0                bbh_dl_Plane_074_mesh_layer_4_tri_0
+                0x0000000007046df8                bbh_dl_Plane_074_mesh_layer_4_vtx_0
+                0x0000000007046e38                bbh_dl_Plane_073_mesh_layer_4_tri_0
+                0x0000000007046e50                bbh_dl_Plane_073_mesh_layer_4_vtx_0
+                0x0000000007046e90                bbh_dl_Plane_072_mesh_layer_4_tri_0
+                0x0000000007046ea8                bbh_dl_Plane_072_mesh_layer_4_vtx_0
+                0x0000000007046ee8                bbh_dl_Plane_071_mesh_layer_4_tri_0
+                0x0000000007046f00                bbh_dl_Plane_071_mesh_layer_4_vtx_0
+                0x0000000007046f40                bbh_dl_Plane_070_mesh_layer_4_tri_0
+                0x0000000007046f58                bbh_dl_Plane_070_mesh_layer_4_vtx_0
+                0x0000000007046f98                bbh_dl_Plane_069_mesh_layer_4_tri_0
+                0x0000000007046fb0                bbh_dl_Plane_069_mesh_layer_4_vtx_0
+                0x0000000007046ff0                bbh_dl_Plane_068_mesh_layer_4_tri_0
+                0x0000000007047008                bbh_dl_Plane_068_mesh_layer_4_vtx_0
+                0x0000000007047048                bbh_dl_Plane_067_mesh_layer_4_tri_0
+                0x0000000007047060                bbh_dl_Plane_067_mesh_layer_4_vtx_0
+                0x00000000070470a0                bbh_dl_Plane_066_mesh_layer_4_tri_0
+                0x00000000070470b8                bbh_dl_Plane_066_mesh_layer_4_vtx_0
+                0x00000000070470f8                bbh_dl_Plane_065_mesh_layer_4_tri_0
+                0x0000000007047110                bbh_dl_Plane_065_mesh_layer_4_vtx_0
+                0x0000000007047150                bbh_dl_Plane_064_mesh_layer_4_tri_0
+                0x0000000007047168                bbh_dl_Plane_064_mesh_layer_4_vtx_0
+                0x00000000070471a8                bbh_dl_Plane_063_mesh_layer_4_tri_0
+                0x00000000070471c0                bbh_dl_Plane_063_mesh_layer_4_vtx_0
+                0x0000000007047200                bbh_dl_Plane_062_mesh_layer_4_tri_0
+                0x0000000007047218                bbh_dl_Plane_062_mesh_layer_4_vtx_0
+                0x0000000007047258                bbh_dl_Plane_061_mesh_layer_4_tri_0
+                0x0000000007047270                bbh_dl_Plane_061_mesh_layer_4_vtx_0
+                0x00000000070472b0                bbh_dl_Plane_060_mesh_layer_4_tri_0
+                0x00000000070472c8                bbh_dl_Plane_060_mesh_layer_4_vtx_0
+                0x0000000007047308                bbh_dl_Plane_059_mesh_layer_4_tri_0
+                0x0000000007047320                bbh_dl_Plane_059_mesh_layer_4_vtx_0
+                0x0000000007047360                bbh_dl_Plane_058_mesh_layer_4_tri_0
+                0x0000000007047378                bbh_dl_Plane_058_mesh_layer_4_vtx_0
+                0x00000000070473b8                bbh_dl_Plane_057_mesh_layer_4_tri_0
+                0x00000000070473d0                bbh_dl_Plane_057_mesh_layer_4_vtx_0
+                0x0000000007047410                bbh_dl_Plane_056_mesh_layer_4_tri_0
+                0x0000000007047428                bbh_dl_Plane_056_mesh_layer_4_vtx_0
+                0x0000000007047468                bbh_dl_Plane_055_mesh_layer_4_tri_0
+                0x0000000007047480                bbh_dl_Plane_055_mesh_layer_4_vtx_0
+                0x00000000070474c0                bbh_dl_Plane_054_mesh_layer_4_tri_0
+                0x00000000070474d8                bbh_dl_Plane_054_mesh_layer_4_vtx_0
+                0x0000000007047518                bbh_dl_Plane_053_mesh_layer_4_tri_0
+                0x0000000007047530                bbh_dl_Plane_053_mesh_layer_4_vtx_0
+                0x0000000007047570                bbh_dl_Plane_052_mesh_layer_4_tri_0
+                0x0000000007047588                bbh_dl_Plane_052_mesh_layer_4_vtx_0
+                0x00000000070475c8                bbh_dl_Plane_051_mesh_layer_4_tri_0
+                0x00000000070475e0                bbh_dl_Plane_051_mesh_layer_4_vtx_0
+                0x0000000007047620                bbh_dl_Plane_050_mesh_layer_4_tri_0
+                0x0000000007047638                bbh_dl_Plane_050_mesh_layer_4_vtx_0
+                0x0000000007047678                bbh_dl_Plane_049_mesh_layer_4_tri_0
+                0x0000000007047690                bbh_dl_Plane_049_mesh_layer_4_vtx_0
+                0x00000000070476d0                bbh_dl_Plane_048_mesh_layer_4_tri_0
+                0x00000000070476e8                bbh_dl_Plane_048_mesh_layer_4_vtx_0
+                0x0000000007047728                bbh_dl_Plane_047_mesh_layer_4_tri_0
+                0x0000000007047740                bbh_dl_Plane_047_mesh_layer_4_vtx_0
+                0x0000000007047780                bbh_dl_Plane_045_mesh_layer_1_tri_0
+                0x00000000070477e8                bbh_dl_Plane_045_mesh_layer_1_vtx_0
+                0x00000000070479e8                bbh_dl_Plane_045_mesh_layer_1_vtx_cull
+                0x0000000007047a68                bbh_dl_Plane_044_mesh_layer_4_tri_1
+                0x0000000007047a98                bbh_dl_Plane_044_mesh_layer_4_vtx_1
+                0x0000000007047b98                bbh_dl_Plane_044_mesh_layer_4_tri_0
+                0x0000000007047ee0                bbh_dl_Plane_044_mesh_layer_4_vtx_0
+                0x0000000007049400                bbh_dl_Plane_043_mesh_layer_1_tri_1
+                0x0000000007049460                bbh_dl_Plane_043_mesh_layer_1_vtx_1
+                0x0000000007049700                bbh_dl_Plane_043_mesh_layer_1_tri_0
+                0x0000000007049758                bbh_dl_Plane_043_mesh_layer_1_vtx_0
+                0x0000000007049818                bbh_dl_Plane_043_mesh_layer_1_vtx_cull
+                0x0000000007049898                bbh_dl_Plane_041_mesh_layer_1_tri_1
+                0x00000000070498f8                bbh_dl_Plane_041_mesh_layer_1_vtx_1
+                0x0000000007049b98                bbh_dl_Plane_041_mesh_layer_1_tri_0
+                0x0000000007049bf0                bbh_dl_Plane_041_mesh_layer_1_vtx_0
+                0x0000000007049cb0                bbh_dl_Plane_041_mesh_layer_1_vtx_cull
+                0x0000000007049d30                bbh_dl_Plane_040_mesh_layer_1_tri_0
+                0x0000000007049e78                bbh_dl_Plane_040_mesh_layer_1_vtx_0
+                0x000000000704a658                bbh_dl_Plane_040_mesh_layer_1_vtx_cull
+                0x000000000704a6d8                bbh_dl_Plane_039_mesh_layer_1_tri_1
+                0x000000000704a738                bbh_dl_Plane_039_mesh_layer_1_vtx_1
+                0x000000000704a9d8                bbh_dl_Plane_039_mesh_layer_1_tri_0
+                0x000000000704aa30                bbh_dl_Plane_039_mesh_layer_1_vtx_0
+                0x000000000704aaf0                bbh_dl_Plane_039_mesh_layer_1_vtx_cull
+                0x000000000704ab70                bbh_dl_Plane_038_mesh_layer_1_tri_0
+                0x000000000704ac80                bbh_dl_Plane_038_mesh_layer_1_vtx_0
+                0x000000000704b3c0                bbh_dl_Plane_038_mesh_layer_1_vtx_cull
+                0x000000000704b440                bbh_dl_Plane_037_mesh_layer_1_tri_1
+                0x000000000704b4a0                bbh_dl_Plane_037_mesh_layer_1_vtx_1
+                0x000000000704b740                bbh_dl_Plane_037_mesh_layer_1_tri_0
+                0x000000000704b798                bbh_dl_Plane_037_mesh_layer_1_vtx_0
+                0x000000000704b858                bbh_dl_Plane_037_mesh_layer_1_vtx_cull
+                0x000000000704b8d8                bbh_dl_Plane_036_mesh_layer_1_tri_0
+                0x000000000704ba20                bbh_dl_Plane_036_mesh_layer_1_vtx_0
+                0x000000000704c200                bbh_dl_Plane_036_mesh_layer_1_vtx_cull
+                0x000000000704c280                bbh_dl_Plane_035_mesh_layer_1_tri_0
+                0x000000000704c2e8                bbh_dl_Plane_035_mesh_layer_1_vtx_0
+                0x000000000704c4e8                bbh_dl_Plane_035_mesh_layer_1_vtx_cull
+                0x000000000704c568                bbh_dl_Plane_034_mesh_layer_1_tri_1
+                0x000000000704c5c0                bbh_dl_Plane_034_mesh_layer_1_vtx_1
+                0x000000000704c680                bbh_dl_Plane_034_mesh_layer_1_tri_0
+                0x000000000704c6e0                bbh_dl_Plane_034_mesh_layer_1_vtx_0
+                0x000000000704c980                bbh_dl_Plane_034_mesh_layer_1_vtx_cull
+                0x000000000704ca00                bbh_dl_Plane_033_mesh_layer_4_tri_0
+                0x000000000704ca18                bbh_dl_Plane_033_mesh_layer_4_vtx_0
+                0x000000000704ca58                bbh_dl_Plane_032_mesh_layer_4_tri_0
+                0x000000000704ca70                bbh_dl_Plane_032_mesh_layer_4_vtx_0
+                0x000000000704cab0                bbh_dl_Plane_031_mesh_layer_4_tri_0
+                0x000000000704cac8                bbh_dl_Plane_031_mesh_layer_4_vtx_0
+                0x000000000704cb08                bbh_dl_Plane_030_mesh_layer_4_tri_0
+                0x000000000704cb20                bbh_dl_Plane_030_mesh_layer_4_vtx_0
+                0x000000000704cb60                bbh_dl_Plane_029_mesh_layer_4_tri_0
+                0x000000000704cb78                bbh_dl_Plane_029_mesh_layer_4_vtx_0
+                0x000000000704cbb8                bbh_dl_Plane_028_mesh_layer_1_tri_0
+                0x000000000704cd00                bbh_dl_Plane_028_mesh_layer_1_vtx_0
+                0x000000000704d4e0                bbh_dl_Plane_028_mesh_layer_1_vtx_cull
+                0x000000000704d560                bbh_dl_Plane_027_mesh_layer_1_tri_1
+                0x000000000704d5b8                bbh_dl_Plane_027_mesh_layer_1_vtx_1
+                0x000000000704d678                bbh_dl_Plane_027_mesh_layer_1_tri_0
+                0x000000000704d6d8                bbh_dl_Plane_027_mesh_layer_1_vtx_0
+                0x000000000704d978                bbh_dl_Plane_027_mesh_layer_1_vtx_cull
+                0x000000000704d9f8                bbh_dl_Plane_023_mesh_layer_1_tri_1
+                0x000000000704da58                bbh_dl_Plane_023_mesh_layer_1_vtx_1
+                0x000000000704dcf8                bbh_dl_Plane_023_mesh_layer_1_tri_0
+                0x000000000704dd50                bbh_dl_Plane_023_mesh_layer_1_vtx_0
+                0x000000000704de10                bbh_dl_Plane_023_mesh_layer_1_vtx_cull
+                0x000000000704de90                bbh_dl_Plane_021_mesh_layer_1_tri_1
+                0x000000000704def0                bbh_dl_Plane_021_mesh_layer_1_vtx_1
+                0x000000000704e190                bbh_dl_Plane_021_mesh_layer_1_tri_0
+                0x000000000704e1e8                bbh_dl_Plane_021_mesh_layer_1_vtx_0
+                0x000000000704e2a8                bbh_dl_Plane_021_mesh_layer_1_vtx_cull
+                0x000000000704e328                bbh_dl_Plane_019_mesh_layer_4_tri_0
+                0x000000000704e340                bbh_dl_Plane_019_mesh_layer_4_vtx_0
+                0x000000000704e380                bbh_dl_Plane_018_mesh_layer_4_tri_0
+                0x000000000704e398                bbh_dl_Plane_018_mesh_layer_4_vtx_0
+                0x000000000704e3d8                bbh_dl_Plane_017_mesh_layer_4_tri_0
+                0x000000000704e3f0                bbh_dl_Plane_017_mesh_layer_4_vtx_0
+                0x000000000704e430                bbh_dl_Plane_016_mesh_layer_4_tri_0
+                0x000000000704e448                bbh_dl_Plane_016_mesh_layer_4_vtx_0
+                0x000000000704e488                bbh_dl_Plane_015_mesh_layer_4_tri_0
+                0x000000000704e4a0                bbh_dl_Plane_015_mesh_layer_4_vtx_0
+                0x000000000704e4e0                bbh_dl_Plane_014_mesh_layer_1_tri_1
+                0x000000000704e540                bbh_dl_Plane_014_mesh_layer_1_vtx_1
+                0x000000000704e7e0                bbh_dl_Plane_014_mesh_layer_1_tri_0
+                0x000000000704e838                bbh_dl_Plane_014_mesh_layer_1_vtx_0
+                0x000000000704e8f8                bbh_dl_Plane_014_mesh_layer_1_vtx_cull
+                0x000000000704e978                bbh_dl_Plane_013_mesh_layer_1_tri_0
+                0x000000000704eac0                bbh_dl_Plane_013_mesh_layer_1_vtx_0
+                0x000000000704f2a0                bbh_dl_Plane_013_mesh_layer_1_vtx_cull
+                0x000000000704f320                bbh_dl_Plane_009_mesh_layer_4_tri_0
+                0x000000000704f338                bbh_dl_Plane_009_mesh_layer_4_vtx_0
+                0x000000000704f378                bbh_dl_Plane_004_mesh_layer_4_tri_0
+                0x000000000704f390                bbh_dl_Plane_004_mesh_layer_4_vtx_0
+                0x000000000704f3d0                bbh_dl_Plane_003_mesh_layer_4_tri_0
+                0x000000000704f3e8                bbh_dl_Plane_003_mesh_layer_4_vtx_0
+                0x000000000704f428                bbh_dl_Plane_002_mesh_layer_1_tri_0
+                0x000000000704f500                bbh_dl_Plane_002_mesh_layer_1_vtx_0
+                0x000000000704faa0                bbh_dl_LinePlatformPath1_001_mesh_layer_4_tri_0
+                0x000000000704fbd8                bbh_dl_LinePlatformPath1_001_mesh_layer_4_vtx_0
+                0x0000000007050298                bbh_dl_BGCMountain_mesh_layer_0_tri_1
+                0x0000000007050300                bbh_dl_BGCMountain_mesh_layer_0_vtx_1
+                0x0000000007050580                bbh_dl_BGCMountain_mesh_layer_0_tri_0
+                0x0000000007050630                bbh_dl_BGCMountain_mesh_layer_0_vtx_0
+                0x00000000070509f0                bbh_dl_BGBMoon_mesh_layer_0_tri_0
+                0x0000000007050a08                bbh_dl_BGBMoon_mesh_layer_0_vtx_0
+                0x0000000007050a48                bbh_dl_BGASky_mesh_layer_0_tri_0
+                0x0000000007050b20                bbh_dl_BGASky_mesh_layer_0_vtx_0
+                0x0000000007050d10                bbh_dl_Plane_026_mesh_layer_1_tri_5
+                0x0000000007050d40                bbh_dl_Plane_026_mesh_layer_1_vtx_5
+                0x0000000007050ec0                bbh_dl_Plane_026_mesh_layer_1_tri_4
+                0x0000000007050f88                bbh_dl_Plane_026_mesh_layer_1_vtx_4
+                0x00000000070515c8                bbh_dl_Plane_026_mesh_layer_1_tri_3
+                0x0000000007051630                bbh_dl_Plane_026_mesh_layer_1_vtx_3
+                0x00000000070517b0                bbh_dl_Plane_026_mesh_layer_1_tri_2
+                0x00000000070518d8                bbh_dl_Plane_026_mesh_layer_1_vtx_2
+                0x0000000007051f48                bbh_dl_Plane_026_mesh_layer_1_tri_1
+                0x0000000007051fc0                bbh_dl_Plane_026_mesh_layer_1_vtx_1
+                0x0000000007052260                bbh_dl_Plane_026_mesh_layer_1_tri_0
+                0x00000000070523c8                bbh_dl_Plane_026_mesh_layer_1_vtx_0
+                0x0000000007052b68                bbh_dl_Plane_025_mesh_layer_2_tri_0
+                0x0000000007052b98                bbh_dl_Plane_025_mesh_layer_2_vtx_0
+                0x0000000007052c28                bbh_dl_Plane_025_mesh_layer_2_vtx_cull
+                0x0000000007052ca8                bbh_dl_Plane_mesh_layer_5_tri_0
+                0x0000000007052cc0                bbh_dl_Plane_mesh_layer_5_vtx_0
+                0x0000000007052d00                bbh_dl_Cube_001_mesh_layer_4_tri_1
+                0x0000000007052d20                bbh_dl_Cube_001_mesh_layer_4_vtx_1
+                0x0000000007052da0                bbh_dl_Cube_001_mesh_layer_4_tri_0
+                0x0000000007052f08                bbh_dl_Cube_001_mesh_layer_4_vtx_0
+                0x0000000007053008                bbh_dl_Room9Layer4_mesh_layer_4_tri_0
+                0x0000000007053028                bbh_dl_Room9Layer4_mesh_layer_4_vtx_0
+                0x00000000070530e8                bbh_dl_Room9Layer1_mesh_layer_1_tri_6
+                0x0000000007053108                bbh_dl_Room9Layer1_mesh_layer_1_vtx_6
+                0x0000000007053188                bbh_dl_Room9Layer1_mesh_layer_1_tri_5
+                0x0000000007053290                bbh_dl_Room9Layer1_mesh_layer_1_vtx_5
+                0x0000000007053690                bbh_dl_Room9Layer1_mesh_layer_1_tri_4
+                0x0000000007053738                bbh_dl_Room9Layer1_mesh_layer_1_vtx_4
+                0x0000000007053af8                bbh_dl_Room9Layer1_mesh_layer_1_tri_3
+                0x0000000007053bb8                bbh_dl_Room9Layer1_mesh_layer_1_vtx_3
+                0x0000000007053ee8                bbh_dl_Room9Layer1_mesh_layer_1_tri_2
+                0x0000000007053f10                bbh_dl_Room9Layer1_mesh_layer_1_vtx_2
+                0x0000000007053f80                bbh_dl_Room9Layer1_mesh_layer_1_tri_1
+                0x0000000007053fa8                bbh_dl_Room9Layer1_mesh_layer_1_vtx_1
+                0x0000000007054018                bbh_dl_Room9Layer1_mesh_layer_1_tri_0
+                0x00000000070540c0                bbh_dl_Room9Layer1_mesh_layer_1_vtx_0
+                0x0000000007054360                bbh_dl_Room8Layer4_mesh_layer_4_tri_0
+                0x0000000007054380                bbh_dl_Room8Layer4_mesh_layer_4_vtx_0
+                0x0000000007054440                bbh_dl_Room8Layer1_mesh_layer_1_tri_6
+                0x0000000007054460                bbh_dl_Room8Layer1_mesh_layer_1_vtx_6
+                0x00000000070544e0                bbh_dl_Room8Layer1_mesh_layer_1_tri_5
+                0x00000000070545e8                bbh_dl_Room8Layer1_mesh_layer_1_vtx_5
+                0x00000000070549e8                bbh_dl_Room8Layer1_mesh_layer_1_tri_4
+                0x0000000007054a80                bbh_dl_Room8Layer1_mesh_layer_1_vtx_4
+                0x0000000007054d00                bbh_dl_Room8Layer1_mesh_layer_1_tri_3
+                0x0000000007054da8                bbh_dl_Room8Layer1_mesh_layer_1_vtx_3
+                0x0000000007055008                bbh_dl_Room8Layer1_mesh_layer_1_tri_2
+                0x00000000070550b0                bbh_dl_Room8Layer1_mesh_layer_1_vtx_2
+                0x0000000007055470                bbh_dl_Room8Layer1_mesh_layer_1_tri_1
+                0x0000000007055498                bbh_dl_Room8Layer1_mesh_layer_1_vtx_1
+                0x0000000007055508                bbh_dl_Room8Layer1_mesh_layer_1_tri_0
+                0x0000000007055530                bbh_dl_Room8Layer1_mesh_layer_1_vtx_0
+                0x00000000070555a0                bbh_dl_Room7Layer4_mesh_layer_4_tri_0
+                0x00000000070555c0                bbh_dl_Room7Layer4_mesh_layer_4_vtx_0
+                0x0000000007055650                bbh_dl_Room7Layer1_mesh_layer_1_tri_6
+                0x0000000007055670                bbh_dl_Room7Layer1_mesh_layer_1_vtx_6
+                0x00000000070556f0                bbh_dl_Room7Layer1_mesh_layer_1_tri_5
+                0x00000000070557f8                bbh_dl_Room7Layer1_mesh_layer_1_vtx_5
+                0x0000000007055bf8                bbh_dl_Room7Layer1_mesh_layer_1_tri_4
+                0x0000000007055c68                bbh_dl_Room7Layer1_mesh_layer_1_vtx_4
+                0x0000000007055e48                bbh_dl_Room7Layer1_mesh_layer_1_tri_3
+                0x0000000007055ef0                bbh_dl_Room7Layer1_mesh_layer_1_vtx_3
+                0x0000000007056150                bbh_dl_Room7Layer1_mesh_layer_1_tri_2
+                0x00000000070561f8                bbh_dl_Room7Layer1_mesh_layer_1_vtx_2
+                0x00000000070565b8                bbh_dl_Room7Layer1_mesh_layer_1_tri_1
+                0x00000000070565e0                bbh_dl_Room7Layer1_mesh_layer_1_vtx_1
+                0x0000000007056650                bbh_dl_Room7Layer1_mesh_layer_1_tri_0
+                0x0000000007056678                bbh_dl_Room7Layer1_mesh_layer_1_vtx_0
+                0x00000000070566e8                bbh_dl_Room6Layer4_mesh_layer_4_tri_0
+                0x0000000007056708                bbh_dl_Room6Layer4_mesh_layer_4_vtx_0
+                0x0000000007056798                bbh_dl_Room6Layer1_mesh_layer_1_tri_6
+                0x00000000070567c0                bbh_dl_Room6Layer1_mesh_layer_1_vtx_6
+                0x0000000007056830                bbh_dl_Room6Layer1_mesh_layer_1_tri_5
+                0x0000000007056858                bbh_dl_Room6Layer1_mesh_layer_1_vtx_5
+                0x00000000070568c8                bbh_dl_Room6Layer1_mesh_layer_1_tri_4
+                0x00000000070568e8                bbh_dl_Room6Layer1_mesh_layer_1_vtx_4
+                0x0000000007056968                bbh_dl_Room6Layer1_mesh_layer_1_tri_3
+                0x0000000007056a70                bbh_dl_Room6Layer1_mesh_layer_1_vtx_3
+                0x0000000007056e70                bbh_dl_Room6Layer1_mesh_layer_1_tri_2
+                0x0000000007056f28                bbh_dl_Room6Layer1_mesh_layer_1_vtx_2
+                0x00000000070571f8                bbh_dl_Room6Layer1_mesh_layer_1_tri_1
+                0x00000000070572a0                bbh_dl_Room6Layer1_mesh_layer_1_vtx_1
+                0x0000000007057500                bbh_dl_Room6Layer1_mesh_layer_1_tri_0
+                0x00000000070575a8                bbh_dl_Room6Layer1_mesh_layer_1_vtx_0
+                0x0000000007057968                bbh_dl_Room5Layer6_mesh_layer_6_tri_0
+                0x0000000007057980                bbh_dl_Room5Layer6_mesh_layer_6_vtx_0
+                0x00000000070579c0                bbh_dl_Room5Layer4_mesh_layer_4_tri_1
+                0x0000000007057ac0                bbh_dl_Room5Layer4_mesh_layer_4_vtx_1
+                0x0000000007058190                bbh_dl_Room5Layer4_mesh_layer_4_tri_0
+                0x00000000070581c0                bbh_dl_Room5Layer4_mesh_layer_4_vtx_0
+                0x0000000007058340                bbh_dl_Room5Layer1_mesh_layer_1_tri_10
+                0x0000000007058530                bbh_dl_Room5Layer1_mesh_layer_1_vtx_10
+                0x0000000007058bc0                bbh_dl_Room5Layer1_mesh_layer_1_tri_9
+                0x0000000007058c00                bbh_dl_Room5Layer1_mesh_layer_1_vtx_9
+                0x0000000007058d00                bbh_dl_Room5Layer1_mesh_layer_1_tri_8
+                0x0000000007058d20                bbh_dl_Room5Layer1_mesh_layer_1_vtx_8
+                0x0000000007058d70                bbh_dl_Room5Layer1_mesh_layer_1_tri_7
+                0x0000000007058da0                bbh_dl_Room5Layer1_mesh_layer_1_vtx_7
+                0x0000000007058e40                bbh_dl_Room5Layer1_mesh_layer_1_tri_6
+                0x0000000007058e60                bbh_dl_Room5Layer1_mesh_layer_1_vtx_6
+                0x0000000007058ec0                bbh_dl_Room5Layer1_mesh_layer_1_tri_5
+                0x0000000007058f30                bbh_dl_Room5Layer1_mesh_layer_1_vtx_5
+                0x00000000070590c0                bbh_dl_Room5Layer1_mesh_layer_1_tri_4
+                0x0000000007059190                bbh_dl_Room5Layer1_mesh_layer_1_vtx_4
+                0x00000000070595b0                bbh_dl_Room5Layer1_mesh_layer_1_tri_3
+                0x00000000070595e0                bbh_dl_Room5Layer1_mesh_layer_1_vtx_3
+                0x00000000070596d0                bbh_dl_Room5Layer1_mesh_layer_1_tri_2
+                0x0000000007059990                bbh_dl_Room5Layer1_mesh_layer_1_vtx_2
+                0x000000000705a670                bbh_dl_Room5Layer1_mesh_layer_1_tri_1
+                0x000000000705a6a0                bbh_dl_Room5Layer1_mesh_layer_1_vtx_1
+                0x000000000705a740                bbh_dl_Room5Layer1_mesh_layer_1_tri_0
+                0x000000000705a768                bbh_dl_Room5Layer1_mesh_layer_1_vtx_0
+                0x000000000705a808                bbh_dl_Room4Layer4_mesh_layer_4_tri_0
+                0x000000000705a838                bbh_dl_Room4Layer4_mesh_layer_4_vtx_0
+                0x000000000705a988                bbh_dl_Room4Layer1_mesh_layer_1_tri_10
+                0x000000000705aad0                bbh_dl_Room4Layer1_mesh_layer_1_vtx_10
+                0x000000000705afa0                bbh_dl_Room4Layer1_mesh_layer_1_tri_9
+                0x000000000705aff0                bbh_dl_Room4Layer1_mesh_layer_1_vtx_9
+                0x000000000705b0e0                bbh_dl_Room4Layer1_mesh_layer_1_tri_8
+                0x000000000705b110                bbh_dl_Room4Layer1_mesh_layer_1_vtx_8
+                0x000000000705b1b0                bbh_dl_Room4Layer1_mesh_layer_1_tri_7
+                0x000000000705b220                bbh_dl_Room4Layer1_mesh_layer_1_vtx_7
+                0x000000000705b320                bbh_dl_Room4Layer1_mesh_layer_1_tri_6
+                0x000000000705b370                bbh_dl_Room4Layer1_mesh_layer_1_vtx_6
+                0x000000000705b470                bbh_dl_Room4Layer1_mesh_layer_1_tri_5
+                0x000000000705b4a8                bbh_dl_Room4Layer1_mesh_layer_1_vtx_5
+                0x000000000705b588                bbh_dl_Room4Layer1_mesh_layer_1_tri_4
+                0x000000000705b680                bbh_dl_Room4Layer1_mesh_layer_1_vtx_4
+                0x000000000705ba20                bbh_dl_Room4Layer1_mesh_layer_1_tri_3
+                0x000000000705bb20                bbh_dl_Room4Layer1_mesh_layer_1_vtx_3
+                0x000000000705be50                bbh_dl_Room4Layer1_mesh_layer_1_tri_2
+                0x000000000705be78                bbh_dl_Room4Layer1_mesh_layer_1_vtx_2
+                0x000000000705bee8                bbh_dl_Room4Layer1_mesh_layer_1_tri_1
+                0x000000000705bf40                bbh_dl_Room4Layer1_mesh_layer_1_vtx_1
+                0x000000000705c080                bbh_dl_Room4Layer1_mesh_layer_1_tri_0
+                0x000000000705c0a8                bbh_dl_Room4Layer1_mesh_layer_1_vtx_0
+                0x000000000705c148                bbh_dl_Room3Layer6_mesh_layer_6_tri_0
+                0x000000000705c168                bbh_dl_Room3Layer6_mesh_layer_6_vtx_0
+                0x000000000705c1e8                bbh_dl_Room3Layer4_mesh_layer_4_tri_2
+                0x000000000705c308                bbh_dl_Room3Layer4_mesh_layer_4_vtx_2
+                0x000000000705c988                bbh_dl_Room3Layer4_mesh_layer_4_tri_1
+                0x000000000705ca10                bbh_dl_Room3Layer4_mesh_layer_4_vtx_1
+                0x000000000705ceb0                bbh_dl_Room3Layer4_mesh_layer_4_tri_0
+                0x000000000705d040                bbh_dl_Room3Layer4_mesh_layer_4_vtx_0
+                0x000000000705db00                bbh_dl_Room3Layer2_mesh_layer_2_tri_5
+                0x000000000705db18                bbh_dl_Room3Layer2_mesh_layer_2_vtx_5
+                0x000000000705db58                bbh_dl_Room3Layer2_mesh_layer_2_tri_4
+                0x000000000705db70                bbh_dl_Room3Layer2_mesh_layer_2_vtx_4
+                0x000000000705dbb0                bbh_dl_Room3Layer2_mesh_layer_2_tri_3
+                0x000000000705dbc8                bbh_dl_Room3Layer2_mesh_layer_2_vtx_3
+                0x000000000705dc08                bbh_dl_Room3Layer2_mesh_layer_2_tri_2
+                0x000000000705dc68                bbh_dl_Room3Layer2_mesh_layer_2_vtx_2
+                0x000000000705dca8                bbh_dl_Room3Layer2_mesh_layer_2_tri_1
+                0x000000000705dcc0                bbh_dl_Room3Layer2_mesh_layer_2_vtx_1
+                0x000000000705dd00                bbh_dl_Room3Layer2_mesh_layer_2_tri_0
+                0x000000000705ddb8                bbh_dl_Room3Layer2_mesh_layer_2_vtx_0
+                0x000000000705de38                bbh_dl_Room3Layer1_mesh_layer_1_tri_28
+                0x000000000705de88                bbh_dl_Room3Layer1_mesh_layer_1_vtx_28
+                0x000000000705df78                bbh_dl_Room3Layer1_mesh_layer_1_tri_27
+                0x000000000705dfa8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_27
+                0x000000000705e048                bbh_dl_Room3Layer1_mesh_layer_1_tri_26
+                0x000000000705e068                bbh_dl_Room3Layer1_mesh_layer_1_vtx_26
+                0x000000000705e0c8                bbh_dl_Room3Layer1_mesh_layer_1_tri_25
+                0x000000000705e118                bbh_dl_Room3Layer1_mesh_layer_1_vtx_25
+                0x000000000705e258                bbh_dl_Room3Layer1_mesh_layer_1_tri_24
+                0x000000000705e2a0                bbh_dl_Room3Layer1_mesh_layer_1_vtx_24
+                0x000000000705e400                bbh_dl_Room3Layer1_mesh_layer_1_tri_23
+                0x000000000705e530                bbh_dl_Room3Layer1_mesh_layer_1_vtx_23
+                0x000000000705eb30                bbh_dl_Room3Layer1_mesh_layer_1_tri_22
+                0x000000000705ebd8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_22
+                0x000000000705eec8                bbh_dl_Room3Layer1_mesh_layer_1_tri_21
+                0x000000000705ef68                bbh_dl_Room3Layer1_mesh_layer_1_vtx_21
+                0x000000000705f1c8                bbh_dl_Room3Layer1_mesh_layer_1_tri_20
+                0x000000000705f200                bbh_dl_Room3Layer1_mesh_layer_1_vtx_20
+                0x000000000705f280                bbh_dl_Room3Layer1_mesh_layer_1_tri_19
+                0x000000000705f2c8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_19
+                0x000000000705f3e8                bbh_dl_Room3Layer1_mesh_layer_1_tri_18
+                0x000000000705f490                bbh_dl_Room3Layer1_mesh_layer_1_vtx_18
+                0x000000000705f720                bbh_dl_Room3Layer1_mesh_layer_1_tri_17
+                0x000000000705f7c8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_17
+                0x000000000705fb08                bbh_dl_Room3Layer1_mesh_layer_1_tri_16
+                0x000000000705fb90                bbh_dl_Room3Layer1_mesh_layer_1_vtx_16
+                0x000000000705fd90                bbh_dl_Room3Layer1_mesh_layer_1_tri_15
+                0x000000000705fe80                bbh_dl_Room3Layer1_mesh_layer_1_vtx_15
+                0x00000000070602c0                bbh_dl_Room3Layer1_mesh_layer_1_tri_14
+                0x0000000007060310                bbh_dl_Room3Layer1_mesh_layer_1_vtx_14
+                0x00000000070603f0                bbh_dl_Room3Layer1_mesh_layer_1_tri_13
+                0x0000000007060410                bbh_dl_Room3Layer1_mesh_layer_1_vtx_13
+                0x0000000007060460                bbh_dl_Room3Layer1_mesh_layer_1_tri_12
+                0x0000000007060538                bbh_dl_Room3Layer1_mesh_layer_1_vtx_12
+                0x0000000007060938                bbh_dl_Room3Layer1_mesh_layer_1_tri_11
+                0x00000000070609a8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_11
+                0x0000000007060b98                bbh_dl_Room3Layer1_mesh_layer_1_tri_10
+                0x0000000007060bd8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_10
+                0x0000000007060cf8                bbh_dl_Room3Layer1_mesh_layer_1_tri_9
+                0x0000000007060d20                bbh_dl_Room3Layer1_mesh_layer_1_vtx_9
+                0x0000000007060da0                bbh_dl_Room3Layer1_mesh_layer_1_tri_8
+                0x0000000007060de0                bbh_dl_Room3Layer1_mesh_layer_1_vtx_8
+                0x0000000007060f00                bbh_dl_Room3Layer1_mesh_layer_1_tri_7
+                0x0000000007060f30                bbh_dl_Room3Layer1_mesh_layer_1_vtx_7
+                0x0000000007061030                bbh_dl_Room3Layer1_mesh_layer_1_tri_6
+                0x0000000007061088                bbh_dl_Room3Layer1_mesh_layer_1_vtx_6
+                0x00000000070611c8                bbh_dl_Room3Layer1_mesh_layer_1_tri_5
+                0x0000000007061238                bbh_dl_Room3Layer1_mesh_layer_1_vtx_5
+                0x00000000070614f8                bbh_dl_Room3Layer1_mesh_layer_1_tri_4
+                0x00000000070615e0                bbh_dl_Room3Layer1_mesh_layer_1_vtx_4
+                0x0000000007061ab0                bbh_dl_Room3Layer1_mesh_layer_1_tri_3
+                0x0000000007061ad8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_3
+                0x0000000007061b48                bbh_dl_Room3Layer1_mesh_layer_1_tri_2
+                0x0000000007061bf8                bbh_dl_Room3Layer1_mesh_layer_1_vtx_2
+                0x0000000007061f38                bbh_dl_Room3Layer1_mesh_layer_1_tri_1
+                0x0000000007061ff0                bbh_dl_Room3Layer1_mesh_layer_1_vtx_1
+                0x00000000070623b0                bbh_dl_Room3Layer1_mesh_layer_1_tri_0
+                0x0000000007062428                bbh_dl_Room3Layer1_mesh_layer_1_vtx_0
+                0x00000000070626a8                bbh_dl_Room2Layer6_mesh_layer_6_tri_1
+                0x0000000007062780                bbh_dl_Room2Layer6_mesh_layer_6_vtx_1
+                0x0000000007062d40                bbh_dl_Room2Layer6_mesh_layer_6_tri_0
+                0x0000000007062dd8                bbh_dl_Room2Layer6_mesh_layer_6_vtx_0
+                0x00000000070631d8                bbh_dl_Room2Layer5_mesh_layer_5_tri_0
+                0x0000000007063278                bbh_dl_Room2Layer5_mesh_layer_5_vtx_0
+                0x0000000007063458                bbh_dl_Room2Layer4_mesh_layer_4_tri_1
+                0x00000000070634d8                bbh_dl_Room2Layer4_mesh_layer_4_vtx_1
+                0x0000000007063928                bbh_dl_Room2Layer4_mesh_layer_4_tri_0
+                0x0000000007063998                bbh_dl_Room2Layer4_mesh_layer_4_vtx_0
+                0x0000000007063c18                bbh_dl_Room2Layer2_mesh_layer_2_tri_2
+                0x0000000007063c38                bbh_dl_Room2Layer2_mesh_layer_2_vtx_2
+                0x0000000007063cb8                bbh_dl_Room2Layer2_mesh_layer_2_tri_1
+                0x0000000007063cd0                bbh_dl_Room2Layer2_mesh_layer_2_vtx_1
+                0x0000000007063d10                bbh_dl_Room2Layer2_mesh_layer_2_tri_0
+                0x0000000007063d28                bbh_dl_Room2Layer2_mesh_layer_2_vtx_0
+                0x0000000007063d68                bbh_dl_Room2Layer1_mesh_layer_1_tri_26
+                0x0000000007063d98                bbh_dl_Room2Layer1_mesh_layer_1_vtx_26
+                0x0000000007063e38                bbh_dl_Room2Layer1_mesh_layer_1_tri_25
+                0x0000000007063e88                bbh_dl_Room2Layer1_mesh_layer_1_vtx_25
+                0x0000000007064008                bbh_dl_Room2Layer1_mesh_layer_1_tri_24
+                0x0000000007064120                bbh_dl_Room2Layer1_mesh_layer_1_vtx_24
+                0x00000000070646e0                bbh_dl_Room2Layer1_mesh_layer_1_tri_23
+                0x0000000007064750                bbh_dl_Room2Layer1_mesh_layer_1_vtx_23
+                0x0000000007064920                bbh_dl_Room2Layer1_mesh_layer_1_tri_22
+                0x0000000007064b80                bbh_dl_Room2Layer1_mesh_layer_1_vtx_22
+                0x0000000007065690                bbh_dl_Room2Layer1_mesh_layer_1_tri_21
+                0x0000000007065b78                bbh_dl_Room2Layer1_mesh_layer_1_vtx_21
+                0x00000000070671f8                bbh_dl_Room2Layer1_mesh_layer_1_tri_20
+                0x0000000007067210                bbh_dl_Room2Layer1_mesh_layer_1_vtx_20
+                0x0000000007067250                bbh_dl_Room2Layer1_mesh_layer_1_tri_19
+                0x0000000007067290                bbh_dl_Room2Layer1_mesh_layer_1_vtx_19
+                0x00000000070673b0                bbh_dl_Room2Layer1_mesh_layer_1_tri_18
+                0x0000000007067578                bbh_dl_Room2Layer1_mesh_layer_1_vtx_18
+                0x0000000007067ab8                bbh_dl_Room2Layer1_mesh_layer_1_tri_17
+                0x0000000007067bf8                bbh_dl_Room2Layer1_mesh_layer_1_vtx_17
+                0x00000000070681f8                bbh_dl_Room2Layer1_mesh_layer_1_tri_16
+                0x00000000070682a0                bbh_dl_Room2Layer1_mesh_layer_1_vtx_16
+                0x0000000007068520                bbh_dl_Room2Layer1_mesh_layer_1_tri_15
+                0x00000000070685c0                bbh_dl_Room2Layer1_mesh_layer_1_vtx_15
+                0x0000000007068810                bbh_dl_Room2Layer1_mesh_layer_1_tri_14
+                0x0000000007068840                bbh_dl_Room2Layer1_mesh_layer_1_vtx_14
+                0x0000000007068940                bbh_dl_Room2Layer1_mesh_layer_1_tri_13
+                0x00000000070689c8                bbh_dl_Room2Layer1_mesh_layer_1_vtx_13
+                0x0000000007068ce8                bbh_dl_Room2Layer1_mesh_layer_1_tri_12
+                0x0000000007068e00                bbh_dl_Room2Layer1_mesh_layer_1_vtx_12
+                0x0000000007069160                bbh_dl_Room2Layer1_mesh_layer_1_tri_11
+                0x0000000007069320                bbh_dl_Room2Layer1_mesh_layer_1_vtx_11
+                0x0000000007069b50                bbh_dl_Room2Layer1_mesh_layer_1_tri_10
+                0x0000000007069be8                bbh_dl_Room2Layer1_mesh_layer_1_vtx_10
+                0x0000000007069ea8                bbh_dl_Room2Layer1_mesh_layer_1_tri_9
+                0x000000000706a018                bbh_dl_Room2Layer1_mesh_layer_1_vtx_9
+                0x000000000706a678                bbh_dl_Room2Layer1_mesh_layer_1_tri_8
+                0x000000000706a6c8                bbh_dl_Room2Layer1_mesh_layer_1_vtx_8
+                0x000000000706a798                bbh_dl_Room2Layer1_mesh_layer_1_tri_7
+                0x000000000706a810                bbh_dl_Room2Layer1_mesh_layer_1_vtx_7
+                0x000000000706a9c0                bbh_dl_Room2Layer1_mesh_layer_1_tri_6
+                0x000000000706abb0                bbh_dl_Room2Layer1_mesh_layer_1_vtx_6
+                0x000000000706b500                bbh_dl_Room2Layer1_mesh_layer_1_tri_5
+                0x000000000706ba38                bbh_dl_Room2Layer1_mesh_layer_1_vtx_5
+                0x000000000706d228                bbh_dl_Room2Layer1_mesh_layer_1_tri_4
+                0x000000000706d430                bbh_dl_Room2Layer1_mesh_layer_1_vtx_4
+                0x000000000706dd10                bbh_dl_Room2Layer1_mesh_layer_1_tri_3
+                0x000000000706ddc8                bbh_dl_Room2Layer1_mesh_layer_1_vtx_3
+                0x000000000706e0e8                bbh_dl_Room2Layer1_mesh_layer_1_tri_2
+                0x000000000706e178                bbh_dl_Room2Layer1_mesh_layer_1_vtx_2
+                0x000000000706e498                bbh_dl_Room2Layer1_mesh_layer_1_tri_1
+                0x000000000706e5e0                bbh_dl_Room2Layer1_mesh_layer_1_vtx_1
+                0x000000000706eb40                bbh_dl_Room2Layer1_mesh_layer_1_tri_0
+                0x000000000706eb70                bbh_dl_Room2Layer1_mesh_layer_1_vtx_0
+                0x000000000706ebf0                bbh_dl_Room1Layer4_mesh_layer_4_tri_4
+                0x000000000706ec28                bbh_dl_Room1Layer4_mesh_layer_4_vtx_4
+                0x000000000706ee08                bbh_dl_Room1Layer4_mesh_layer_4_tri_3
+                0x000000000706ee58                bbh_dl_Room1Layer4_mesh_layer_4_vtx_3
+                0x000000000706f0f8                bbh_dl_Room1Layer4_mesh_layer_4_tri_2
+                0x000000000706f258                bbh_dl_Room1Layer4_mesh_layer_4_vtx_2
+                0x000000000706f8f8                bbh_dl_Room1Layer4_mesh_layer_4_tri_1
+                0x000000000706f948                bbh_dl_Room1Layer4_mesh_layer_4_vtx_1
+                0x000000000706fb48                bbh_dl_Room1Layer4_mesh_layer_4_tri_0
+                0x000000000706fc08                bbh_dl_Room1Layer4_mesh_layer_4_vtx_0
+                0x0000000007070048                bbh_dl_Room1Layer1_mesh_layer_1_tri_14
+                0x00000000070702a8                bbh_dl_Room1Layer1_mesh_layer_1_vtx_14
+                0x0000000007070af8                bbh_dl_Room1Layer1_mesh_layer_1_tri_13
+                0x0000000007070b50                bbh_dl_Room1Layer1_mesh_layer_1_vtx_13
+                0x0000000007070cd0                bbh_dl_Room1Layer1_mesh_layer_1_tri_12
+                0x0000000007070e28                bbh_dl_Room1Layer1_mesh_layer_1_vtx_12
+                0x00000000070712a8                bbh_dl_Room1Layer1_mesh_layer_1_tri_11
+                0x0000000007071338                bbh_dl_Room1Layer1_mesh_layer_1_vtx_11
+                0x0000000007071658                bbh_dl_Room1Layer1_mesh_layer_1_tri_10
+                0x00000000070717d8                bbh_dl_Room1Layer1_mesh_layer_1_vtx_10
+                0x0000000007071f98                bbh_dl_Room1Layer1_mesh_layer_1_tri_9
+                0x0000000007072208                bbh_dl_Room1Layer1_mesh_layer_1_vtx_9
+                0x0000000007072b18                bbh_dl_Room1Layer1_mesh_layer_1_tri_8
+                0x0000000007072d30                bbh_dl_Room1Layer1_mesh_layer_1_vtx_8
+                0x0000000007073690                bbh_dl_Room1Layer1_mesh_layer_1_tri_7
+                0x0000000007073930                bbh_dl_Room1Layer1_mesh_layer_1_vtx_7
+                0x0000000007074120                bbh_dl_Room1Layer1_mesh_layer_1_tri_6
+                0x0000000007074148                bbh_dl_Room1Layer1_mesh_layer_1_vtx_6
+                0x0000000007074208                bbh_dl_Room1Layer1_mesh_layer_1_tri_5
+                0x0000000007074248                bbh_dl_Room1Layer1_mesh_layer_1_vtx_5
+                0x0000000007074388                bbh_dl_Room1Layer1_mesh_layer_1_tri_4
+                0x00000000070743a8                bbh_dl_Room1Layer1_mesh_layer_1_vtx_4
+                0x0000000007074428                bbh_dl_Room1Layer1_mesh_layer_1_tri_3
+                0x0000000007074458                bbh_dl_Room1Layer1_mesh_layer_1_vtx_3
+                0x0000000007074528                bbh_dl_Room1Layer1_mesh_layer_1_tri_2
+                0x0000000007074568                bbh_dl_Room1Layer1_mesh_layer_1_vtx_2
+                0x00000000070746e8                bbh_dl_Room1Layer1_mesh_layer_1_tri_1
+                0x00000000070747d0                bbh_dl_Room1Layer1_mesh_layer_1_vtx_1
+                0x0000000007074b90                bbh_dl_Room1Layer1_mesh_layer_1_tri_0
+                0x0000000007074bc8                bbh_dl_Room1Layer1_mesh_layer_1_vtx_0
+                0x0000000007074cd8                bbh_dl_Zail_005_mesh_layer_4_tri_0
+                0x0000000007074d18                bbh_dl_Zail_005_mesh_layer_4_vtx_0
+                0x0000000007074e08                bbh_dl_Zail_004_mesh_layer_4_tri_0
+                0x0000000007074e48                bbh_dl_Zail_004_mesh_layer_4_vtx_0
+                0x0000000007074f38                bbh_dl_Zail_003_mesh_layer_4_tri_0
+                0x0000000007074f78                bbh_dl_Zail_003_mesh_layer_4_vtx_0
+                0x0000000007075068                bbh_dl_Zail_002_mesh_layer_4_tri_0
+                0x00000000070750a8                bbh_dl_Zail_002_mesh_layer_4_vtx_0
+                0x0000000007075198                bbh_dl_Zail_001_mesh_layer_4_tri_0
+                0x00000000070751d8                bbh_dl_Zail_001_mesh_layer_4_vtx_0
+                0x00000000070752c8                bbh_dl_Zail_mesh_layer_4_tri_0
+                0x0000000007075308                bbh_dl_Zail_mesh_layer_4_vtx_0
+                0x00000000070753f8                bbh_dl_Plane_042_mesh_layer_6_tri_0
+                0x0000000007075420                bbh_dl_Plane_042_mesh_layer_6_vtx_0
+                0x00000000070754e0                bbh_dl_Plane_001_mesh_layer_4_tri_3
+                0x0000000007075520                bbh_dl_Plane_001_mesh_layer_4_vtx_3
+                0x0000000007075620                bbh_dl_Plane_001_mesh_layer_4_tri_2
+                0x0000000007075660                bbh_dl_Plane_001_mesh_layer_4_vtx_2
+                0x0000000007075760                bbh_dl_Plane_001_mesh_layer_4_tri_1
+                0x0000000007075820                bbh_dl_Plane_001_mesh_layer_4_vtx_1
+                0x0000000007075be0                bbh_dl_Plane_001_mesh_layer_4_tri_0
+                0x0000000007075c18                bbh_dl_Plane_001_mesh_layer_4_vtx_0
+                0x0000000007075cf8                bbh_dl_OCEAN_mesh_layer_1_tri_0
+                0x00000000070761b8                bbh_dl_OCEAN_mesh_layer_1_vtx_0
+                0x0000000007077398                bbh_dl_AAAPlane_mesh_layer_4_tri_0
+                0x00000000070773b8                bbh_dl_AAAPlane_mesh_layer_4_vtx_0
+                0x0000000007077408                bbh_dl_AAAPlane_mesh_layer_1_tri_15
+                0x0000000007077490                bbh_dl_AAAPlane_mesh_layer_1_vtx_15
+                0x0000000007077730                bbh_dl_AAAPlane_mesh_layer_1_tri_14
+                0x0000000007077900                bbh_dl_AAAPlane_mesh_layer_1_vtx_14
+                0x00000000070780e0                bbh_dl_AAAPlane_mesh_layer_1_tri_13
+                0x00000000070781c8                bbh_dl_AAAPlane_mesh_layer_1_vtx_13
+                0x00000000070784e8                bbh_dl_AAAPlane_mesh_layer_1_tri_12
+                0x0000000007078530                bbh_dl_AAAPlane_mesh_layer_1_vtx_12
+                0x0000000007078630                bbh_dl_AAAPlane_mesh_layer_1_tri_11
+                0x0000000007078648                bbh_dl_AAAPlane_mesh_layer_1_vtx_11
+                0x0000000007078678                bbh_dl_AAAPlane_mesh_layer_1_tri_10
+                0x00000000070786a0                bbh_dl_AAAPlane_mesh_layer_1_vtx_10
+                0x0000000007078720                bbh_dl_AAAPlane_mesh_layer_1_tri_9
+                0x0000000007078740                bbh_dl_AAAPlane_mesh_layer_1_vtx_9
+                0x00000000070787c0                bbh_dl_AAAPlane_mesh_layer_1_tri_8
+                0x0000000007078a18                bbh_dl_AAAPlane_mesh_layer_1_vtx_8
+                0x0000000007079408                bbh_dl_AAAPlane_mesh_layer_1_tri_7
+                0x0000000007079498                bbh_dl_AAAPlane_mesh_layer_1_vtx_7
+                0x00000000070797b8                bbh_dl_AAAPlane_mesh_layer_1_tri_6
+                0x0000000007079890                bbh_dl_AAAPlane_mesh_layer_1_vtx_6
+                0x0000000007079cd0                bbh_dl_AAAPlane_mesh_layer_1_tri_5
+                0x0000000007079f40                bbh_dl_AAAPlane_mesh_layer_1_vtx_5
+                0x000000000707a7a0                bbh_dl_AAAPlane_mesh_layer_1_tri_4
+                0x000000000707a8a8                bbh_dl_AAAPlane_mesh_layer_1_vtx_4
+                0x000000000707adc8                bbh_dl_AAAPlane_mesh_layer_1_tri_3
+                0x000000000707ae18                bbh_dl_AAAPlane_mesh_layer_1_vtx_3
+                0x000000000707af98                bbh_dl_AAAPlane_mesh_layer_1_tri_2
+                0x000000000707b040                bbh_dl_AAAPlane_mesh_layer_1_vtx_2
+                0x000000000707b1e0                bbh_dl_AAAPlane_mesh_layer_1_tri_1
+                0x000000000707b3a0                bbh_dl_AAAPlane_mesh_layer_1_vtx_1
+                0x000000000707bbe0                bbh_dl_AAAPlane_mesh_layer_1_tri_0
+                0x000000000707bc60                bbh_dl_AAAPlane_mesh_layer_1_vtx_0
+                0x000000000707be30                bbh_dl_AAAAAAAFirst_mesh_layer_4_tri_0
+                0x000000000707be60                bbh_dl_AAAAAAAFirst_mesh_layer_4_vtx_0
+                0x000000000707bf20                bbh_dl_AAAAAAABackGround_mesh_layer_0_tri_1
+                0x000000000707c558                bbh_dl_AAAAAAABackGround_mesh_layer_0_vtx_1
+                0x000000000707c9d8                bbh_dl_AAAAAAABackGround_mesh_layer_0_tri_0
+                0x000000000707c9f0                bbh_dl_AAAAAAABackGround_mesh_layer_0_vtx_0
+                0x000000000707ca30                bbh_dl_FlowerBush_rgba16
+                0x000000000707d230                bbh_dl_FlowerBush_rgba16_aligner
+                0x000000000707d238                bbh_dl_FLower01_rgba16
+                0x000000000707da38                bbh_dl_FLower01_rgba16_aligner
+                0x000000000707da40                bbh_dl_arrowsign_ci4_pal_rgba16
+                0x000000000707da58                bbh_dl_arrowsign_ci4_pal_rgba16_aligner
+                0x000000000707da60                bbh_dl_arrowsign_ci4
+                0x000000000707dc60                bbh_dl_arrowsign_ci4_aligner
+                0x000000000707dc68                bbh_dl_Unbenannt_2_ci4_pal_rgba16
+                0x000000000707dc80                bbh_dl_Unbenannt_2_ci4_pal_rgba16_aligner
+                0x000000000707dc88                bbh_dl_Unbenannt_2_ci4
+                0x000000000707e088                bbh_dl_Unbenannt_2_ci4_aligner
+                0x000000000707e090                bbh_dl_GMSE01_3b7e570a_14_ci8_pal_rgba16
+                0x000000000707e158                bbh_dl_GMSE01_3b7e570a_14_ci8_pal_rgba16_aligner
+                0x000000000707e160                bbh_dl_GMSE01_3b7e570a_14_ci8
+                0x000000000707e560                bbh_dl_GMSE01_3b7e570a_14_ci8_aligner
+                0x000000000707e568                bbh_dl_longbar_ci4_pal_rgba16
+                0x000000000707e578                bbh_dl_longbar_ci4_pal_rgba16_aligner
+                0x000000000707e580                bbh_dl_longbar_ci4
+                0x000000000707e780                bbh_dl_longbar_ci4_aligner
+                0x000000000707e788                bbh_dl_flower_ci4_pal_rgba16
+                0x000000000707e798                bbh_dl_flower_ci4_pal_rgba16_aligner
+                0x000000000707e7a0                bbh_dl_flower_ci4
+                0x000000000707e9a0                bbh_dl_flower_ci4_aligner
+                0x000000000707e9a8                bbh_dl_floor2_rgba16
+                0x000000000707f1a8                bbh_dl_floor2_rgba16_aligner
+                0x000000000707f1b0                bbh_dl_mainpath_rgba16
+                0x000000000707f9b0                bbh_dl_mainpath_rgba16_aligner
+                0x000000000707f9b8                bbh_dl_Unbenannt_1_rgba16
+                0x000000000707fab8                bbh_dl_Unbenannt_1_rgba16_aligner
+                0x000000000707fac0                bbh_dl_BG1_ci4_pal_rgba16
+                0x000000000707fae0                bbh_dl_BG1_ci4_pal_rgba16_aligner
+                0x000000000707fae8                bbh_dl_BG1_ci4
+                0x00000000070802e8                bbh_dl_BG1_ci4_aligner
+                0x00000000070802f0                bbh_dl_BG2_ci4_pal_rgba16
+                0x0000000007080310                bbh_dl_BG2_ci4_pal_rgba16_aligner
+                0x0000000007080318                bbh_dl_BG2_ci4
+                0x0000000007080b18                bbh_dl_BG2_ci4_aligner
+                0x0000000007080b20                bbh_dl_yoshimoon_ci4_pal_rgba16
+                0x0000000007080b30                bbh_dl_yoshimoon_ci4_pal_rgba16_aligner
+                0x0000000007080b38                bbh_dl_yoshimoon_ci4
+                0x0000000007081338                bbh_dl_yoshimoon_ci4_aligner
+                0x0000000007081340                bbh_dl_NightskyAnimpng_i4
+                0x0000000007082340                bbh_dl_NightskyAnimpng_i4_aligner
+                0x0000000007082348                bbh_dl_wall_white_i8
+                0x0000000007082b48                bbh_dl_wall_white_i8_aligner
+                0x0000000007082b50                bbh_dl_BOMBERMAN_HERO_ACB3AC2D_2_0_35EB419F_ciByRGBA_ci4_pal_rgba16
+                0x0000000007082b68                bbh_dl_BOMBERMAN_HERO_ACB3AC2D_2_0_35EB419F_ciByRGBA_ci4_pal_rgba16_aligner
+                0x0000000007082b70                bbh_dl_BOMBERMAN_HERO_ACB3AC2D_2_0_35EB419F_ciByRGBA_ci4
+                0x0000000007083370                bbh_dl_BOMBERMAN_HERO_ACB3AC2D_2_0_35EB419F_ciByRGBA_ci4_aligner
+                0x0000000007083378                bbh_dl_circul_i8_copy
+                0x0000000007083578                bbh_dl_circul_i8_copy_aligner
+                0x0000000007083580                bbh_dl__00004950_64x32_rgba16_i8_copy
+                0x0000000007083d80                bbh_dl__00004950_64x32_rgba16_i8_copy_aligner
+                0x0000000007083d88                bbh_dl__048E6CCD64E749DC248F9B4EC0AEEFB4_i8_copy
+                0x0000000007084d88                bbh_dl__048E6CCD64E749DC248F9B4EC0AEEFB4_i8_copy_aligner
+                0x0000000007084d90                bbh_dl_scratches_i4_copy
+                0x0000000007085590                bbh_dl_scratches_i4_copy_aligner
+                0x0000000007085598                bbh_dl_shipI4_i4_copy
+                0x0000000007085d98                bbh_dl_shipI4_i4_copy_aligner
+                0x0000000007085da0                bbh_dl_RMGP01_f8911f56_14_mip2_ci4_pal_rgba16
+                0x0000000007085dc0                bbh_dl_RMGP01_f8911f56_14_mip2_ci4_pal_rgba16_aligner
+                0x0000000007085dc8                bbh_dl_RMGP01_f8911f56_14_mip2_ci4
+                0x0000000007085fc8                bbh_dl_RMGP01_f8911f56_14_mip2_ci4_aligner
+                0x0000000007085fd0                bbh_dl_PCSX2_R5875_EXE_0x3EF757FA_ci4_pal_rgba16
+                0x0000000007085ff0                bbh_dl_PCSX2_R5875_EXE_0x3EF757FA_ci4_pal_rgba16_aligner
+                0x0000000007085ff8                bbh_dl_PCSX2_R5875_EXE_0x3EF757FA_ci4
+                0x00000000070867f8                bbh_dl_PCSX2_R5875_EXE_0x3EF757FA_ci4_aligner
+                0x0000000007086800                bbh_dl_OSC_P_T_FENCE01_ia8
+                0x0000000007087800                bbh_dl_OSC_P_T_FENCE01_ia8_aligner
+                0x0000000007087808                bbh_dl_ComedyclubSign_rgba16
+                0x000000000708b320                bbh_dl_ComedyclubSign_rgba16_aligner
+                0x000000000708b328                bbh_dl_F002rWood00_i4
+                0x000000000708c328                bbh_dl_F002rWood00_i4_aligner
+                0x000000000708c330                bbh_dl_kibako_ci8_pal_rgba16
+                0x000000000708c378                bbh_dl_kibako_ci8_pal_rgba16_aligner
+                0x000000000708c380                bbh_dl_kibako_ci8
+                0x000000000708c780                bbh_dl_kibako_ci8_aligner
+                0x000000000708c788                bbh_dl_TexturesCom_Overlay_Abstract18_512_overlay_i4
+                0x000000000708cf88                bbh_dl_TexturesCom_Overlay_Abstract18_512_overlay_i4_aligner
+                0x000000000708cf90                bbh_dl_RMGP01_acde1b3b_14_i4
+                0x000000000708d790                bbh_dl_RMGP01_acde1b3b_14_i4_aligner
+                0x000000000708d798                bbh_dl_a9975e8cc8c205a11668b2eb93ff0f27_ia4
+                0x000000000708e798                bbh_dl_a9975e8cc8c205a11668b2eb93ff0f27_ia4_aligner
+                0x000000000708e7a0                bbh_dl_nowhiteoutline_ci8_pal_rgba16
+                0x000000000708e888                bbh_dl_nowhiteoutline_ci8_pal_rgba16_aligner
+                0x000000000708e890                bbh_dl_nowhiteoutline_ci8
+                0x000000000708ec90                bbh_dl_nowhiteoutline_ci8_aligner
+                0x000000000708ec98                bbh_dl_KKIIDDZZ_DAT_583__p00_ci4_pal_rgba16
+                0x000000000708ecb8                bbh_dl_KKIIDDZZ_DAT_583__p00_ci4_pal_rgba16_aligner
+                0x000000000708ecc0                bbh_dl_KKIIDDZZ_DAT_583__p00_ci4
+                0x000000000708f4c0                bbh_dl_KKIIDDZZ_DAT_583__p00_ci4_aligner
+                0x000000000708f4c8                bbh_dl__0000E960_64x64_i4_i8
+                0x00000000070904c8                bbh_dl__0000E960_64x64_i4_i8_aligner
+                0x00000000070904d0                bbh_dl_tex1_128x128_m_dbbb57df458ea37a_4_mip1_ci4_pal_rgba16
+                0x00000000070904f0                bbh_dl_tex1_128x128_m_dbbb57df458ea37a_4_mip1_ci4_pal_rgba16_aligner
+                0x00000000070904f8                bbh_dl_tex1_128x128_m_dbbb57df458ea37a_4_mip1_ci4
+                0x0000000007090cf8                bbh_dl_tex1_128x128_m_dbbb57df458ea37a_4_mip1_ci4_aligner
+                0x0000000007090d00                bbh_dl__3adc2000_fmt0431_slice0_mip00_512x512_tm04_i4
+                0x0000000007091d00                bbh_dl__3adc2000_fmt0431_slice0_mip00_512x512_tm04_i4_aligner
+                0x0000000007091d08                bbh_dl__3718896__2__ci4_pal_rgba16
+                0x0000000007091d28                bbh_dl__3718896__2__ci4_pal_rgba16_aligner
+                0x0000000007091d30                bbh_dl__3718896__2__ci4
+                0x0000000007092530                bbh_dl__3718896__2__ci4_aligner
+                0x0000000007092538                bbh_dl__0002D1B0_64x32_rgba16_rgba16
+                0x0000000007093538                bbh_dl__0002D1B0_64x32_rgba16_rgba16_aligner
+                0x0000000007093540                bbh_dl_ship2_rgba16
+                0x0000000007094540                bbh_dl_ship2_rgba16_aligner
+                0x0000000007094548                bbh_dl_ship1_rgba16
+                0x0000000007095548                bbh_dl_ship1_rgba16_aligner
+                0x0000000007095550                bbh_dl_cap1_rgba16
+                0x0000000007096550                bbh_dl_cap1_rgba16_aligner
+                0x0000000007096558                bbh_dl_cap2_rgba16
+                0x0000000007097558                bbh_dl_cap2_rgba16_aligner
+                0x0000000007097560                bbh_dl_Shygut__1__rgba16
+                0x00000000070993e0                bbh_dl_Shygut__1__rgba16_aligner
+                0x00000000070993e8                bbh_dl__0x5D80_ci4_pal_rgba16
+                0x0000000007099408                bbh_dl__0x5D80_ci4_pal_rgba16_aligner
+                0x0000000007099410                bbh_dl__0x5D80_ci4
+                0x0000000007099c10                bbh_dl__0x5D80_ci4_aligner
+                0x0000000007099c18                bbh_dl_coverCI4_ci4_pal_rgba16
+                0x0000000007099c30                bbh_dl_coverCI4_ci4_pal_rgba16_aligner
+                0x0000000007099c38                bbh_dl_coverCI4_ci4
+                0x000000000709a438                bbh_dl_coverCI4_ci4_aligner
+                0x000000000709a440                bbh_dl__37706000_fmt0431_slice0_mip00_512x512_tm04_ci4_pal_rgba16
+                0x000000000709a460                bbh_dl__37706000_fmt0431_slice0_mip00_512x512_tm04_ci4_pal_rgba16_aligner
+                0x000000000709a468                bbh_dl__37706000_fmt0431_slice0_mip00_512x512_tm04_ci4
+                0x000000000709ac68                bbh_dl__37706000_fmt0431_slice0_mip00_512x512_tm04_ci4_aligner
+                0x000000000709ac70                bbh_dl_pirates_boufeu01txy_ci4_pal_rgba16
+                0x000000000709ac90                bbh_dl_pirates_boufeu01txy_ci4_pal_rgba16_aligner
+                0x000000000709ac98                bbh_dl_pirates_boufeu01txy_ci4
+                0x000000000709b498                bbh_dl_pirates_boufeu01txy_ci4_aligner
+                0x000000000709b4a0                bbh_dl_Tex_0008_0_ci4_pal_rgba16
+                0x000000000709b4c0                bbh_dl_Tex_0008_0_ci4_pal_rgba16_aligner
+                0x000000000709b4c8                bbh_dl_Tex_0008_0_ci4
+                0x000000000709bcc8                bbh_dl_Tex_0008_0_ci4_aligner
+                0x000000000709bcd0                bbh_dl_GLME01_c64080ee_14_ci8_pal_rgba16
+                0x000000000709bd08                bbh_dl_GLME01_c64080ee_14_ci8_pal_rgba16_aligner
+                0x000000000709bd10                bbh_dl_GLME01_c64080ee_14_ci8
+                0x000000000709c510                bbh_dl_GLME01_c64080ee_14_ci8_aligner
+                0x000000000709c518                bbh_dl__9149b880_ci4_pal_rgba16
+                0x000000000709c538                bbh_dl__9149b880_ci4_pal_rgba16_aligner
+                0x000000000709c540                bbh_dl__9149b880_ci4
+                0x000000000709c940                bbh_dl__9149b880_ci4_aligner
+                0x000000000709c948                bbh_dl_f295fedb_ci4_pal_rgba16
+                0x000000000709c958                bbh_dl_f295fedb_ci4_pal_rgba16_aligner
+                0x000000000709c960                bbh_dl_f295fedb_ci4
+                0x000000000709c9e0                bbh_dl_f295fedb_ci4_aligner
+                0x000000000709c9e8                bbh_dl_RMGP01_5eaa6816_4_ci8_pal_rgba16
+                0x000000000709ca10                bbh_dl_RMGP01_5eaa6816_4_ci8_pal_rgba16_aligner
+                0x000000000709ca18                bbh_dl_RMGP01_5eaa6816_4_ci8
+                0x000000000709ce18                bbh_dl_RMGP01_5eaa6816_4_ci8_aligner
+                0x000000000709ce20                bbh_dl_pirates_hublot01txy_ci4_pal_rgba16
+                0x000000000709ce40                bbh_dl_pirates_hublot01txy_ci4_pal_rgba16_aligner
+                0x000000000709ce48                bbh_dl_pirates_hublot01txy_ci4
+                0x000000000709d648                bbh_dl_pirates_hublot01txy_ci4_aligner
+                0x000000000709d650                bbh_dl_tnt_caisse02_txy_i8
+                0x000000000709e650                bbh_dl_tnt_caisse02_txy_i8_aligner
+                0x000000000709e658                bbh_dl_th_hon00_ci8_pal_rgba16
+                0x000000000709e750                bbh_dl_th_hon00_ci8_pal_rgba16_aligner
+                0x000000000709e758                bbh_dl_th_hon00_ci8
+                0x000000000709ef58                bbh_dl_th_hon00_ci8_aligner
+                0x000000000709ef60                bbh_dl_Z_kai_main4_ci8_pal_rgba16
+                0x000000000709efa8                bbh_dl_Z_kai_main4_ci8_pal_rgba16_aligner
+                0x000000000709efb0                bbh_dl_Z_kai_main4_ci8
+                0x000000000709f7b0                bbh_dl_Z_kai_main4_ci8_aligner
+                0x000000000709f7b8                bbh_dl_tex1_128x128_349089ccc039f8c3_14_i8
+                0x00000000070a07b8                bbh_dl_tex1_128x128_349089ccc039f8c3_14_i8_aligner
+                0x00000000070a07c0                bbh_dl_SUPER_MARIO_64_428BEF9C_0_2_rgb_i4
+                0x00000000070a17c0                bbh_dl_SUPER_MARIO_64_428BEF9C_0_2_rgb_i4_aligner
+                0x00000000070a17c8                bbh_dl__15110132_scratched_round_metal_plate_texture_background_ia8
+                0x00000000070a27c8                bbh_dl__15110132_scratched_round_metal_plate_texture_background_ia8_aligner
+                0x00000000070a27d0                bbh_dl_two_vertical_ship_windows_with_ocean_surface_and_underwater_two_ship_windows_with_ocean_surface_and_stock_images_csp46533552_rgba16
+                0x00000000070a37d0                bbh_dl_two_vertical_ship_windows_with_ocean_surface_and_underwater_two_ship_windows_with_ocean_surface_and_stock_images_csp46533552_rgba16_aligner
+                0x00000000070a37d8                bbh_dl_LightBeam2_i8
+                0x00000000070a3fd8                bbh_dl_LightBeam2_i8_aligner
+                0x00000000070a3fe0                bbh_dl__0x188C0_ia8
+                0x00000000070a43e0                bbh_dl__0x188C0_ia8_aligner
+                0x00000000070a43e8                bbh_dl_Boo_Fframe_ci4_pal_rgba16
+                0x00000000070a4408                bbh_dl_Boo_Fframe_ci4_pal_rgba16_aligner
+                0x00000000070a4410                bbh_dl_Boo_Fframe_ci4
+                0x00000000070a4c10                bbh_dl_Boo_Fframe_ci4_aligner
+                0x00000000070a4c18                bbh_dl_Bloop1_ci4_pal_rgba16
+                0x00000000070a4c38                bbh_dl_Bloop1_ci4_pal_rgba16_aligner
+                0x00000000070a4c40                bbh_dl_Bloop1_ci4
+                0x00000000070a5440                bbh_dl_Bloop1_ci4_aligner
+                0x00000000070a5448                bbh_dl_bloop2_ci4_pal_rgba16
+                0x00000000070a5468                bbh_dl_bloop2_ci4_pal_rgba16_aligner
+                0x00000000070a5470                bbh_dl_bloop2_ci4
+                0x00000000070a5c70                bbh_dl_bloop2_ci4_aligner
+                0x00000000070a5c78                bbh_dl_Text_i4
+                0x00000000070a6c78                bbh_dl_Text_i4_aligner
+                0x00000000070a6c80                bbh_dl_btl_jun_00_48C00_jun_wall_02___2__i8
+                0x00000000070a7c80                bbh_dl_btl_jun_00_48C00_jun_wall_02___2__i8_aligner
+                0x00000000070a7c88                bbh_dl__37a78000_fmt0034_slice0_mip00_256x256_tm04_i4
+                0x00000000070a8c88                bbh_dl__37a78000_fmt0034_slice0_mip00_256x256_tm04_i4_aligner
+                0x00000000070a8c90                bbh_dl_barukoni_wood_i8
+                0x00000000070a9c90                bbh_dl_barukoni_wood_i8_aligner
+                0x00000000070a9c98                bbh_dl_legno_corrimano_1_32x32_i8
+                0x00000000070aa098                bbh_dl_legno_corrimano_1_32x32_i8_aligner
+                0x00000000070aa0a0                bbh_dl_rc_ki_i8
+                0x00000000070aa4a0                bbh_dl_rc_ki_i8_aligner
+                0x00000000070aa4a8                bbh_dl_sHYREEN_ci4_pal_rgba16
+                0x00000000070aa4c8                bbh_dl_sHYREEN_ci4_pal_rgba16_aligner
+                0x00000000070aa4d0                bbh_dl_sHYREEN_ci4
+                0x00000000070aacd0                bbh_dl_sHYREEN_ci4_aligner
+                0x00000000070aacd8                bbh_dl_Texture0365_RGB_rgba16
+                0x00000000070abcd8                bbh_dl_Texture0365_RGB_rgba16_aligner
+                0x00000000070abce0                bbh_dl_metaldottoplate02_s_spc_i8
+                0x00000000070acce0                bbh_dl_metaldottoplate02_s_spc_i8_aligner
+                0x00000000070acce8                bbh_dl_pirates_hublot01_bas_ty_mx_ci4_pal_rgba16
+                0x00000000070acd08                bbh_dl_pirates_hublot01_bas_ty_mx_ci4_pal_rgba16_aligner
+                0x00000000070acd10                bbh_dl_pirates_hublot01_bas_ty_mx_ci4
+                0x00000000070ad510                bbh_dl_pirates_hublot01_bas_ty_mx_ci4_aligner
+                0x00000000070ad518                bbh_dl_nk_carpet1_ci4_pal_rgba16
+                0x00000000070ad538                bbh_dl_nk_carpet1_ci4_pal_rgba16_aligner
+                0x00000000070ad540                bbh_dl_nk_carpet1_ci4
+                0x00000000070ad940                bbh_dl_nk_carpet1_ci4_aligner
+                0x00000000070ad948                bbh_dl_tex1_128x128_m_8afdc43e9b2f4b63_14_ci4_pal_rgba16
+                0x00000000070ad968                bbh_dl_tex1_128x128_m_8afdc43e9b2f4b63_14_ci4_pal_rgba16_aligner
+                0x00000000070ad970                bbh_dl_tex1_128x128_m_8afdc43e9b2f4b63_14_ci4
+                0x00000000070ae170                bbh_dl_tex1_128x128_m_8afdc43e9b2f4b63_14_ci4_aligner
+                0x00000000070ae178                bbh_dl__34812322_ci4_pal_rgba16
+                0x00000000070ae198                bbh_dl__34812322_ci4_pal_rgba16_aligner
+                0x00000000070ae1a0                bbh_dl__34812322_ci4
+                0x00000000070ae5a0                bbh_dl__34812322_ci4_aligner
+                0x00000000070ae5a8                bbh_dl__3481232_ci8_pal_rgba16
+                0x00000000070ae6c8                bbh_dl__3481232_ci8_pal_rgba16_aligner
+                0x00000000070ae6d0                bbh_dl__3481232_ci8
+                0x00000000070aeed0                bbh_dl__3481232_ci8_aligner
+                0x00000000070aeed8                bbh_dl_KKIIDDZZ_DAT_798__p00_i4
+                0x00000000070af6d8                bbh_dl_KKIIDDZZ_DAT_798__p00_i4_aligner
+                0x00000000070af6e0                bbh_dl__1ED03210C692FF65D9EC32229C6CC7A4_i4
+                0x00000000070afee0                bbh_dl__1ED03210C692FF65D9EC32229C6CC7A4_i4_aligner
+                0x00000000070afee8                bbh_dl__0000DB20_64x32_rgba16_i8
+                0x00000000070b06e8                bbh_dl__0000DB20_64x32_rgba16_i8_aligner
+                0x00000000070b06f0                bbh_dl_KKIIDDZZ_DAT_826__p00_i8
+                0x00000000070b16f0                bbh_dl_KKIIDDZZ_DAT_826__p00_i8_aligner
+                0x00000000070b16f8                bbh_dl_pirates_mas01txy_i8
+                0x00000000070b26f8                bbh_dl_pirates_mas01txy_i8_aligner
+                0x00000000070b2700                bbh_dl__00006120_64x32_rgba16_i8
+                0x00000000070b2f00                bbh_dl__00006120_64x32_rgba16_i8_aligner
+                0x00000000070b2f08                bbh_dl_KKIIDDZZ_DAT_2097__p00_ci4_pal_rgba16
+                0x00000000070b2f28                bbh_dl_KKIIDDZZ_DAT_2097__p00_ci4_pal_rgba16_aligner
+                0x00000000070b2f30                bbh_dl_KKIIDDZZ_DAT_2097__p00_ci4
+                0x00000000070b3730                bbh_dl_KKIIDDZZ_DAT_2097__p00_ci4_aligner
+                0x00000000070b3738                bbh_dl_segment2_05800_rgba16__18__i8
+                0x00000000070b4738                bbh_dl_segment2_05800_rgba16__18__i8_aligner
+                0x00000000070b4740                bbh_dl_GALE01_742ec4ab_14_i4
+                0x00000000070b5740                bbh_dl_GALE01_742ec4ab_14_i4_aligner
+                0x00000000070b5748                bbh_dl_wc_ami_ci8_pal_rgba16
+                0x00000000070b57f0                bbh_dl_wc_ami_ci8_pal_rgba16_aligner
+                0x00000000070b57f8                bbh_dl_wc_ami_ci8
+                0x00000000070b5bf8                bbh_dl_wc_ami_ci8_aligner
+                0x00000000070b5c00                bbh_dl__0x10600_ia4
+                0x00000000070b6400                bbh_dl__0x10600_ia4_aligner
+                0x00000000070b6408                bbh_dl_OSC_P_M_GATE01_ci4_pal_rgba16
+                0x00000000070b6428                bbh_dl_OSC_P_M_GATE01_ci4_pal_rgba16_aligner
+                0x00000000070b6430                bbh_dl_OSC_P_M_GATE01_ci4
+                0x00000000070b6c30                bbh_dl_OSC_P_M_GATE01_ci4_aligner
+                0x00000000070b6c38                bbh_dl__0x2440_ci8_pal_rgba16
+                0x00000000070b6dc8                bbh_dl__0x2440_ci8_pal_rgba16_aligner
+                0x00000000070b6dd0                bbh_dl__0x2440_ci8
+                0x00000000070b71d0                bbh_dl__0x2440_ci8_aligner
+                0x00000000070b71d8                bbh_dl_D301_tk_Chain_01_1_ia8
+                0x00000000070b79d8                bbh_dl_D301_tk_Chain_01_1_ia8_aligner
+                0x00000000070b79e0                bbh_dl__00015A68_32x32_rgba16_ci8_pal_rgba16
+                0x00000000070b7a70                bbh_dl__00015A68_32x32_rgba16_ci8_pal_rgba16_aligner
+                0x00000000070b7a78                bbh_dl__00015A68_32x32_rgba16_ci8
+                0x00000000070b7e78                bbh_dl__00015A68_32x32_rgba16_ci8_aligner
+                0x00000000070b7e80                bbh_dl_scratches_i4
+                0x00000000070b8680                bbh_dl_scratches_i4_aligner
+                0x00000000070b8688                bbh_dl_shipI4_i4
+                0x00000000070b8e88                bbh_dl_shipI4_i4_aligner
+                0x00000000070b8e90                bbh_dl_Tile0311_RGB_i8
+                0x00000000070b9690                bbh_dl_Tile0311_RGB_i8_aligner
+                0x00000000070b9698                bbh_dl_tallpi_boules2_nz_i8
+                0x00000000070ba698                bbh_dl_tallpi_boules2_nz_i8_aligner
+                0x00000000070ba6a0                bbh_dl__00005410_32x32_rgba16_ci8_pal_rgba16
+                0x00000000070ba6c8                bbh_dl__00005410_32x32_rgba16_ci8_pal_rgba16_aligner
+                0x00000000070ba6d0                bbh_dl__00005410_32x32_rgba16_ci8
+                0x00000000070baad0                bbh_dl__00005410_32x32_rgba16_ci8_aligner
+                0x00000000070baad8                bbh_dl__00004950_64x32_rgba16_i8
+                0x00000000070bb2d8                bbh_dl__00004950_64x32_rgba16_i8_aligner
+                0x00000000070bb2e0                bbh_dl_unknown__3__i8
+                0x00000000070bc2e0                bbh_dl_unknown__3__i8_aligner
+                0x00000000070bc2e8                bbh_dl_unknown__1__i8
+                0x00000000070bd2e8                bbh_dl_unknown__1__i8_aligner
+                0x00000000070bd2f0                bbh_dl__048E6CCD64E749DC248F9B4EC0AEEFB4_i8
+                0x00000000070be2f0                bbh_dl__048E6CCD64E749DC248F9B4EC0AEEFB4_i8_aligner
+                0x00000000070be2f8                bbh_dl_unknown__2__i8
+                0x00000000070bf2f8                bbh_dl_unknown__2__i8_aligner
+                0x00000000070bf300                bbh_dl_sail_sdf_test5_ia8
+                0x00000000070c0300                bbh_dl_sail_sdf_test5_ia8_aligner
+                0x00000000070c0308                bbh_dl_scratch_i8
+                0x00000000070c1308                bbh_dl_scratch_i8_aligner
+                0x00000000070c1310                bbh_dl_DC_0x2C1D8_32x32_RGBA16_ci8_pal_rgba16
+                0x00000000070c14a0                bbh_dl_DC_0x2C1D8_32x32_RGBA16_ci8_pal_rgba16_aligner
+                0x00000000070c14a8                bbh_dl_DC_0x2C1D8_32x32_RGBA16_ci8
+                0x00000000070c18a8                bbh_dl_DC_0x2C1D8_32x32_RGBA16_ci8_aligner
+                0x00000000070c18b0                bbh_dl_DT_0x14BE0_32x64_RGBA16_ci8_pal_rgba16
+                0x00000000070c19a0                bbh_dl_DT_0x14BE0_32x64_RGBA16_ci8_pal_rgba16_aligner
+                0x00000000070c19a8                bbh_dl_DT_0x14BE0_32x64_RGBA16_ci8
+                0x00000000070c21a8                bbh_dl_DT_0x14BE0_32x64_RGBA16_ci8_aligner
+                0x00000000070c21b0                bbh_dl__0x19040_ci4_pal_rgba16
+                0x00000000070c21d0                bbh_dl__0x19040_ci4_pal_rgba16_aligner
+                0x00000000070c21d8                bbh_dl__0x19040_ci4
+                0x00000000070c29d8                bbh_dl__0x19040_ci4_aligner
+                0x00000000070c29e0                bbh_dl__000126B8_32x32_rgba16_ci8_pal_rgba16
+                0x00000000070c2b90                bbh_dl__000126B8_32x32_rgba16_ci8_pal_rgba16_aligner
+                0x00000000070c2b98                bbh_dl__000126B8_32x32_rgba16_ci8
+                0x00000000070c2f98                bbh_dl__000126B8_32x32_rgba16_ci8_aligner
+                0x00000000070c2fa0                bbh_dl_SeafoamTest64_i4
+                0x00000000070c37a0                bbh_dl_SeafoamTest64_i4_aligner
+                0x00000000070c37a8                bbh_dl_tiki1_i4
+                0x00000000070c3fa8                bbh_dl_tiki1_i4_aligner
+                0x00000000070c3fb0                bbh_dl_woodI8_i8
+                0x00000000070c4fb0                bbh_dl_woodI8_i8_aligner
+                0x00000000070c4fb8                bbh_dl_cs_stone11_alb_ci8_pal_rgba16
+                0x00000000070c5060                bbh_dl_cs_stone11_alb_ci8_pal_rgba16_aligner
+                0x00000000070c5068                bbh_dl_cs_stone11_alb_ci8
+                0x00000000070c5868                bbh_dl_cs_stone11_alb_ci8_aligner
+                0x00000000070c5870                bbh_dl_KKIIDDZZ_DAT_1468__p00_i8
+                0x00000000070c6870                bbh_dl_KKIIDDZZ_DAT_1468__p00_i8_aligner
+                0x00000000070c6878                bbh_dl__0x178C0_ci4_pal_rgba16
+                0x00000000070c6898                bbh_dl__0x178C0_ci4_pal_rgba16_aligner
+                0x00000000070c68a0                bbh_dl__0x178C0_ci4
+                0x00000000070c70a0                bbh_dl__0x178C0_ci4_aligner
+                0x00000000070c70a8                bbh_dl_Tile0702_RGB_i8
+                0x00000000070c74a8                bbh_dl_Tile0702_RGB_i8_aligner
+                0x00000000070c74b0                bbh_dl_Wheel__1__ci4_pal_rgba16
+                0x00000000070c74d0                bbh_dl_Wheel__1__ci4_pal_rgba16_aligner
+                0x00000000070c74d8                bbh_dl_Wheel__1__ci4
+                0x00000000070c7cd8                bbh_dl_Wheel__1__ci4_aligner
+                0x00000000070c7ce0                bbh_dl_dg_dod_hasi_02_30380CI4_ci4_pal_rgba16
+                0x00000000070c7d00                bbh_dl_dg_dod_hasi_02_30380CI4_ci4_pal_rgba16_aligner
+                0x00000000070c7d08                bbh_dl_dg_dod_hasi_02_30380CI4_ci4
+                0x00000000070c8508                bbh_dl_dg_dod_hasi_02_30380CI4_ci4_aligner
+                0x00000000070c8510                bbh_dl_Grain01Gray_i4
+                0x00000000070c9510                bbh_dl_Grain01Gray_i4_aligner
+                0x00000000070c9518                bbh_dl_circul_i8
+                0x00000000070c9718                bbh_dl_circul_i8_aligner
+                0x00000000070c9720                bbh_dl_GALE01_f67ae1c7_14_ci4_pal_rgba16
+                0x00000000070c9740                bbh_dl_GALE01_f67ae1c7_14_ci4_pal_rgba16_aligner
+                0x00000000070c9748                bbh_dl_GALE01_f67ae1c7_14_ci4
+                0x00000000070c9f48                bbh_dl_GALE01_f67ae1c7_14_ci4_aligner
+                0x00000000070c9f50                bbh_dl_withe_wood_texture_2_by_xpm_i4
+                0x00000000070caf50                bbh_dl_withe_wood_texture_2_by_xpm_i4_aligner
+                0x00000000070caf58                bbh_dl__3550576_ci4_pal_rgba16
+                0x00000000070caf78                bbh_dl__3550576_ci4_pal_rgba16_aligner
+                0x00000000070caf80                bbh_dl__3550576_ci4
+                0x00000000070cb380                bbh_dl__3550576_ci4_aligner
+                0x00000000070cb388                bbh_dl__3411856_ci4_pal_rgba16
+                0x00000000070cb3a8                bbh_dl__3411856_ci4_pal_rgba16_aligner
+                0x00000000070cb3b0                bbh_dl__3411856_ci4
+                0x00000000070cb4b0                bbh_dl__3411856_ci4_aligner
+                0x00000000070cb4b8                bbh_dl__0xDDE0_i8
+                0x00000000070cc4b8                bbh_dl__0xDDE0_i8_aligner
+                0x00000000070cc4c0                bbh_dl_pirates_plancher01txy_i4
+                0x00000000070cd4c0                bbh_dl_pirates_plancher01txy_i4_aligner
+                0x00000000070cd4c8                bbh_dl_GALE01_98203c75_14_ci8_pal_rgba16
+                0x00000000070cd5a0                bbh_dl_GALE01_98203c75_14_ci8_pal_rgba16_aligner
+                0x00000000070cd5a8                bbh_dl_GALE01_98203c75_14_ci8
+                0x00000000070cd9a8                bbh_dl_GALE01_98203c75_14_ci8_aligner
+                0x00000000070cd9b0                bbh_dl_ST_0xC79C0_32x64_RGBA16_ci8_pal_rgba16
+                0x00000000070cda18                bbh_dl_ST_0xC79C0_32x64_RGBA16_ci8_pal_rgba16_aligner
+                0x00000000070cda20                bbh_dl_ST_0xC79C0_32x64_RGBA16_ci8
+                0x00000000070ce220                bbh_dl_ST_0xC79C0_32x64_RGBA16_ci8_aligner
+                0x00000000070ce228                bbh_dl_MoonlightTest2_rgba16
+                0x00000000070de228                bbh_dl_MoonlightTest2_rgba16_aligner
+                0x00000000070de230                bbh_dl_f3d_material_008_lights
+                0x00000000070de248                bbh_dl_f3d_material_002_lights
+                0x00000000070de260                bbh_dl_f3d_material_012_lights
+                0x00000000070de278                bbh_dl_f3d_material_009_lights
+                0x00000000070de290                bbh_dl_f3d_material_001_layer1_lights
+                0x00000000070de2a8                bbh_dl_f3d_material_013_lights
+                0x00000000070de2c0                bbh_dl_f3d_material_003_layer0_lights
+                0x00000000070de2d8                bbh_dl_YINIGHTSKY_layer0_lights
+                0x00000000070de2f0                bbh_dl_f3d_material_042_v4_lights
+                0x00000000070de308                bbh_dl_f3d_material_043_v4_lights
+                0x00000000070de320                bbh_dl_f3d_material_060_v4_lights
+                0x00000000070de338                bbh_dl_f3d_material_054_v4_lights
+                0x00000000070de350                bbh_dl_badwood0_001_v4_lights
+                0x00000000070de368                bbh_dl_f3d_material_056_v4_layer1_lights
+                0x00000000070de380                bbh_dl_f3d_material_041_v4_lights
+                0x00000000070de398                bbh_dl_f3d_material_033_v4_lights
+                0x00000000070de3b0                bbh_dl_f3d_material_044_v4_lights
+                0x00000000070de3c8                bbh_dl_UNAGISIGN_lights
+                0x00000000070de3e0                bbh_dl_f3d_material_087_v4_lights
+                0x00000000070de3f8                bbh_dl_f3d_material_084_v4_lights
+                0x00000000070de410                bbh_dl_f3d_material_029_v4_lights
+                0x00000000070de428                bbh_dl_f3d_material_085_v4_layer1_lights
+                0x00000000070de440                bbh_dl_f3d_material_096_v4_lights
+                0x00000000070de458                bbh_dl_f3d_material_091_v4_lights
+                0x00000000070de470                bbh_dl_f3d_material_097_v4_lights
+                0x00000000070de488                bbh_dl_f3d_material_099_v4_lights
+                0x00000000070de4a0                bbh_dl_f3d_material_098_v4_lights
+                0x00000000070de4b8                bbh_dl_InsideWater_lights
+                0x00000000070de4d0                bbh_dl_f3d_material_092_v4_lights
+                0x00000000070de4e8                bbh_dl_f3d_material_093_v4_lights
+                0x00000000070de500                bbh_dl_f3d_material_089_v4_lights
+                0x00000000070de518                bbh_dl_f3d_material_090_v4_lights
+                0x00000000070de530                bbh_dl_f3d_material_086_v4_lights
+                0x00000000070de548                bbh_dl_f3d_material_123_v4_lights
+                0x00000000070de560                bbh_dl_f3d_material_117_v4_lights
+                0x00000000070de578                bbh_dl_f3d_material_113_v4_lights
+                0x00000000070de590                bbh_dl_f3d_material_112_v4_lights
+                0x00000000070de5a8                bbh_dl_f3d_material_048_v4_lights
+                0x00000000070de5c0                bbh_dl_f3d_material_049_v4_lights
+                0x00000000070de5d8                bbh_dl_f3d_material_001_v4_001_lights
+                0x00000000070de5f0                bbh_dl_f3d_material_077_v4_lights
+                0x00000000070de608                bbh_dl_f3d_material_075_v4_lights
+                0x00000000070de620                bbh_dl_f3d_material_078_v4_lights
+                0x00000000070de638                bbh_dl_f3d_material_072_v4_lights
+                0x00000000070de650                bbh_dl_sm64_material_072_v4_lights
+                0x00000000070de668                bbh_dl_Tex_0008_0_f3d_v4_lights
+                0x00000000070de680                bbh_dl_f3d_material_118_v4_lights
+                0x00000000070de698                bbh_dl_trasurechest_chest_f3d_v4_lights
+                0x00000000070de6b0                bbh_dl_treasurechest_lock_f3d_v4_lights
+                0x00000000070de6c8                bbh_dl_f3d_material_068_v4_lights
+                0x00000000070de6e0                bbh_dl_f3d_material_070_v4_lights
+                0x00000000070de6f8                bbh_dl_f3d_material_069_v4_lights
+                0x00000000070de710                bbh_dl_f3d_material_120_v4_lights
+                0x00000000070de728                bbh_dl_f3d_material_065_v4_lights
+                0x00000000070de740                bbh_dl_f3d_material_067_v4_lights
+                0x00000000070de758                bbh_dl_f3d_material_080_v4_lights
+                0x00000000070de770                bbh_dl_f3d_material_026_v4_lights
+                0x00000000070de788                bbh_dl_f3d_material_110_v4_lights
+                0x00000000070de7a0                bbh_dl_f3d_material_116_v4_lights
+                0x00000000070de7b8                bbh_dl_LIGHTBEAMANIMATION_v4_lights
+                0x00000000070de7d0                bbh_dl_f3d_material_066_v4_lights
+                0x00000000070de7e8                bbh_dl_f3d_material_061_v4_lights
+                0x00000000070de800                bbh_dl_f3d_material_114_v4_lights
+                0x00000000070de818                bbh_dl_f3d_material_115_v4_lights
+                0x00000000070de830                bbh_dl_f3d_material_076_v4_lights
+                0x00000000070de848                bbh_dl_f3d_material_073_v4_lights
+                0x00000000070de860                bbh_dl_f3d_material_095_v4_lights
+                0x00000000070de878                bbh_dl_f3d_material_111_v4_lights
+                0x00000000070de890                bbh_dl_f3d_material_121_v4_lights
+                0x00000000070de8a8                bbh_dl_f3d_material_109_v4_lights
+                0x00000000070de8c0                bbh_dl_f3d_material_126_v4_lights
+                0x00000000070de8d8                bbh_dl_f3d_material_124_v4_lights
+                0x00000000070de8f0                bbh_dl_f3d_material_125_v4_lights
+                0x00000000070de908                bbh_dl_f3d_material_108_v4_lights
+                0x00000000070de920                bbh_dl_sm64_material_081_v4_lights
+                0x00000000070de938                bbh_dl_f3d_material_165_v4_lights
+                0x00000000070de950                bbh_dl_f3d_material_064_v4_lights
+                0x00000000070de968                bbh_dl_f3d_material_063_v4_lights
+                0x00000000070de980                bbh_dl_f3d_material_119_v4_layer1_lights
+                0x00000000070de998                bbh_dl_f3d_material_122_v4_lights
+                0x00000000070de9b0                bbh_dl_f3d_material_101_v4_lights
+                0x00000000070de9c8                bbh_dl_f3d_material_103_v4_lights
+                0x00000000070de9e0                bbh_dl_f3d_material_088_v4_lights
+                0x00000000070de9f8                bbh_dl_f3d_material_083_v4_lights
+                0x00000000070dea10                bbh_dl_f3d_material_104_v4_lights
+                0x00000000070dea28                bbh_dl_f3d_material_105_v4_lights
+                0x00000000070dea40                bbh_dl_f3d_material_100_v4_lights
+                0x00000000070dea58                bbh_dl_sm64_material_050_v4_lights
+                0x00000000070dea70                bbh_dl_f3d_material_027_v4_lights
+                0x00000000070dea88                bbh_dl_f3d_material_032_v4_lights
+                0x00000000070deaa0                bbh_dl_f3d_material_028_v4_lights
+                0x00000000070deab8                bbh_dl_f3d_material_040_v4_lights
+                0x00000000070dead0                bbh_dl_f3d_material_082_v4_lights
+                0x00000000070deae8                bbh_dl_insidewalls_v4_layer1_lights
+                0x00000000070deb00                bbh_dl_f3d_material_030_v4_lights
+                0x00000000070deb18                bbh_dl_f3d_material_038_v4_lights
+                0x00000000070deb30                bbh_dl_f3d_material_036_v4_lights
+                0x00000000070deb48                bbh_dl_sm64_material_060_v4_lights
+                0x00000000070deb60                bbh_dl_roof_v4_lights
+                0x00000000070deb78                bbh_dl_f3d_material_025_lights
+                0x00000000070deb90                bbh_dl_badwood4_v4_lights
+                0x00000000070deba8                bbh_dl_badwood1_v4_lights
+                0x00000000070debc0                bbh_dl_badwood3_v4_lights
+                0x00000000070debd8                bbh_dl_badwood0_v4_lights
+                0x00000000070debf0                bbh_dl_badwood2_v4_lights
+                0x00000000070dec08                bbh_dl_f3d_material_007_lights
+                0x00000000070dec20                bbh_dl_f3d_material_146_v4_lights
+                0x00000000070dec38                bbh_dl_f3d_material_017_v4_lights
+                0x00000000070dec50                bbh_dl_f3d_material_023_v4_lights
+                0x00000000070dec68                bbh_dl_f3d_material_003_v4_001_lights
+                0x00000000070dec80                bbh_dl_f3d_material_009_v4_001_lights
+                0x00000000070dec98                bbh_dl_OCEANWATER_layer1_area1_lights
+                0x00000000070decb0                bbh_dl_f3d_material_010_v4_001_lights
+                0x00000000070decc8                bbh_dl_f3d_material_006_v4_001_lights
+                0x00000000070dece0                bbh_dl_f3d_material_016_v4_001_lights
+                0x00000000070decf8                bbh_dl_f3d_material_127_v4_lights
+                0x00000000070ded10                bbh_dl_f3d_material_012_v4_001_lights
+                0x00000000070ded28                bbh_dl_f3d_material_lights
+                0x00000000070ded40                bbh_dl_f3d_material_022_v4_lights
+                0x00000000070ded58                bbh_dl_f3d_material_004_v4_001_lights
+                0x00000000070ded70                bbh_dl_f3d_material_021_v4_lights
+                0x00000000070ded88                bbh_dl_f3d_material_081_v4_lights
+                0x00000000070deda0                bbh_dl_wood_v4_lights
+                0x00000000070dedb8                bbh_dl_f3d_material_010_v4_lights
+                0x00000000070dedd0                bbh_dl_f3d_material_020_v4_lights
+                0x00000000070dede8                bbh_dl_f3d_material_013_v4_lights
+                0x00000000070dee00                bbh_dl_f3d_material_015_v4_001_lights
+                0x00000000070dee18                bbh_dl_f3d_material_v4_lights
+                0x00000000070dee30                bbh_dl_f3d_material_002_v4_001_layer4_area1_lights
+                0x00000000070dee48                bbh_dl_f3d_material_005_layer0_lights
+                0x00000000070dee60                bbh_area_4_spline_LinePlatformPath3
+                0x00000000070dee74                bbh_area_4_spline_LinePlatformPath2
+                0x00000000070deec8                bbh_area_4_spline_LinePlatformPath1
+                0x00000000070deefc                bbh_area_4_macro_objs
+                0x00000000070def00                bbh_area_4_collision
+                0x00000000070e0654                bbh_area_3_spline_EelScenePosIntro
+                0x00000000070e0664                bbh_area_3_spline_EelSceneFocIntro
+                0x00000000070e067c                bbh_area_3_macro_objs
+                0x00000000070e0680                bbh_area_3_collision
+                0x00000000070e1014                bbh_area_2_spline_CoinPathSnake
+                0x00000000070e10d8                bbh_area_2_spline_CoinPath
+                0x00000000070e110c                bbh_area_2_macro_objs
+                0x00000000070e1110                bbh_area_2_collision
+                0x00000000070e826c                bbh_area_1_spline_IntroCutscenePos_002
+                0x00000000070e827c                bbh_area_1_spline_IntroCutscenePos_001
+                0x00000000070e828c                bbh_area_1_spline_IntroCutscenePos
+                0x00000000070e82a4                bbh_area_1_spline_IntroCutsceneFoc_002
+                0x00000000070e82b4                bbh_area_1_spline_IntroCutsceneFoc_001
+                0x00000000070e82c4                bbh_area_1_spline_IntroCutsceneFoc
+                0x00000000070e82dc                bbh_area_1_macro_objs
+                0x00000000070e82e0                bbh_area_1_collision
+                0x00000000070ea00c                bbh_dl_ComedyclubSign2_rgba16
+
+.data1
+ *(.data1)
+
+.got.plt
+ *(.got.plt)
+                0x00000000070edb24                . = .
+                0x00000000070f5b20                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got)
+
+.sdata
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x00000000070edb24                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x00000000070edb24                . = .
+                0x00000000070edb24                __bss_start = .
+                0x00000000070edb24                _fbss = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x00000000070edb24        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000070edb24        0x0 build/us/levels/bbh/leveldata.o
+ *(COMMON)
+                0x00000000070edb24                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000070edb24                . = ALIGN (0x4)
+                0x00000000070edb24                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000070edb24                . = ALIGN (0x4)
+                0x00000000070edb24                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x00000000070edb24                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x12
+ *(.comment)
+ .comment       0x0000000000000000       0x12 build/us/levels/bbh/leveldata.o
+                                         0x13 (size before relaxing)
+
+.pdr            0x0000000000000000        0x0
+ .pdr           0x0000000000000000        0x0 build/us/levels/bbh/leveldata.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ *(.gnu.attributes)
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/levels/bbh/leveldata.o
+
+.gptab.sdata
+ *(.gptab.data)
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+
+.mdebug.abi32   0x0000000000000000        0x0
+ *(.mdebug.abi32)
+ .mdebug.abi32  0x0000000000000000        0x0 build/us/levels/bbh/leveldata.o
+
+.mdebug.abiN32
+ *(.mdebug.abiN32)
+
+.mdebug.abi64
+ *(.mdebug.abi64)
+
+.mdebug.abiO64
+ *(.mdebug.abiO64)
+
+.mdebug.eabi32
+ *(.mdebug.eabi32)
+
+.mdebug.eabi64
+ *(.mdebug.eabi64)
+
+.gcc_compiled_long32
+ *(.gcc_compiled_long32)
+
+.gcc_compiled_long64
+ *(.gcc_compiled_long64)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(build/us/levels/bbh/leveldata.elf elf32-bigmips)

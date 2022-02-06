@@ -1,0 +1,10 @@
+extern const GeoLayout bossplatform2_geo[];
+extern Lights1 bossplatform2_f3d_material2_layer1_lights;
+extern u8 bossplatform2__0x96E0_i4[];
+extern u8 bossplatform2_RSwamp_0040_tex_i4[];
+extern Vtx bossplatform2_Circle_002_mesh_layer_1_vtx_0[15];
+extern Gfx bossplatform2_Circle_002_mesh_layer_1_tri_0[];
+extern Gfx mat_bossplatform2_f3d_material2_layer1[];
+extern Gfx mat_revert_bossplatform2_f3d_material2_layer1[];
+extern Gfx bossplatform2_Circle_002_mesh_layer_1[];
+extern Gfx bossplatform2_material_revert_render_settings[];

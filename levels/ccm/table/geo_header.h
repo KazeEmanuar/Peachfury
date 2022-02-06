@@ -1,0 +1,11 @@
+extern const GeoLayout table_geo[];
+extern Lights1 table_f3d_material_005_lights;
+extern u8 table_kibako_ci8[];
+extern u8 table_kibako_ci8_pal_rgba16[];
+extern Vtx table_Plane_024_mesh_layer_1_vtx_cull[8];
+extern Vtx table_Plane_024_mesh_layer_1_vtx_0[43];
+extern Gfx table_Plane_024_mesh_layer_1_tri_0[];
+extern Gfx mat_table_f3d_material_005[];
+extern Gfx mat_revert_table_f3d_material_005[];
+extern Gfx table_Plane_024_mesh_layer_1[];
+extern Gfx table_material_revert_render_settings[];

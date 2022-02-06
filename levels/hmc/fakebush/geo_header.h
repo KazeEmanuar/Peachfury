@@ -1,0 +1,10 @@
+extern const GeoLayout fakebush_geo[];
+extern Lights1 fakebush_f3d_material_006_lights;
+extern u8 fakebush_btl_hei_4_01_3F600_hei_a_grass__ci4[];
+extern u8 fakebush_btl_hei_4_01_3F600_hei_a_grass__ci4_pal_rgba16[];
+extern Vtx fakebush_Plane_mesh_layer_4_vtx_0[42];
+extern Gfx fakebush_Plane_mesh_layer_4_tri_0[];
+extern Gfx mat_fakebush_f3d_material_006[];
+extern Gfx mat_revert_fakebush_f3d_material_006[];
+extern Gfx fakebush_Plane_mesh_layer_4[];
+extern Gfx fakebush_material_revert_render_settings[];

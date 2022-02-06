@@ -1,0 +1,15 @@
+extern const GeoLayout breakingblock_geo[];
+extern Lights1 breakingblock_f3d_material_007_lights;
+extern u8 breakingblock_ruinsstone00_s_spc_i8[];
+extern u8 breakingblock_EConvex_0004_tex_i8[];
+extern Vtx breakingblock_Circle_030_mesh_layer_1_vtx_0[8];
+extern Gfx breakingblock_Circle_030_mesh_layer_1_tri_0[];
+extern Vtx breakingblock_Transparent_mesh_layer_6_vtx_0[8];
+extern Gfx breakingblock_Transparent_mesh_layer_6_tri_0[];
+extern Gfx mat_breakingblock_f3d_material_007[];
+extern Gfx mat_revert_breakingblock_f3d_material_007[];
+extern Gfx mat_breakingblock_f3d_material[];
+extern Gfx mat_revert_breakingblock_f3d_material[];
+extern Gfx breakingblock_Circle_030_mesh_layer_1[];
+extern Gfx breakingblock_Transparent_mesh_layer_6[];
+extern Gfx breakingblock_material_revert_render_settings[];

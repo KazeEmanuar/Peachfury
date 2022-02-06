@@ -1,0 +1,21 @@
+const Collision goombaking_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(8),
+	COL_VERTEX(-80, 68, 80),
+	COL_VERTEX(0, 68, 135),
+	COL_VERTEX(80, 68, 80),
+	COL_VERTEX(135, 68, 0),
+	COL_VERTEX(80, 68, -80),
+	COL_VERTEX(0, 68, -135),
+	COL_VERTEX(-80, 68, -80),
+	COL_VERTEX(-135, 68, 0),
+	COL_TRI_INIT(SURFACE_DEFAULT, 6),
+	COL_TRI(0, 1, 2),
+	COL_TRI(2, 3, 4),
+	COL_TRI(4, 5, 6),
+	COL_TRI(6, 7, 0),
+	COL_TRI(0, 2, 4),
+	COL_TRI(4, 6, 0),
+	COL_TRI_STOP(),
+	COL_END()
+};

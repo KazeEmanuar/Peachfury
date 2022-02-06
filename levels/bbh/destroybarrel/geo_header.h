@@ -1,0 +1,11 @@
+extern const GeoLayout destroybarrel_geo[];
+extern Lights1 destroybarrel_f3d_material_033_lights;
+extern u8 destroybarrel_fk_mokusei00_ci4[];
+extern u8 destroybarrel_fk_mokusei00_ci4_pal_rgba16[];
+extern Vtx destroybarrel_Plane_019_mesh_layer_1_vtx_cull[8];
+extern Vtx destroybarrel_Plane_019_mesh_layer_1_vtx_0[38];
+extern Gfx destroybarrel_Plane_019_mesh_layer_1_tri_0[];
+extern Gfx mat_destroybarrel_f3d_material_033[];
+extern Gfx mat_revert_destroybarrel_f3d_material_033[];
+extern Gfx destroybarrel_Plane_019_mesh_layer_1[];
+extern Gfx destroybarrel_material_revert_render_settings[];

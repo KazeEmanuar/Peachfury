@@ -1,0 +1,10 @@
+extern const GeoLayout bombsprite_geo[];
+extern u8 bombsprite_bombspirte_ci8[];
+extern u8 bombsprite_bombspirte_ci8_pal_rgba16[];
+extern Vtx bombsprite_Plane_mesh_vtx_cull[8];
+extern Vtx bombsprite_Plane_mesh_vtx_0[4];
+extern Gfx bombsprite_Plane_mesh_tri_0[];
+extern Gfx mat_bombsprite_sm64_material[];
+extern Gfx mat_revert_bombsprite_sm64_material[];
+extern Gfx bombsprite_Plane_mesh[];
+extern Gfx bombsprite_material_revert_render_settings[];

@@ -1,0 +1,5 @@
+#include "anim_050008D0.inc.c"
+#include "anim_050009D0.inc.c"
+#include "anim_idle.inc.c"
+#include "anim_birdidle.inc.c"
+#include "anim_FLYNEW.inc.c"

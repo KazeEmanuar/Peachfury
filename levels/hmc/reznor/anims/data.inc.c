@@ -1,0 +1,8 @@
+#include "anim_EATGRAS.inc.c"
+#include "anim_SPOTMARIO.inc.c"
+#include "anim_STARTCHARGE.inc.c"
+#include "anim_RUN.inc.c"
+#include "anim_BREMSEN.inc.c"
+#include "anim_BUMP.inc.c"
+#include "anim_GRABBED.inc.c"
+#include "anim_DIE.inc.c"

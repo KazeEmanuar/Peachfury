@@ -1,0 +1,21 @@
+const Collision crumblefloor_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(8),
+	COL_VERTEX(156, 35, -225),
+	COL_VERTEX(0, 35, -225),
+	COL_VERTEX(0, 35, 225),
+	COL_VERTEX(-156, 35, -275),
+	COL_VERTEX(-156, 35, 225),
+	COL_VERTEX(156, 35, 275),
+	COL_VERTEX(0, 35, -275),
+	COL_VERTEX(0, 35, 275),
+	COL_TRI_INIT(SURFACE_NOT_SLIPPERY, 6),
+	COL_TRI(0, 1, 2),
+	COL_TRI(3, 4, 1),
+	COL_TRI(5, 0, 2),
+	COL_TRI(1, 6, 3),
+	COL_TRI(4, 2, 1),
+	COL_TRI(2, 7, 5),
+	COL_TRI_STOP(),
+	COL_END()
+};

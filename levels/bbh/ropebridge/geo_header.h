@@ -1,0 +1,10 @@
+extern const GeoLayout ropebridge_geo[];
+extern Lights1 ropebridge_f3d_material_079_lights;
+extern u8 ropebridge__3252176_ci4[];
+extern u8 ropebridge__3252176_ci4_pal_rgba16[];
+extern Vtx ropebridge_Plane_031_mesh_layer_4_vtx_0[10];
+extern Gfx ropebridge_Plane_031_mesh_layer_4_tri_0[];
+extern Gfx mat_ropebridge_f3d_material_079[];
+extern Gfx mat_revert_ropebridge_f3d_material_079[];
+extern Gfx ropebridge_Plane_031_mesh_layer_4[];
+extern Gfx ropebridge_material_revert_render_settings[];

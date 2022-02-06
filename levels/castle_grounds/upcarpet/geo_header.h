@@ -1,0 +1,17 @@
+extern const GeoLayout upcarpet_geo[];
+extern Lights1 upcarpet_f3d_material_074_lights;
+extern Lights1 upcarpet_f3d_material_lights;
+extern u8 upcarpet_Tatami00_ci4[];
+extern u8 upcarpet_Tatami00_ci4_pal_rgba16[];
+extern u8 upcarpet_KKIIDDZZ_DAT_1858__p00_ci4[];
+extern u8 upcarpet_KKIIDDZZ_DAT_1858__p00_ci4_pal_rgba16[];
+extern Vtx upcarpet_Plane_002_mesh_layer_1_vtx_0[4];
+extern Gfx upcarpet_Plane_002_mesh_layer_1_tri_0[];
+extern Vtx upcarpet_Plane_002_mesh_layer_1_vtx_1[10];
+extern Gfx upcarpet_Plane_002_mesh_layer_1_tri_1[];
+extern Gfx mat_upcarpet_f3d_material_074[];
+extern Gfx mat_revert_upcarpet_f3d_material_074[];
+extern Gfx mat_upcarpet_f3d_material[];
+extern Gfx mat_revert_upcarpet_f3d_material[];
+extern Gfx upcarpet_Plane_002_mesh_layer_1[];
+extern Gfx upcarpet_material_revert_render_settings[];

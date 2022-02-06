@@ -1,0 +1,10 @@
+extern const GeoLayout tunnel2_geo[];
+extern Lights1 tunnel2_f3d_material_030_lights;
+extern u8 tunnel2__0xDDE0_ci4[];
+extern u8 tunnel2__0xDDE0_ci4_pal_rgba16[];
+extern Vtx tunnel2_Plane_001_mesh_layer_1_vtx_0[166];
+extern Gfx tunnel2_Plane_001_mesh_layer_1_tri_0[];
+extern Gfx mat_tunnel2_f3d_material_030[];
+extern Gfx mat_revert_tunnel2_f3d_material_030[];
+extern Gfx tunnel2_Plane_001_mesh_layer_1[];
+extern Gfx tunnel2_material_revert_render_settings[];

@@ -1,0 +1,17 @@
+const Collision cloud_collision[] = {
+	COL_INIT(),
+	COL_VERTEX_INIT(6),
+	COL_VERTEX(372, 41, 17),
+	COL_VERTEX(189, 41, -300),
+	COL_VERTEX(-164, 41, -319),
+	COL_VERTEX(-377, 41, 121),
+	COL_VERTEX(-192, 41, 308),
+	COL_VERTEX(172, 41, 315),
+	COL_TRI_INIT(SURFACE_NOT_SLIPPERY, 4),
+	COL_TRI(0, 1, 2),
+	COL_TRI(2, 3, 4),
+	COL_TRI(4, 5, 0),
+	COL_TRI(2, 4, 0),
+	COL_TRI_STOP(),
+	COL_END()
+};

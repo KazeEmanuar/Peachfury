@@ -1,0 +1,17 @@
+extern const GeoLayout movecrate_geo[];
+extern Lights1 movecrate_f3d_material_018_lights;
+extern Lights1 movecrate_f3d_material_019_lights;
+extern u8 movecrate__3481232_ci8[];
+extern u8 movecrate__3481232_ci8_pal_rgba16[];
+extern u8 movecrate__34812322_ci4[];
+extern u8 movecrate__34812322_ci4_pal_rgba16[];
+extern Vtx movecrate_Plane_040_mesh_layer_1_vtx_0[10];
+extern Gfx movecrate_Plane_040_mesh_layer_1_tri_0[];
+extern Vtx movecrate_Plane_040_mesh_layer_1_vtx_1[4];
+extern Gfx movecrate_Plane_040_mesh_layer_1_tri_1[];
+extern Gfx mat_movecrate_f3d_material_018[];
+extern Gfx mat_revert_movecrate_f3d_material_018[];
+extern Gfx mat_movecrate_f3d_material_019[];
+extern Gfx mat_revert_movecrate_f3d_material_019[];
+extern Gfx movecrate_Plane_040_mesh_layer_1[];
+extern Gfx movecrate_material_revert_render_settings[];

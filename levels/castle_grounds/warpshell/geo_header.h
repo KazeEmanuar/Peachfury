@@ -1,0 +1,16 @@
+extern const GeoLayout warpshell_geo[];
+extern Lights1 warpshell_f3d_material_lights;
+extern Lights1 warpshell_f3d_material_001_lights;
+extern u8 warpshell_dl_animalshell_albci4_ci4[];
+extern u8 warpshell_dl_animalshell_albci4_ci4_pal_rgba16[];
+extern u8 warpshell_dl_anim23alshell_alb_i8[];
+extern Vtx warpshell_DL_AnimalShell_Bevel__Shell_mesh_layer_1_vtx_0[148];
+extern Gfx warpshell_DL_AnimalShell_Bevel__Shell_mesh_layer_1_tri_0[];
+extern Vtx warpshell_DL_AnimalShell_Bevel__Shell_mesh_layer_1_vtx_1[6];
+extern Gfx warpshell_DL_AnimalShell_Bevel__Shell_mesh_layer_1_tri_1[];
+extern Gfx mat_warpshell_f3d_material[];
+extern Gfx mat_revert_warpshell_f3d_material[];
+extern Gfx mat_warpshell_f3d_material_001[];
+extern Gfx mat_revert_warpshell_f3d_material_001[];
+extern Gfx warpshell_DL_AnimalShell_Bevel__Shell_mesh_layer_1[];
+extern Gfx warpshell_material_revert_render_settings[];

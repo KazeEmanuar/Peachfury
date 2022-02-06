@@ -1,0 +1,14 @@
+extern Lights1 trexEyes_Eyehalf_layer1_lights;
+extern Lights1 trexEyes_EyeClosed_layer1_lights;
+extern u8 trexEyes_dinoeyeeeeeehalf_rgba16[];
+extern u8 trexEyes_dinoeyeeeeeeclosed_rgba16[];
+extern Vtx trexEyes_Plane_mesh_vtx_cull[8];
+extern Vtx trexEyes_Plane_mesh_vtx_0[3];
+extern Gfx trexEyes_Plane_mesh_tri_0[];
+extern Vtx trexEyes_Plane_mesh_vtx_1[3];
+extern Gfx trexEyes_Plane_mesh_tri_1[];
+extern Gfx mat_trexEyes_Eyehalf_layer1[];
+extern Gfx mat_revert_trexEyes_Eyehalf_layer1[];
+extern Gfx mat_trexEyes_EyeClosed_layer1[];
+extern Gfx mat_revert_trexEyes_EyeClosed_layer1[];
+extern Gfx trexEyes_Plane_mesh[];

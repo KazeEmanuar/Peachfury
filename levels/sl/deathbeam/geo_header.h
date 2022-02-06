@@ -1,0 +1,16 @@
+extern const GeoLayout deathbeam_geo[];
+extern Lights1 deathbeam_f3d_material_lights;
+extern Lights1 deathbeam_f3d_material_001_lights;
+extern u8 deathbeam_ia8_ia16[];
+extern Vtx deathbeam_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx deathbeam_Cube_mesh_layer_1_vtx_0[14];
+extern Gfx deathbeam_Cube_mesh_layer_1_tri_0[];
+extern Vtx deathbeam_Cube_mesh_layer_5_vtx_cull[8];
+extern Vtx deathbeam_Cube_mesh_layer_5_vtx_0[16];
+extern Gfx deathbeam_Cube_mesh_layer_5_tri_0[];
+extern Gfx mat_deathbeam_f3d_material[];
+extern Gfx mat_deathbeam_f3d_material_001[];
+extern Gfx mat_revert_deathbeam_f3d_material_001[];
+extern Gfx deathbeam_Cube_mesh_layer_1[];
+extern Gfx deathbeam_Cube_mesh_layer_5[];
+extern Gfx deathbeam_material_revert_render_settings[];

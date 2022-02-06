@@ -1,0 +1,17 @@
+extern const GeoLayout grasshopper_Bone_opt1[];
+extern const GeoLayout grasshopper_geo[];
+extern Lights1 grasshopper_f3d_material_004_lights;
+extern Lights1 grasshopper_f3d_material_005_lights;
+extern u8 grasshopper_Grasshopper_ci4[];
+extern u8 grasshopper_Grasshopper_ci4_pal_rgba16[];
+extern u8 grasshopper_Grasshopper_Hop_ci4[];
+extern u8 grasshopper_Grasshopper_Hop_ci4_pal_rgba16[];
+extern Vtx grasshopper_Bone_001_mesh_layer_4_vtx_0[8];
+extern Gfx grasshopper_Bone_001_mesh_layer_4_tri_0[];
+extern Gfx mat_grasshopper_f3d_material_004[];
+extern Gfx mat_revert_grasshopper_f3d_material_004[];
+extern Gfx mat_grasshopper_f3d_material_005[];
+extern Gfx mat_revert_grasshopper_f3d_material_005[];
+extern Gfx grasshopper_Bone_001_mesh_layer_4[];
+extern Gfx grasshopper_Bone_001_mesh_layer_4_mat_override_f3d_material_005_0[];
+extern Gfx grasshopper_material_revert_render_settings[];

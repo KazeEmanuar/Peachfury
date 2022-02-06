@@ -1,0 +1,27 @@
+#include "src/game/envfx_snow.h"
+
+const GeoLayout fatyosher_geo[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_BONE(LAYER_OPAQUE, 0, 0, 0, -617, 0, 0, fatyosher_Bone_mesh_layer_1),
+		GEO_OPEN_NODE(),
+			GEO_BONE(LAYER_OPAQUE, 0, 224, 0, 1683, 0, 0, fatyosher_Bone_001_mesh_layer_1),
+			GEO_BONE(LAYER_OPAQUE, 93, 47, -1, 11295, 474, -24174, fatyosher_leg_l_mesh_layer_1),
+			GEO_BONE(LAYER_OPAQUE, -93, 47, -1, 11295, -474, 24174, fatyosher_leg_r_mesh_layer_1),
+			GEO_DISPLAY_LIST(LAYER_OPAQUE, fatyosher_uparm_l_skinned_mesh_layer_1),
+			GEO_BONE(LAYER_OPAQUE, 64, 183, 14, 4229, 2078, -14399, fatyosher_uparm_l_mesh_layer_1),
+			GEO_OPEN_NODE(),
+				GEO_DISPLAY_LIST(LAYER_OPAQUE, fatyosher_forearm_l_skinned_mesh_layer_1),
+				GEO_BONE(LAYER_OPAQUE, 0, 40, 0, 11788, 2658, -751, fatyosher_forearm_l_mesh_layer_1),
+			GEO_CLOSE_NODE(),
+			GEO_DISPLAY_LIST(LAYER_OPAQUE, fatyosher_uparm_r_skinned_mesh_layer_1),
+			GEO_BONE(LAYER_OPAQUE, -64, 183, 14, 4229, -2078, 14399, fatyosher_uparm_r_mesh_layer_1),
+			GEO_OPEN_NODE(),
+				GEO_DISPLAY_LIST(LAYER_OPAQUE, fatyosher_forearm_r_skinned_mesh_layer_1),
+				GEO_BONE(LAYER_OPAQUE, 0, 40, 0, 11788, -2658, 751, fatyosher_forearm_r_mesh_layer_1),
+			GEO_CLOSE_NODE(),
+		GEO_CLOSE_NODE(),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, fatyosher_material_revert_render_settings),
+	GEO_CLOSE_NODE(),
+	GEO_END(),
+};
