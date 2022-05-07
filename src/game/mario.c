@@ -1448,7 +1448,7 @@ void update_mario_health(struct MarioState *m) {
         // }
 
         if (m->healCounter > 0) {
-            m->health += 0x40;
+          //  m->health += 0x40;
             m->healCounter--;
         }
         if (m->hurtCounter > 0) {
@@ -1463,7 +1463,7 @@ void update_mario_health(struct MarioState *m) {
         }
     }
     if (!fadeoutstarted) {
-        if (m->health < 0x880) {
+        if ((m->health < 0x880)) {
             fadeoutstarted = 1;
             play_transition(WARP_TRANSITION_FADE_INTO_COLOR, 0x0A, 0, 0, 0);
         }
@@ -1488,7 +1488,7 @@ void update_mario_health(struct MarioState *m) {
             if (m->action & ACT_FLAG_PAUSE_EXIT) {
                 if (m->floorHeight == m->pos[1]) {
                     if (m->floor->normal.y > normY) {
-                        if ((SURFACETYPE(m->floor) != 0x23) && (SURFACETYPE(m->floor) != 0x0A)) {
+                        if ((SURFACETYPE(m->floor) != 0x23) && (SURFACETYPE(m->floor) != 0x0A) && (SURFACETYPE(m->floor) != 0x01)) {
                             if (!m->floor->object) {
                                 for (i = 0; i < 3; i++) {
                                     avgPos[i] = (m->floor->vertex1[i] + m->floor->vertex2[i]

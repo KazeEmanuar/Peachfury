@@ -1494,9 +1494,11 @@ u32 mario_can_talk(struct MarioState *m, u32 arg) {
 #else
 #define SIGN_RANGE 0x4000
 #endif
-
+s32 bPressAction(struct MarioState *m) {
+    return (m->action == ACT_PUNCHING) || (m->action == ACT_MOVE_PUNCHING);
+}
 u32 check_read_sign(struct MarioState *m, struct Object *o) {
-    if (m->action == ACT_PUNCHING && object_facing_mario(m, o, SIGN_RANGE)) {
+    if (bPressAction(m)  && object_facing_mario(m, o, SIGN_RANGE)) {
         s16 facingDYaw = (s16) (o->oMoveAngleYaw + 0x8000) - m->faceAngle[1];
         if (facingDYaw >= -SIGN_RANGE && facingDYaw <= SIGN_RANGE) {
             f32 targetX = o->oPosX + 105.0f * sins(o->oMoveAngleYaw);

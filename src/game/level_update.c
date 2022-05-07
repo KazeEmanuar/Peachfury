@@ -590,7 +590,7 @@ __attribute__((always_inline)) inline s32 play_mode_normal(void) {
 
     return 0;
 }
-
+extern f32 backupPos[3];
 __attribute__((always_inline)) inline s32 play_mode_paused(void) {
     if (gPauseScreenMode == 0) {
         set_menu_mode(RENDER_PAUSE_SCREEN);
@@ -600,13 +600,15 @@ __attribute__((always_inline)) inline s32 play_mode_paused(void) {
         set_play_mode(PLAY_MODE_NORMAL);
     } else {
         // Exit level
-
-                save_file_erase(0);
-                save_file_reload();
-                fade_into_special_warp(-2, 0); // reset game
-                /*save_file_erase(1);
-                save_file_erase(2);
-                save_file_erase(3);*/
+        backupPos[0] = 100.f;
+        backupPos[1] = 100.f;
+        backupPos[2] = 100.f;
+        save_file_erase(0);
+        save_file_reload();
+        fade_into_special_warp(-2, 0); // reset game
+                                       /*save_file_erase(1);
+                                       save_file_erase(2);
+                                       save_file_erase(3);*/
         /*initiate_warp(LEVEL_HMC, 1, 0x0A, 1);
         fade_into_special_warp(0, 0);*/
         gSavedCourseNum = COURSE_NONE;
@@ -683,8 +685,8 @@ __attribute__((always_inline)) inline s32 update_level(void) {
 
     switch (sCurrPlayMode) {
         case PLAY_MODE_NORMAL:
-            if (gCurrLevelNum != LEVEL_PSS){
-            gSaveBuffer.files[0][0].savestateTimer++;
+            if (gCurrLevelNum != LEVEL_PSS) {
+                gSaveBuffer.files[0][0].savestateTimer++;
             }
             changeLevel = play_mode_normal();
             scroll_textures();
@@ -696,11 +698,11 @@ __attribute__((always_inline)) inline s32 update_level(void) {
             changeLevel = play_mode_paused();
             break;
         case PLAY_MODE_CHANGE_AREA:
-           // read_controller_inputs();
+            // read_controller_inputs();
             changeLevel = play_mode_change_area();
             break;
         case PLAY_MODE_CHANGE_LEVEL:
-           // read_controller_inputs();
+            // read_controller_inputs();
             changeLevel = play_mode_change_level();
             break;
     }
@@ -881,7 +883,7 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
                 AreaTimer = 0;
                 levelID = gCurrLevelNum;
             }
-            if (gCurrLevelNum == LEVEL_PSS){
+            if (gCurrLevelNum == LEVEL_PSS) {
                 obj_mark_for_deletion(gMarioObject);
             }
             break;

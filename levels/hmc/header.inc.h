@@ -311,7 +311,7 @@ extern Vtx hmc_dl_BGeometry_mesh_layer_1_vtx_18[121];
 extern Gfx hmc_dl_BGeometry_mesh_layer_1_tri_18[];
 extern Vtx hmc_dl_BGeometry_mesh_layer_1_vtx_19[31];
 extern Gfx hmc_dl_BGeometry_mesh_layer_1_tri_19[];
-extern Vtx hmc_dl_BGeometry_mesh_layer_1_vtx_20[57];
+extern Vtx hmc_dl_BGeometry_mesh_layer_1_vtx_20[71];
 extern Gfx hmc_dl_BGeometry_mesh_layer_1_tri_20[];
 extern Vtx hmc_dl_BGeometry_mesh_layer_1_vtx_21[49];
 extern Gfx hmc_dl_BGeometry_mesh_layer_1_tri_21[];

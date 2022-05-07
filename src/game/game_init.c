@@ -729,7 +729,7 @@ u8 wisdeScreenMode = 0;
 extern u8 isEmu;
 void thread9_graphics_loop() {
     OSTime prevtime = 0;
-    OSTime deltatime = 0;
+    s32 deltatime = 0;
     OSTime posttime = 0;
 
     set_vblank_handler(4, &gGraphicsVblankHandler, &gGraphicsVblankQueue, (OSMesg) 1);
@@ -752,26 +752,28 @@ void thread9_graphics_loop() {
         if (isEmu) {
             gMoveSpeed = 1; // interpolate by half since this is an extra rendered frame
             if (lastRenderedFrame == gGlobalTimer) {
-                gMoveSpeed = 0; // immidiately snap to the current frame since the interpolated frame
-                                // was already rendered
+                gMoveSpeed = 0; // immidiately snap to the current frame since the interpolated
+                                // frame was already rendered
             }
         } else {
-            if (deltatime < 16.72666666f) {
+#define CYCLEPERSCPU 46875.f
+            #define TIMEPASSED(x) (x / CYCLEPERSCPU)
+            if (TIMEPASSED(deltatime) < 16.72666666f) {
                 gMoveSpeed = 1; // interpolate by half since this is an extra rendered frame
                 if (lastRenderedFrame == gGlobalTimer) {
                     gMoveSpeed = 0; // immidiately snap to the current frame since the interpolated
                                     // frame was already rendered
                 }
-            } else if (deltatime > 47.95f) { // game assumes this frame takes as long to render as the
-                                             // next one will
+            } else if (TIMEPASSED(deltatime) > 47.95f) { // game assumes this frame takes as long to render as
+                                             // the next one will
                 switch (gGlobalTimer
-                        - lastRenderedFrame) { // L stands for "last rendered VI". A stands for "physics
-                                               // advanced that VI". T stands for "current VI". N stands
-                                               // for "predicted next rendered VI"
+                        - lastRenderedFrame) { // L stands for "last rendered VI". A stands for
+                                               // "physics advanced that VI". T stands for "current
+                                               // VI". N stands for "predicted next rendered VI"
                     case 1:
-                        gMoveSpeed =
-                            2; // LA, 0, A, T, A, 0, NA: move and rotate by distance + distance/2, so
-                               // that over 6 VIs, both rendered frames are 1.5 frames apart visually.
+                        gMoveSpeed = 2; // LA, 0, A, T, A, 0, NA: move and rotate by distance +
+                                        // distance/2, so that over 6 VIs, both rendered frames
+                                        // are 1.5 frames apart visually.
                         break;
                     case 2:
                         gMoveSpeed = 0; // A, L, A, 0, TA: opposite scenario to case 1. 2 frames

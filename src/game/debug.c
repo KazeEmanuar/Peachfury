@@ -56,7 +56,7 @@ void checkCloudSpawn() {
     if (gMarioState->action & ACT_FLAG_ALLOW_VERTICAL_WIND_ACTION) {
         if (!(gMarioState->action & ACT_FLAG_INVULNERABLE)) {
             if (gMarioState->controller->buttonPressed & A_BUTTON) {
-                if ((find_floor_height(gMarioState->pos[0], gMarioState->pos[1], gMarioState->pos[2])
+                if ((MAX(gMarioState->lastFloorHeight, gMarioState->floorHeight)
                      - gMarioState->pos[1])
                     < -72.f) {
                     if ((gMarioState->action != ACT_WALL_KICK_AIR) || (gMarioState->actionTimer > 1)) {

@@ -104,7 +104,7 @@ const LevelScript level_hmc_entry[] = {
 		OBJECT(0x3E, -6998, -6871, -6881, 0, -180, 0, (0 << 24) | (1 << 16), bhvBounceShroom),
 		OBJECT(0, -6561, -5901, -7298, 0, -180, 0, (0 << 24) | (150 << 16), bhvPoleGrabbing),
 		OBJECT(0, -5198, -5628, -6609, 0, -180, 0, (0 << 24) | (150 << 16), bhvPoleGrabbing),
-		OBJECT(MODEL_STAR, -8011, -6716, -1108, 0, -180, 0, (0 << 24), bhvStar),
+		OBJECT(MODEL_STAR, -7948, -6716, -1094, 0, -180, 0, (0 << 24), bhvStar),
 		OBJECT(MODEL_BIRDS, -8358, -6748, -8765, 0, -180, 0, (9 << 24), bhvFreeBird),
 		OBJECT(MODEL_BIRDS, -4999, -6974, -9797, 0, -180, 0, (9 << 24), bhvFreeBird),
 		OBJECT(MODEL_BIRDS, -7040, -6911, -10422, 0, -180, 0, (9 << 24), bhvFreeBird),

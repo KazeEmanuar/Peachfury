@@ -1055,7 +1055,7 @@ void geo_process_held_object(struct GraphNodeHeldObject *node) {
     }
 
     if (((struct GraphNodeRoot *) node)->node.children != NULL) {
-        geo_process_node_and_siblings(((struct GraphNodeRoot *) node)->node.children);
+     //   geo_process_node_and_siblings(((struct GraphNodeRoot *) node)->node.children);
     }
 }
 

@@ -228,11 +228,11 @@
 #define TEXT_FOR_MARIO _("...for Mario...")
 #define TEXT_FILE_MARIO_QUESTION _("Mario!")
 
-#define STAR01 _("BELOW THE CANYON GRID")
+#define STAR01 _("WHERE THE RED BIRDS ROOST")
 #define STAR02 _("RED BIRD CANYON")
 #define STAR03 _("GOOMBA ISLE")
 #define STAR04 _("8 BIT UNDERGROUND")
-#define STAR05 _("SCAVENGER SIGNS")
+#define STAR05 _("PIRATE TREASSURE HUNT")
 #define STAR06 _("GLOWING ROCK")
 #define STAR07 _("100 COINS")
 #define STAR08 _("THE CANYON HOLE")
